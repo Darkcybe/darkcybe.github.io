@@ -3,5 +3,9 @@ I work in the Cyber Security industry as a Digital Forensics and Incident Respon
 
 Please feel free to reach out to me if you have any questions, comments or recommendations!
 
-## Disclaimer
-All opinions expressed on this site and through my connected social media profiles are my own and do not reflect those of my employer. Retweets and mentions of named assets do not constitute my endorsement of any position, product, or service. I do not earn any income from this blog, however if you would like to shout me a coffee flick me a message!
+> **Disclaimer**
+> All opinions expressed on this site and through my connected social media profiles are my own and do not reflect
+> those of my employer. Retweets and mentions of named assets do not constitute my endorsement of any position,
+> product, or service. I do not earn any income from this blog, however if you would like to shout me a coffee flick me
+> a message!
+{: prompt-warning }

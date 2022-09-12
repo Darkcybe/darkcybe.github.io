@@ -1,6 +1,6 @@
 ---
 title: Nmap
-categories: [Ethical Hacking,Ethical Hacking Tools,Scanning and Enumeration]
+categories: [Ethical Hacking Tools,Scanning and Enumeration]
 tags: [nmap,discovery,ta0007,network service discovery, t1046]
 comments: true
 ---
@@ -145,6 +145,7 @@ nmap -sn -oA <output Name/Directory> <IP ADDRESS>/CIDR
 # Scan a host, enabling OS detection, version detection, script scanning, and traceroute with verbose output
 nmap -v -A -sV <IP ADDRESS> or <DOMAIN>
 ```
+{: .nolineno }
 
 ## Performing Complex Scans
 As mentioned above, Nmap has the ability to conduct complex and aggressive scanning which can be very useful for internal security teams and penetration testers alike. Some handy scans are as below:
@@ -161,8 +162,11 @@ nmap -sV --script=vulners <IP ADDRESS>
 # Scan a webserver and retrieve banner information via NSE
 nmap -sV --script=http-enum <IP ADDRESS>
 ```
+{: .nolineno }
+
 > There are over 600 pre-packaged scripts and many more available through third-party repositories. By Default on Linux installs, scripts are kept in the directory `/usr/share/nmap/scripts`. 
-> 
+{: .prompt-info }
+
 ## Searching the NSE Database
 
 There are numerous pre-packaged scripts that ship default with Nmap, with additional extensions or specialized scripts able to be created or downloaded via repositories such as GitHub. The following are a few more precise commands that can be used to interact with the script database
@@ -174,6 +178,7 @@ nmap --script-help "smb-*" | grep "^smb-"
 # Displaying Script Help
 nmap --script-help "smb-os-discovery"
 ```
+{: .nolineno }
 
 # Additional Info
 ## ZenMap
