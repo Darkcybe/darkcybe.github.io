@@ -10,5 +10,8 @@ Hi and welcome to my blog! I work in the Cyber Security industry as a Digital Fo
 
 Please feel free to reach out to me if you have any questions, comments or recommendations! I am open to construction criticism.
 
-## Disclaimer
-All opinions expressed on this site and through my connected social media profiles are my own and do not reflect those of my employer. Retweets and mentions of named assets do not constitute my endorsement of any position, product, or service. I do not earn any income from this blog, however if you would like to shout me a coffee flick me a message!
+| :warning: Disclaimer                                                                                                |
+|:--------------------------------------------------------------------------------------------------------------------|
+| All opinions expressed on this site and through my connected social media profiles are my own and do not reflect    those of my employer. Retweets and mentions of named assets do not constitute my endorsement of any position, 
+product, or service. I do not earn any income from this blog, however if you would like to shout me a coffee flick 
+me a message!                                                                                                         |
