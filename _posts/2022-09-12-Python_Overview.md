@@ -108,7 +108,7 @@ contacts = {"number":2,
 ```
 {: .nolineno }
 
-Dictionaries can be modified using methods, some of the commonly used methods relating to dictionaries can be found here [Python Dictionary Methods (w3schools.com)](https://www.w3schools.com/python/python_ref_dictionary.asp).
+Dictionaries can be modified using methods, some of the commonly used methods relating to dictionaries can be found at the [Python Dictionary Methods](https://www.w3schools.com/python/python_ref_dictionary.asp) by W3Schools.
 
 | Method | Description | Example |
 | --- | --- | --- |
@@ -129,7 +129,7 @@ Functions are pre-compiled instructions that can be executed to perform certain 
 
 ## Standard Functions
 
-Some of the built-in and commonly used functions that exist in Python are listed below, a more through list of examples can be found at: [Built-in Functions — Python 3.10.5 documentation](https://docs.python.org/3/library/functions.html)
+Some of the built-in and commonly used functions that exist in Python are listed below, a more through list of examples can be found atwithin the Python Documentation for [Built-in Functions](https://docs.python.org/3/library/functions.html).
 
 | Method | Description | Example |
 | --- | --- | --- |
@@ -187,7 +187,7 @@ play_game()
 
 # Modules/Libraries/Packages
 
-A module in Python is a way of providing useful code to be used by another program, containing functions and other resources. Python contains an already extensive library which can be accessed natively, more information can be found here [The Python Standard Library — Python 3.10.5 documentation](https://docs.python.org/3/library/index.html). More advanced or third-party modules can be found at the The Python Package Index (PyPI), which maintains a repository of software for the Python Language: [PyPI · The Python Package Index](https://pypi.org/)
+A module in Python is a way of providing useful code to be used by another program, containing functions and other resources. Python contains an already extensive library which can be accessed natively, more information can be found at [The Python Standard Library Documentation](https://docs.python.org/3/library/index.html). More advanced or third-party modules can be found at the [PyPI · The Python Package Index](https://pypi.org/), which maintains a repository of software for the Python Language: 
 
 ## Importing a Standard Module
 
@@ -209,7 +209,7 @@ roll = random.randint(1,6)
 ```
 {: .nolineno }
 
-Using the random module as an example again, we can see that there a numerous function available. [random — Generate pseudo-random numbers — Python 3.10.5 documentation](https://docs.python.org/3/library/random.html)
+Using the random module as an example again, we can see that there a numerous function available via the [random — Generate pseudo-random numbers](https://docs.python.org/3/library/random.html) document by Python.
 
 ```python
 choices = ["rock", "paper", "scissors"]
@@ -219,7 +219,7 @@ computer_choice = random.choice(choices)
 
 ## Installing Third-Party Packages
 
-Apart from the extensive libraries available by default with Python, there exist a vat number of specialized packages that have been created by the Python community to extend the capabilities of modules. As previously mentioned,  a repository of these packages can be found here [PyPI · The Python Package Index](https://pypi.org/), and also via custom repositories on GitHub.
+Apart from the extensive libraries available by default with Python, there exist a vat number of specialized packages that have been created by the Python community to extend the capabilities of modules. As previously mentioned, a repository of these packages can be found at [PyPI · The Python Package Index](https://pypi.org/), and also via custom repositories on GitHub.
 
 To install third-party packages, the Python Install Package (PIP) is required, PIP manages the installation of packages from the Python Package Index and can be interacted with via the Python Terminal. In the below example, the package ‘requests’ is downloaded and installed via PIP. The Requests package allows HTTP requests to be made to webservers in order to interact with APIs and retrieve/post data.
 
@@ -232,7 +232,7 @@ pip --upgrade requests # If already installed, packages can be upgraded
 ```
 {: .nolineno }
 
-Once installed, a package can then be imported and used in the same manner as built-in modules or libraries. In the example below, the requests package is used to make an outbound connection to a webserver ([https://randomuser.me/api/](https://randomuser.me/api/)), returning and parsing the data in .json format.
+Once installed, a package can then be imported and used in the same manner as built-in modules or libraries. In the example below, the requests package is used to make an outbound connection to a webserver [https://randomuser.me/api/](https://randomuser.me/api/), returning and parsing the data in .json format.
 
 ```python
 import requests
@@ -244,7 +244,8 @@ print(output)
 ```
 {: .nolineno }
 
-An example is shown below of a practical use of the requests package. User information is retrieved from the webserver and parsed to print the username and password. Due to the JSON data being quite overwhelming, online tools such as [JSON Parser - Best JSON Formatter | JSON Editor](https://jsonparser.org/) can be used to break the dictionaries and lists into a more readable format.
+
+An example is shown below of a practical use of the requests package. User information is retrieved from the webserver and parsed to print the username and password. Due to the JSON data being quite overwhelming, online tools such as [JSON Parser](https://jsonparser.org/) can be used to break the dictionaries and lists into a more readable format.
 
 ```python
 import requests
