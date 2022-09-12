@@ -9,9 +9,9 @@ comments: true
 
 It is perhaps the most utilized tool when initiating a pentest or challenge for a CTF event and is also used for system administration purposes to map network devices. Nmap can be found on popular pentesting environments natively such as Kali Linux and ParrotOS.
 
-| Tool Name | Version |
-| --------- | ------- |
-| [Nmap](https://nmap.org/download)      | V7.92   |
+| Tool Name | Version | MITRE ATT&CK Tactic | MITRE ATT&CK Technique |
+| --------- | ------- | ------------------- | ---------------------- |
+| [Nmap](https://nmap.org/download) | V7.92 | [Discovery](https://attack.mitre.org/tactics/TA0007/) | [Network Service Discovery](https://attack.mitre.org/techniques/T1046/)
 
 # Nmap Help Page
 ```
