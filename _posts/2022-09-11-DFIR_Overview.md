@@ -88,7 +88,7 @@ There a number of specalist skills that a DFIR analyst or engineer may learn or 
 ## Malware Analysis
 Malware can be categorized into several core types based upon their intended functions. Historically, early malware would be designed to perform a single or few tasks as developed by the attacker. Recently however, there has been an increasing amount of malware application designed in a modular fashion that enable an attacker to choose which functions the deployed malware can perform. The below image identifies some of the more common types of malware.
 
-[![Types of Malware](/assets/img/DFIR/Overview_Types_of_Malware.PNG "Types of Malware")](https://www.crowdstrike.com/cybersecurity-101/malware/types-of-malware/)
+[![Types of Malware](/assets/img/posts/DFIR/Overview_Types_of_Malware.PNG "Types of Malware")](https://www.crowdstrike.com/cybersecurity-101/malware/types-of-malware/)
 
 There are several challenges when analyzing a piece of malware. Each type of malware will have unique analysis phases and required environmental configurations in order to effectively understand it’s intended and possible functionality. Not only does each type of malware require a unique analysis technique, there are other factors that will be encountered such as encryption, programming languages, anti-debugging techniques, and many more.
 
