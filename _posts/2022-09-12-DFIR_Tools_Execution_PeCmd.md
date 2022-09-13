@@ -1,6 +1,6 @@
 ---
 title: PeCmd
-categories: [DFIR Tools,Evidence of...]
+categories: [DFIR Tools,Program Execution]
 tags: [pecmd,prefetch,execution (T0002),evidence of execution]
 comments: true
 ---
