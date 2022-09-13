@@ -74,13 +74,10 @@ Primarily IR is established to answer key facts for an organizations management 
 # DFIR Analysis Techniques
 There a number of specalist skills that a DFIR analyst or engineer may learn or individually speacalise in, some of the more common are:
 - Malware Analysis
-- Memory Forensics
-- Host Forensics (All OS's)
-- Mobile Forensics
-- Log Analysis
-- Threat Hunting
 - Cyber Threat Intelligence
-
+- Threat Hunting
+- System Forensics
+  
 ## Malware Analysis
 Malware can be categorized into several core types based upon their intended functions. Historically, early malware would be designed to perform a single or few tasks as developed by the attacker. Recently however, there has been an increasing amount of malware application designed in a modular fashion that enable an attacker to choose which functions the deployed malware can perform. The below image identifies some of the more common types of malware.
 
@@ -97,6 +94,14 @@ The overarching goals of malware analysis are focused on observing malware behav
 There are two common types of malware analysis that all malware professionals should be familiar with; Static and Dynamic Analysis.
 - **Static Analysis:** Static analysis is the initial phase of malware analysis in which a malicious file is examined without running the file itself. Determinations of potential classification and artefacts of interest are common outcomes of static analysis. However, there are complex scenarios in which static analysis can be hindered such as code packing and encryption which require an advanced level of understanding areas of disassembly, coding, and operating system architectures.
 - **Dynamic Analysis:** Dynamic analysis is typically a secondary phase after static analysis has been performed. Dynamic analysis involves observing the malwares behaviors during and after execution. Highly detailed signatures can be discovered during dynamic analysis such as registry modifications, dropped files and many more. Debugging may also be covered within dynamic analysis which is the examination of a running processes internal constructs.
+
+## Cyber Threat Intelligence and Threat Hunting
+CTI and Threat Hunting are both proactive operations that SOC teams can employ to better and faster detect threats, particularly unknown or targeted attacks. CTI is basically the ongoing analysis of adversaries, their capabilities, motivations, and goals with the end product of informed reporting and usable indicators that can be used by threat hunters and SOC analysts. Threat Hunting refers more to the process of hunting down potential indications that an environment has been breached, typically under the stance that there has been and it must be hunted down. By leveraging each others support, both CTI and Threat Hunting teams can work in parallel to create valuable situational awareness of the current state of affairs pertaining to attacker TTPs.
+
+## System Forensics
+- Memory Fornensics
+- Host Forensics (All OS's)
+- Mobile Forensics
 
 # Sources
 - 
