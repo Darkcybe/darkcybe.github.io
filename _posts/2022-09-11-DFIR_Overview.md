@@ -99,9 +99,13 @@ The overarching goals of malware analysis are focused on observing malware behav
 
 ### Types of Malware Analysis
 There are two common types of malware analysis that all malware professionals should be familiar with; Static and Dynamic Analysis.
+
 **Static Analysis**
+
 Static analysis is the initial phase of malware analysis in which a malicious file is examined without running the file itself. Determinations of potential classification and artefacts of interest are common outcomes of static analysis. However, there are complex scenarios in which static analysis can be hindered such as code packing and encryption which require an advanced level of understanding areas of disassembly, coding, and operating system architectures.
+
 **Dynamic Analysis**
+
 Dynamic analysis is typically a secondary phase after static analysis has been performed. Dynamic analysis involves observing the malwares behaviors during and after execution. Highly detailed signatures can be discovered during dynamic analysis such as registry modifications, dropped files and many more. Debugging may also be covered within dynamic analysis which is the examination of a running processes internal constructs.
 
 # Sources
