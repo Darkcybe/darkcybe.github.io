@@ -27,6 +27,7 @@ ParrotOS is my preference when performing HTB challenges, so we will start here 
    ```bash
    sudo openvpn /path/to/lab_<username>.ovpn
    ```
+   {: .nolineno }
 3. Once the host establishes a connection to the HTB servers, the platform VPN configuration should change to a green status, providing a connected IP address within the HTB servers subnet.
 
 ## Starting and Connecting to a Lab
