@@ -19,12 +19,19 @@ This post will run through the steps involved in the installation and configurat
 # Installing TheHive4
 
 1. TheHive requires Java OpenJDK version 8 or 11 (LTS) in order to load, although 8 is required to load the Cassandra nodes in the following database setup
+   ```bash
+   apt-get install -y openjdk-8-jre-headless
+   echo JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
+   export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+   ```
+   {: .nolineno }
 2. Install the Apache Cassandra database, note that version 3.11.x is supported by TheHive with its repo added to the sources list. Cassandra is the backend database in which TheHive will write to.
    - Configure Cassandra by amending the cluster name and cassandra.yaml file. For this post, a single node is being created so the host IP address is the only parameter required in the IP options.
 3. Install TheHive via APT package
    - Create a local file storage path for TheHive installation
 4. Create an indexing directory for TheHive and change permissions.
-   - > This may already be set during the installation process, however if not follow the steps to add the directories and change permissions. There should be 3 directories with all permissions set to `thehive:thehive` (databse, files, index). {: .prompt-info }
+   > This may already be set during the installation process, however if not follow the steps to add the directories and change permissions. There should be 3 directories with all permissions set to `thehive:thehive` (databse, files, index). 
+   {: .prompt-info }
 5. Configure `etc/thehive/application.conf`
    - Once complete, change ownership permissions for the `/opt/thp/thehive/files` directory
 6. Start TheHive service
@@ -32,11 +39,6 @@ This post will run through the steps involved in the installation and configurat
    - The default admin user is `admin@thehive.local` with password `secret`. It is recommended to change the default password.
 
 ```bash
-# Step 1
-apt-get install -y openjdk-8-jre-headless
-echo JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-
 # Step 2
 curl -fsSL https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
 echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
