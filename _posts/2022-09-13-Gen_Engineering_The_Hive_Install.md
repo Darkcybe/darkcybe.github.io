@@ -9,6 +9,7 @@ comments: true
 This post will run through the steps involved in the installation and configuration of The Hive 4.x and Cortex on a single server deployment. Additionally, MISP will also be installed on the same server.
 
 # Hardware Dependencies
+
 | Users |  CPU  |   RAM   | Storage |
 |:-----:|:-----:|:-------:|:-------:|
 |   <3  | 2vCPU |  4-8GB  |   50GB  |
@@ -16,18 +17,16 @@ This post will run through the steps involved in the installation and configurat
 |  >10  | 8vCPU | 16-32GB |  200GB  |
 
 # Installing TheHive4
+
 1. TheHive requires Java OpenJDK version 8 or 11 (LTS) in order to load, although 8 is required to load the Cassandra nodes in the following database setup
-   
-```bash
+   -  ```bash
    apt-get install -y openjdk-8-jre-headless
    echo JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
    export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64""
-```
-{: .nolineno }
-
-1. Install the Apache Cassandra database, note that version 3.11.x is supported by TheHive with its repo added to the sources list. Cassandra is the backend database in which TheHive will write to.
+    ```
+    {: .nolineno }
+2. Install the Apache Cassandra database, note that version 3.11.x is supported by TheHive with its repo added to the sources list. Cassandra is the backend database in which TheHive will write to.
    - Configure Cassandra by amending the cluster name and cassandra.yaml file. For this post, a single node is being created so the host IP address is the only parameter required in the IP options.
-  
 ```bash
 curl -fsSL https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
 echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
