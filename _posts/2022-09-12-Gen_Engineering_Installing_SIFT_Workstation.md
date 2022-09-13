@@ -23,6 +23,7 @@ The current SIFT version is only supported by Ubuntu 20.04 Desktop/Server editio
     sudo autoremove
     ```
     {: .nolineno }
+    
 # Installing SIFT-CLI
 1. For those still with me, we know need to install the SIFT CLI package in order to install and maintain our SIFT environment. So head on onto the [teamdfir](https://github.com/teamdfir/sift-cli#installation) github page and download the latest release files.
 2. Install [cosign](https://github.com/sigstore/cosign/releases/latest) and Validate the signature 

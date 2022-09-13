@@ -24,8 +24,7 @@ This post will run through the steps involved in the installation and configurat
 3. Install TheHive via APT package
    - Create a local file storage path for TheHive installation
 4. Create an indexing directory for TheHive and change permissions.
-   - > This may already be set during the installation process, however if not follow the steps to add the directories and change permissions. There should be 3 directories with all permissions set to `thehive:thehive` (databse, files, index).
-    {: .prompt-info }
+   - > This may already be set during the installation process, however if not follow the steps to add the directories and change permissions. There should be 3 directories with all permissions set to `thehive:thehive` (databse, files, index). {: .prompt-info }
 5. Configure `etc/thehive/application.conf`
    - Once complete, change ownership permissions for the `/opt/thp/thehive/files` directory
 6. Start TheHive service
