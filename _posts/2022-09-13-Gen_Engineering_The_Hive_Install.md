@@ -85,15 +85,15 @@ db {
             hostname: ["127.0.0.1"] # seed node ip addresses
             cql {
                 cluster-name: thp       # cluster name
-                keyspace: thehive           # name of the keyspace
+                keyspace: thehive       # name of the keyspace
                 }
             }
         }
     }
-## Storage configuration
-storage {
-    provider = localfs
-    localfs.location = /opt/thp/thehive/files }
+    ## Storage configuration
+    storage {
+        provider = localfs
+        localfs.location = /opt/thp/thehive/files }
 
 # Step 6
 service thehive start
@@ -104,40 +104,10 @@ service thehive start
 Cortex allows the automatic analysis of observables stored with a TheHive case. Examples are such things as IP reputation checks, VirusTotal checks, and intelligence scanning for IOCs. The developers behind TheHive created and maintain Cortex, making the linkage between the two seamless. Cortex works via API calls to various external sources. The following example outlines the steps to install and configure Cortex on the same server running TheHive.
 
 1. Cortex requires Elasticsearch v7.x prior to installation, therefore the initial step is to add the Elasticsearch repo to the sources list and install the package.
-   - Once the package has installed, configure the elasticsearch.yml file accordingly. Once edited, start the Elasticsearch service.
-
-```bash
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
-sudo apt install apt-transport-https
-sudo apt update && sudo apt install elasticsearch
-```
-{: .nolineno }
-
-```yaml
-http.host: <IP ADDR>
-cluster.name: hive
-thread_pool.search.queue_size: 100000
-```
-
-```bash
-sudo systemctl enable elasticsearch.service
-sudo systemctl start elasticsearch.service
-```
-{: .nolineno }
-
+   - Once the package has installed, configure the `elasticsearch.yml` file accordingly. Once edited, start the Elasticsearch service.
 2. Install Cortex via APT package
    - TheHive repo should already be added to the APT sources list, however if not it can be added using the commands displayed.
    - If already added, simply run the cortex install command.
-
-```bash
-curl https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY | sudo apt-key add -
-echo 'deb https://deb.thehive-project.org release main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
-sudo apt-get update
-sudo apt-get install cortex
-```
-{: .nolineno }
-
 3. Configure Cortex
    - Create the Cortex secret key and apply it to the `/etc/cortex/application.conf` file.
    - Amend the Elasticsearch IP address
@@ -145,27 +115,42 @@ sudo apt-get install cortex
      - Once started, the hive can be access via the web-gui `http://YOUR_SERVER_ADDRESS:9001/`
      - Set an admin username and password
 
-```conf
-# Secret key
-# ~~~~~
-# The secret key is used to secure cryptographics functions.
-# If you deploy your application to several instances be sure to use the same key!
-play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
-
-## ElasticSearch
-    search {
-        # Name of the index
-        index = cortex
-        # ElasticSearch instance address.
-        uri = "http://<IP ADDR>:9200"
-```
-{: .nolineno }
-
 ```bash
+# Step 1
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt install apt-transport-https
+sudo apt update && sudo apt install elasticsearch
+
+## Elasticsearch.yml
+http.host: <IP ADDR>
+cluster.name: hive
+thread_pool.search.queue_size: 100000
+
+## Service Restart
+sudo systemctl enable elasticsearch.service
+sudo systemctl start elasticsearch.service
+
+# Step 2
+curl https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY | sudo apt-key add -
+echo 'deb https://deb.thehive-project.org release main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
+sudo apt-get update
+sudo apt-get install cortex
+
+# Step 3
+## Application.conf
+play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
+    ## ElasticSearch
+        search {
+            # Name of the index
+            index = cortex
+            # ElasticSearch instance address.
+            uri = "http://<IP ADDR>:9200"
+
+## Service Restart
 sudo systemctl enable cortex
 sudo service cortex start
 ```
-{: .nolineno }
 
 ## Installing and Configuring Cotex Analyzers and Responders
 1. Install pre-requisite python packages
