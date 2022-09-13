@@ -9,11 +9,11 @@ comments: true
 This post will run through the steps involved in the installation and configuration of The Hive 4.x and Cortex on a single server deployment. Additionally, MISP will also be installed on the same server.
 
 # Hardware Dependencies
-| Users | CPU | RAM | Storage |
-| --- | --- | --- | --- |
-| 1-3 | 2 vCPU | 4-8GB | 50GB |
-| 4-10 | 4 vCPU | 8-16GB | 100GB |
-| 11+ | 2 vCPU | 4-8GB | 200GB |
+| Users |  CPU  |   RAM   | Storage |
+|:-----:|:-----:|:-------:|:-------:|
+|   <3  | 2vCPU |  4-8GB  |   50GB  |
+|  <10  | 4vCPU |  8-16B  |  100GB  |
+|  >10  | 8vCPU | 16-32GB |  200GB  |
 
 # Installing TheHive4
 1. TheHive requires Java OpenJDK version 8 or 11 (LTS) in order to load, although 8 is required to load the Cassandra nodes in the following database setup
@@ -86,6 +86,7 @@ chown -R thehive:thehive /opt/thp/thehive/files
 
 5. Configure `etc/thehive/application.conf`
    - Once complete, change ownership permissions for the `/opt/thp/thehive/files` directory
+
 ```conf
 db {
     provider: janusgraph
@@ -145,6 +146,7 @@ sudo systemctl start elasticsearch.service
 2. Install Cortex via APT package
    - TheHive repo should already be added to the APT sources list, however if not it can be added using the commands displayed.
    - If already added, simply run the cortex install command.
+
 ```bash
 curl https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY | sudo apt-key add -
 echo 'deb https://deb.thehive-project.org release main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
@@ -159,7 +161,8 @@ sudo apt-get install cortex
    - Start the Cortex service
      - Once started, the hive can be access via the web-gui `http://YOUR_SERVER_ADDRESS:9001/`
      - Set an admin username and password
-``` bash
+
+```conf
 # Secret key
 # ~~~~~
 # The secret key is used to secure cryptographics functions.
