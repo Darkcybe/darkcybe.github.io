@@ -1,7 +1,7 @@
 ---
 title: Nmap
 categories: [Ethical Hacking Tools,Scanning and Enumeration]
-tags: [nmap,discovery (TA0007),network service discovery (T1046)]
+tags: [nmap,discovery (TA0007),network service discovery (T1046), nse, intelligence gathering]
 comments: true
 ---
 
