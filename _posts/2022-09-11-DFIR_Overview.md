@@ -12,20 +12,18 @@ DFIR consists of two main functions:
 - **Incident Response:** Covers personnel and the overarching process of the coordinated response to cyber security incidents. 
 
 There are several frameworks in existence that detail response lifecycles when responding to cyber security incidents, such as the [Lockheed Martin Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html), [The Diamond Model](https://www.threatintel.academy/diamond/), [SANS PICERL](https://www.cynet.com/incident-response/incident-response-sans-the-6-steps-in-depth/) and [NIST SP 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf). The most commonly used within the industry, within my experience anyway, are the PICERL and NIST frameworks which separate incident response into the following phases:
-
-**PICERL**
-1. Preperation
-2. Identifiication
-3. Containment
-4. Eradication
-5. Recovery
-6. Lessons Learned
-
-**NIST**
-1. Preperation
-2. Detection and Analysis
-3. Containment, Eradication, and Recovery
-4. Post-Incident Activity
+- **PICERL**
+  1. Preperation
+  2. Identifiication
+  3. Containment
+  4. Eradication
+  5. Recovery
+  6. Lessons Learned
+- **NIST**
+  1. Preperation
+  2. Detection and Analysis
+  3. Containment, Eradication, and Recovery
+  4. Post-Incident Activity
 
 Following an established reponse process or framework is crucial to the success in service restoration following an incident. Typically a process will contain several phases that the DFIR team must achieve in order to complete the response, NIST provide such a framework within publication [SP800-61: Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final). A short summary of the phases can be found below, with more specific recommendations and guides found in the phase links above.
 
@@ -43,17 +41,18 @@ Due to the multitude of avenues in which an incident can occur, several layers o
 - Event and Incident Declaration (Efficacy and Categorization, Initial Analysis)
 
 ### Containment, Eradication, and Recovery
-**Containment**
-- Short-term methods
-- Data collection and retention
-- Artifact Interruption (Kill processes, Firewall Rule Modification, Account Blocking and Password Resets)
+- **Containment**
+  - Short-term methods
+  - Data collection and retention
+  - Artifact Interruption (Kill processes, Firewall Rule Modification, Account Blocking and Password Resets)
 - **Eradication**
   - Removal of Artifacts (Files, Registry Entries, Backup Restoral)
   - System and Application Patching
 - **Recovery**
   - Return to BaU
   - Monitoring and Environmental Baselining
-- **Post-Incident Activity**
+
+### Post-Incident Activity
   - Lessons Learned
   - Preparation Review (People, Policy and Procedure)
   - Funding Increase
