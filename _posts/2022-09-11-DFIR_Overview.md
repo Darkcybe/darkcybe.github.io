@@ -47,19 +47,16 @@ Due to the multitude of avenues in which an incident can occur, several layers o
 - Short-term methods
 - Data collection and retention
 - Artifact Interruption (Kill processes, Firewall Rule Modification, Account Blocking and Password Resets)
-
-**Eradication**
-- Removal of Artifacts (Files, Registry Entries, Backup Restoral)
-- System and Application Patching
-
-**Recovery**
-- Return to BaU
-- Monitoring and Environmental Baselining
-
-**Post-Incident Activity**
-- Lessons Learned
-- Preparation Review (People, Policy and Procedure)
-- Funding Increase
+- **Eradication**
+  - Removal of Artifacts (Files, Registry Entries, Backup Restoral)
+  - System and Application Patching
+- **Recovery**
+  - Return to BaU
+  - Monitoring and Environmental Baselining
+- **Post-Incident Activity**
+  - Lessons Learned
+  - Preparation Review (People, Policy and Procedure)
+  - Funding Increase
 
 # Goals of DFIR
 Primarily IR is established to answer key facts for an organizations management team, who did what to which systems and how to we recover as quickly as possible. Digital Forensics on the other hand specialize in providing verbose evidence that can be used by an organization for any law or insurance proceedings arising from the incident. The work of both function is commonly joined during incidents which allows the simplification of achievable goals for the incident response team to follow into two main categories. 
@@ -99,14 +96,8 @@ The overarching goals of malware analysis are focused on observing malware behav
 
 ### Types of Malware Analysis
 There are two common types of malware analysis that all malware professionals should be familiar with; Static and Dynamic Analysis.
-
-**Static Analysis**
-
-Static analysis is the initial phase of malware analysis in which a malicious file is examined without running the file itself. Determinations of potential classification and artefacts of interest are common outcomes of static analysis. However, there are complex scenarios in which static analysis can be hindered such as code packing and encryption which require an advanced level of understanding areas of disassembly, coding, and operating system architectures.
-
-**Dynamic Analysis**
-
-Dynamic analysis is typically a secondary phase after static analysis has been performed. Dynamic analysis involves observing the malwares behaviors during and after execution. Highly detailed signatures can be discovered during dynamic analysis such as registry modifications, dropped files and many more. Debugging may also be covered within dynamic analysis which is the examination of a running processes internal constructs.
+- **Static Analysis:** Static analysis is the initial phase of malware analysis in which a malicious file is examined without running the file itself. Determinations of potential classification and artefacts of interest are common outcomes of static analysis. However, there are complex scenarios in which static analysis can be hindered such as code packing and encryption which require an advanced level of understanding areas of disassembly, coding, and operating system architectures.
+- **Dynamic Analysis:** Dynamic analysis is typically a secondary phase after static analysis has been performed. Dynamic analysis involves observing the malwares behaviors during and after execution. Highly detailed signatures can be discovered during dynamic analysis such as registry modifications, dropped files and many more. Debugging may also be covered within dynamic analysis which is the examination of a running processes internal constructs.
 
 # Sources
 - 
