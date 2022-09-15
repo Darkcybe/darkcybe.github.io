@@ -1,7 +1,7 @@
 ---
 title: Nmap
-categories: [Ethical Hacking Tools,Scanning and Enumeration]
-tags: [nmap,discovery (TA0007),network service discovery (T1046), nse, intelligence gathering]
+categories: [Ethical Hacking Tools,Reconnaissance]
+tags: [nmap,reconnaissance (TA0043),active scanning (T1595), nse]
 comments: true
 ---
 
@@ -11,7 +11,7 @@ It is perhaps the most utilized tool when initiating a pentest or challenge for 
 
 | Tool Name | Version | MITRE ATT&CK Tactic | MITRE ATT&CK Technique |
 | --------- | ------- | ------------------- | ---------------------- |
-| [Nmap](https://nmap.org/download) | V7.92 | [Discovery](https://attack.mitre.org/tactics/TA0007/) | [Network Service Discovery](https://attack.mitre.org/techniques/T1046/)
+| [Nmap](https://nmap.org/download) | V7.92 | [Reconnaissance](https://attack.mitre.org/tactics/TA0043/) | [Active Scanning](https://attack.mitre.org/techniques/T1595/)
 
 # Nmap Help Page
 ```
