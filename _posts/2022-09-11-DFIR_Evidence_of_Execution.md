@@ -15,6 +15,7 @@ HKEY_USERS{SID}\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist{GU
 
 HKEY_CURRENT_USER\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist{GUID}\Count
 ```
+
 ### Interpretation and Investigative Notes
 All values are ROT-13 Encoded
 - GUID for XP
@@ -22,13 +23,16 @@ All values are ROT-13 Encoded
 - GUID for Win7/8/10
   - CEBFF5CD - Executable File Execution
   - F4E57C4B - Shortcut File Execution
+  
 ### Tools
 - [UserAssist View](http://www.nirsoft.net/utils/userassist_view.html)
 - [Registry Explorer (RECmd)](https://www.sans.org/tools/registry-explorer/)
 - [RECmd - Registry Plugins](https://github.com/EricZimmerman/RegistryPlugins)
+
 ### Sources
 - [Aldeid - Windows UserAssist Keys](https://www.aldeid.com/wiki/Windows-userassist-keys)
 - [Didier Stevens - UserAssist](https://blog.didierstevens.com/programs/userassist/)
+
 ## Shimcache or AppCompatCache
 Windows Application Compatibility Database is used by Windows to identify possible application compatibility challenges with executables. Tracks the executables filename, file size, last modified time, and in Windows XP the last update time.
 ### Location
@@ -39,18 +43,21 @@ SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatability
 # WINDOWS 7/8/10
 SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
 ```
+
 ### Interpretation and Investigative Notes
 Any executable run on the Windows system can be found in this key. You can use this key to identify systems specific malware was executed on. In addition, based on the interpretation of the time-based data you might be able to determine the last time of execution or activty on the system.
 - Windows XP - Contains 96 entries at most
   - LastUpdateTime is updated when the files are executed
 - Windows 7/8/10 - Contains 1024 entries at most
   - LastUpdateTime does not exist on Windows 7 systems
+  
 ### Tools
 - [ShimCacheParser](https://github.com/mandiant/ShimCacheParser)
 - [AppCompatCache Parser)](https://github.com/EricZimmerman/AppCompatCacheParser)
 - [Registry Explorer (RECmd)](https://www.sans.org/tools/registry-explorer/)
 - [RECmd - Registry Plugins](https://github.com/EricZimmerman/RegistryPlugins)
 - [AppCompatibilityCache Utility](https://tzworks.com/prototype_page.php?proto_id=29)
+
 ### Sources
 - [Chris Menne - Windows Shimcache Analysis](https://chrismenne.com/windows-shimcache-analysis/)
 
