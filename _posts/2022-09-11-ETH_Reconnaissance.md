@@ -11,7 +11,11 @@ Gathering information on target infrastructure, operations, and personnel.
 # Techniques
 
 ## Passive Scanning and Open Source Intelligence (OSINT)
-Adversaries may execute passive reconnaissance via services or gather information from open source repositories that can be used for target profiling.
+Adversaries may execute passive reconnaissance via services or gather information from open source repositories that can be used for target profiling. Typically passive reconnaissance will be near impossible to attribute back to an actor.
+
+| Detection      | Mitigation                                                                     |
+| -------------- | ------------------------------------------------------------------------------ |
+| Threat Hunting | Passive scanning is outside of internal defensive scopes, however reviews of <br> externally passive scanning and OSINT sources including employee password breaches can help |
 
 ### Identifying Target Infrastructure
 Passive reconnaissance can be performed against a target or in an attempt to identify a potetial target by searching for information such as IP address spaces, domains, subdomains, services, etc.
@@ -19,6 +23,8 @@ Passive reconnaissance can be performed against a target or in an attempt to ide
 #### Tools
 - [Shodan](https://www.shodan.io/)
 - [Censys](https://censys.io/)
+- [Crt - Certificate Search](https://crt.sh)
+- [Netcraft - Webserver Infrastructure](https://www.netcraft.com/)
 
 ## Active Scanning [T1595](https://attack.mitre.org/techniques/T1595/)
 Adversaries may execute active reconnaissance scans to gather information that can be used during targeting. Active scans are those where the adversary probes victim infrastructure via network traffic, as opposed to other forms of reconnaissance that do not involve direct interaction.
