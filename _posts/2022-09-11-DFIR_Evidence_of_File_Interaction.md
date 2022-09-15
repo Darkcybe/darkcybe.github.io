@@ -1,10 +1,10 @@
 ---
-title: Evidence of File Deletion or Knowledge
+title: Evidence of File Interaction
 categories: [DFIR]
-tags: [evidence, acmru, thumbcache, ]
+tags: [evidence, acmru, thumbcache]
 comments: true
 ---
-Techniques that can be used to discover evidence in support of an attackers deletion or interaction with files post-breach.
+Techniques that can be used to discover evidence in support of an attackers interaction with files such as search, deletion and opening post-breach.
 
 # Windows
 
