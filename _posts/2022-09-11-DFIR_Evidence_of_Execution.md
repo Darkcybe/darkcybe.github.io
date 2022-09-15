@@ -61,5 +61,32 @@ Any executable run on the Windows system can be found in this key. You can use t
 ### Sources
 - [Chris Menne - Windows Shimcache Analysis](https://chrismenne.com/windows-shimcache-analysis/)
 
-## Amcache.hve
+## AmCache.hve
 ProgramDataUpdater (a task associated with the Application Experience Service) uses the registry file Amcache.hve to store data during process creation.
+### Location
+```plaintext
+# Windows 7/8/10
+C:\Windows\AppCompat\Programs\Amcache.hve
+```
+
+### Interpretation and Investigative Notes
+- Amcache.hve - Keys = `Amcache.hve\Root\File\{Volume GUID}\#######`
+- Entry for every executable run, full path information, files `$StandardInfo` Last Modification Time, and Disk Volume the executable was run from.
+- Fire Run Time = Last Modification Time of key
+- SHA1 hash of executable also contained in the key.
+  
+### Tools
+- [AmCache Parser](https://github.com/EricZimmerman/AmcacheParser)
+- [Get-ForensicAmcache)](https://powerforensics.readthedocs.io/en/latest/modulehelp/Get-ForensicAmcache/)
+- [Registry Explorer (RECmd)](https://www.sans.org/tools/registry-explorer/)
+- [RECmd - Registry Plugins](https://github.com/EricZimmerman/RegistryPlugins)
+
+### Sources
+- [Andrea Fortuna - AmCache and Shimcache in Forensic Analysis](https://www.andreafortuna.org/2017/10/16/amcache-and-shimcache-in-forensic-analysis/)
+
+## Last-Visited MRU
+Tracks the Specific executable used by an application to open files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application.
+
+**Example:** Notepad.exe was last run using the C:\%USERPROFILE%\Desktop folder
+
+### Location
