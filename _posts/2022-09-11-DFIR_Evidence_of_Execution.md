@@ -41,8 +41,8 @@ All values are ROT-13 Encoded
 ## Shimcache (AppCompatCache)
 Windows Application Compatibility Database is used by Windows to identify possible application compatibility challenges with executables. Tracks the executables filename, file size, last modified time, and in Windows XP the last update time.
 
-WIN: XP, 7, 8, 10, 11
-SRV: NULL
+**WIN:** XP, 7, 8, 10, 11<br>
+**SRV:** NULL
 
 ### Location
 ```plaintext
@@ -73,8 +73,8 @@ Any executable run on the Windows system can be found in this key. You can use t
 ## AmCache.hve
 ProgramDataUpdater (a task associated with the Application Experience Service) uses the registry file Amcache.hve to store data during process creation. Details of program installation and execution are stored.
 
-WIN: 7, 8, 10, 11
-SRV: 2008 R2+
+**WIN:** 7, 8, 10, 11<br>
+**SRV:** 2008 R2+
 
 ### Location
 ```plaintext
@@ -101,8 +101,8 @@ Tracks the Specific executable used by an application to open files documented i
 
 **Example:** Notepad.exe was last run using the C:\%USERPROFILE%\Desktop folder
 
-WIN: XP, 7, 8, 10, 11
-SRV: NULL
+**WIN:** XP, 7, 8, 10, 11<br>
+**SRV:** NULL
 
 ### Location
 ```plaintext
@@ -127,8 +127,8 @@ Tracks the application executables used to open files in OpenSaveMRU and the las
 ## Windows Timeline (Activities Cache.db)
 Windows 10 records recently used applications and files in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains.
 
-WIN: 10+
-SRV: NULL
+**WIN:** 10+ <br>
+**SRV:** NULL
 
 ### Location
 ```plaintext
@@ -151,8 +151,8 @@ Tracks application execution and provides a focus count per application.
 ## RecentApps
 GUI Program execution launched on the Windows 10 System is tracked in the RecentApps key.
 
-WIN: 10 
-SRV: NULL
+**WIN:** 10 <br>
+**SRV:** NULL
 
 ### Location
 ```plaintext
@@ -177,8 +177,8 @@ The Windows task bar (Jump List) is engineered to allow users to "jump" or acces
 
 The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application on Windows 7 through 10 machines. Windows 11 contains a shortcut (.LNK) files that direct to the application, file, or directory.
 
-WIN: 7+
-SRV: NULL
+**WIN:** 7+ <br>
+**SRV:** NULL
 
 ### Location
 ```plaintext
@@ -205,8 +205,8 @@ C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\
 ## System Resource Usage Monitor (SRUM)
 Records 30 to 60 days of historical system performance. Applications run, user account responsible for each, and application and bytes sent/received per application per hour.
 
-WIN: 8+
-SRV: NULL
+**WIN:** 8+ <br>
+**SRV:** NULL
 
 ### Location
 ```plaintext
@@ -237,8 +237,8 @@ Increases performance of a system by pre-loading code pages of commonly used app
 - Limited to 1024 files on Windows 8
 - `<EXE_NAME>-<HASH>.pf`
 
-WIN: XP+
-SRV: NULL
+**WIN:** XP+ <br>
+**SRV:** NULL
 
 ### Location
 ```plaintext
@@ -262,8 +262,8 @@ C:\Windows\Prefetch
 ## Windows Backgroud Activity (BAM) and Desktop Activity Moderator (DAM)
 Windows BAM is updated when Windows boots and controls the activity of background applications and is found on all Windows devices. DAM on the otherhand is only found on Windows Tablets and Mobile devices.
 
-WIN: 10+
-SRV: NULL
+**WIN:** 10+ <br>
+**SRV:** NULL
 
 ### Location
 ```plaintext
