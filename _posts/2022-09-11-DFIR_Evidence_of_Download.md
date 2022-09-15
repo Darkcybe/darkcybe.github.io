@@ -19,7 +19,7 @@ Tracks files that have been opened or saved within a Windows shell dialog box. T
 # WINDOWS XP
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU
 
-# WINDOWS +
+# WINDOWS 7+
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDIMRU
 ```
 

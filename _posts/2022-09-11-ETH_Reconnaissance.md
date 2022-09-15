@@ -1,0 +1,39 @@
+---
+title: Reconnaissance
+categories: [Ethical Hacking]
+tags: [reconnaissance (TA0043), active scanning (T1595)]
+comments: true
+---
+Gathering information on target infrastructure, operations, and personnel.
+
+"Reconnaissance consists of techniques that involve adversaries actively or passively gathering information that can be used to support targeting. Such information may include details of the victim organization, infrastructure, or staff/personnel. This information can be leveraged by the adversary to aid in other phases of the adversary lifecycle, such as using gathered information to plan and execute Initial Access, to scope and prioritize post-compromise objectives, or to drive and lead further Reconnaissance efforts." [MITRE ATT&CK](https://attack.mitre.org/tactics/TA0043/)
+
+# Techniques
+
+## Active Scanning (T1595)
+Adversaries may execute active reconnaissance scans to gather information that can be used during targeting. Active scans are those where the adversary probes victim infrastructure via network traffic, as opposed to other forms of reconnaissance that do not involve direct interaction. [MITRE ATT&CK](https://attack.mitre.org/techniques/T1595/)
+
+| Detection       | Mitigation                                                                     |
+| ---------       | ------------------------------------------------------------------------------ |
+| Network Traffic | Scanning is outside of internal defensive scopes, however reviews of <br> externally facing ports and services should regularly be monitored |
+
+### Scanning IP Blocks
+Target IP address can be identified 
+
+#### Tools
+- [Darkcybe - Nmap Guide](https://darkcybe.github.io/posts/ETH_Tools_Nmap/)
+
+### Vulnerablity Scanning
+Scaning target hosts for exploitable vulnerabilities
+
+#### Tools
+- [Darkcybe - Nmap Guide](https://darkcybe.github.io/posts/ETH_Tools_Nmap/)
+- [Darkcybe - Nessus Guide]
+- [Darkcybe - Nikto Guide]
+
+### Wordlist Scanning
+Brute-force or directory crawling technique that allows for content identification
+
+#### Tools
+- [Darkcybe - Nmap Guide](https://darkcybe.github.io/posts/ETH_Tools_Nmap/)
+- [Darkcybe - Dirbuster Guide]
