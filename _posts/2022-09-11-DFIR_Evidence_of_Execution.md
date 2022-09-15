@@ -9,7 +9,7 @@ comments: true
 ## UserAssist
 GUI-based programs launched from the desktop are tracked in the launcher on a windows system
 ### Location
-```powershell
+```plaintext
 # Windows XP/7/8/10
 HKEY_USERS{SID}\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist{GUID}\Count
 
@@ -36,7 +36,7 @@ All values are ROT-13 Encoded
 ## Shimcache or AppCompatCache
 Windows Application Compatibility Database is used by Windows to identify possible application compatibility challenges with executables. Tracks the executables filename, file size, last modified time, and in Windows XP the last update time.
 ### Location
-```powershell
+```plaintext
 # WINDOWS XP
 SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatability
 
