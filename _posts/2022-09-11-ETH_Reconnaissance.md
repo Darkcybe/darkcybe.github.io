@@ -28,12 +28,15 @@ Scaning target hosts for exploitable vulnerabilities
 
 #### Tools
 - [Darkcybe - Nmap Guide](https://darkcybe.github.io/posts/ETH_Tools_Nmap/)
-- [Darkcybe - Nessus Guide]
-- [Darkcybe - Nikto Guide]
+- [Darkcybe - Nessus Guide] Comming Soon
+- [Darkcybe - Nikto Guide] Comming Soon
 
 ### Wordlist Scanning
 Brute-force or directory crawling technique that allows for content identification
 
 #### Tools
 - [Darkcybe - Nmap Guide](https://darkcybe.github.io/posts/ETH_Tools_Nmap/)
-- [Darkcybe - Dirbuster Guide]
+- [Darkcybe - Dirbuster Guide] Comming Soon
+
+## Gather Victim Host Information (T1592)
+Adversaries may gather information about the victim's hosts that can be used during targeting. Information about hosts may include a variety of details, including administrative data (ex: name, assigned IP, functionality, etc.) as well as specifics regarding its configuration (ex: operating system, language, etc.). [MITRE ATT&CK](https://attack.mitre.org/techniques/T1592/)
