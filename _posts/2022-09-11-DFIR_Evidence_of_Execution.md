@@ -11,8 +11,8 @@ Techniques that can be used to discover evidence in support of program execution
 ## UserAssist
 GUI-based programs launched from the desktop are tracked in the launcher on a windows system
 
-WIN: XP, 7, 8, 10, 11
-SRV: NULL
+**WIN:** XP, 7, 8, 10, 11<br>
+**SRV:** NULL
 
 ### Location
 ```plaintext
