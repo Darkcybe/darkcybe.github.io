@@ -10,8 +10,8 @@ Gathering information on target infrastructure, operations, and personnel.
 
 # Techniques
 
-## Active Scanning (T1595)
-Adversaries may execute active reconnaissance scans to gather information that can be used during targeting. Active scans are those where the adversary probes victim infrastructure via network traffic, as opposed to other forms of reconnaissance that do not involve direct interaction. [MITRE ATT&CK](https://attack.mitre.org/techniques/T1595/)
+## Active Scanning [T1595](https://attack.mitre.org/techniques/T1595/)
+Adversaries may execute active reconnaissance scans to gather information that can be used during targeting. Active scans are those where the adversary probes victim infrastructure via network traffic, as opposed to other forms of reconnaissance that do not involve direct interaction.
 
 | Detection       | Mitigation                                                                     |
 | ---------       | ------------------------------------------------------------------------------ |
