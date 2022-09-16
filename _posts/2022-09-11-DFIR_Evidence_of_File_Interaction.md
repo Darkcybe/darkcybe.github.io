@@ -1,6 +1,7 @@
 ---
 title: Evidence of File Interaction
 categories: [DFIR]
+order: 3
 tags: [evidence, acmru, thumbcache, wordwheelquery, recycle bin, lastvisitedmru, internet explorer, microsoft edge]
 comments: true
 ---

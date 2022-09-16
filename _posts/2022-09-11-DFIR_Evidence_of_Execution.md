@@ -1,6 +1,7 @@
 ---
 title: Evidence of Execution
 categories: [DFIR]
+order: 2
 tags: [userassist, shimcache, appcompatcache, amcache, lastvisitedmru, activitiescache, recentapps, jumplists, srum, prefetch, bam, dam, evidence]
 comments: true
 ---
@@ -96,7 +97,7 @@ C:\Windows\AppCompat\Programs\Amcache.hve
 ### Sources
 - [Andrea Fortuna - AmCache and Shimcache in Forensic Analysis](https://www.andreafortuna.org/2017/10/16/amcache-and-shimcache-in-forensic-analysis/)
 
-## LastVisited MRU
+## LastVisitedMRU
 Tracks the Specific executable used by an application to open files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application.
 
 **Example:** Notepad.exe was last run using the C:\%USERPROFILE%\Desktop folder
