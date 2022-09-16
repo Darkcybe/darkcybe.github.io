@@ -12,7 +12,7 @@ Unsigned files within legitimate paths such as `\System32` should be investigate
 
 | Tool Name | Version | MITRE ATT&CK Tactic | MITRE ATT&CK Technique | MITRE ATT&CK Sub-Technique |
 | --------- | ------- | ------------------- | ---------------------- | --------------------------
-| [SigCheck](https://docs.microsoft.com/en-us/sysinternals/downloads/sigcheck) | V2.72 | [Defence Evasion](https://attack.mitre.org/tactics/TA0005/) | [Masquearading](https://attack.mitre.org/techniques/T1036/)<br> [Subvert Trust Controls](https://attack.mitre.org/techniques/T1553/)| [Invalid Code Signature](https://attack.mitre.org/techniques/T1036/001/)<br> [Code Signing](https://attack.mitre.org/techniques/T1553/002/)|
+| [SigCheck](https://docs.microsoft.com/en-us/sysinternals/downloads/sigcheck) | V2.90 | [Defence Evasion](https://attack.mitre.org/tactics/TA0005/) | [Masquearading](https://attack.mitre.org/techniques/T1036/)<br> [Subvert Trust Controls](https://attack.mitre.org/techniques/T1553/)| [Invalid Code Signature](https://attack.mitre.org/techniques/T1036/001/)<br> [Code Signing](https://attack.mitre.org/techniques/T1553/002/)|
 
 # Instructions
 ## Scanning a Single File
