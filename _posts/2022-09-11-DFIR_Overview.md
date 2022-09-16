@@ -76,8 +76,9 @@ Once an event has been determined to be an incident that negatively impacts the 
 - **Recoverability:** Possible responses that the team may take when handling the incident. An incident with a high impact and low effort to recover from is an ideal candidate for immediate action from the team. The team should prioritize the response to each incident based on its estimate of the business impact caused by the incident and the estimated efforts required to recover from the incident.
 
 #### [Impact Categories](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
+
 | Category |                                                   Definition                                                  |
-|:--------:|:-------------------------------------------------------------------------------------------------------------:|
+|:--------:| ------------------------------------------------------------------------------------------------------------- |
 |   None   | No effect to the organization’s ability to provide all services to all users                                  |
 |    Low   | Minimal effect; the organization can still provide all critical services to all users but has lost efficiency |
 |  Medium  | Organization has lost the ability to provide a critical service to a subset of system users                   |
@@ -86,7 +87,7 @@ Once an event has been determined to be an incident that negatively impacts the 
 #### [Recoverability Categories](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
 
 |     Category    |                                                        Definition                                                       |
-|:---------------:|:-----------------------------------------------------------------------------------------------------------------------:|
+| --------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Regular         | Time to recovery is predictable with existing resources                                                                 |
 | Supplemented    | Time to recovery is predictable with additional resources                                                               |
 | Extended        | Time to recovery is unpredictable; additional resources and outside help are needed                                     |
