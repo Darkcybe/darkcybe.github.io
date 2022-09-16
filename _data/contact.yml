@@ -9,10 +9,11 @@
 -
   type: discord
   icon: 'fab fa-discord'
+  url: 'https://discordapp.com/users/darkcybe#4349'
 -
-  type: email
-  icon: 'fas fa-envelope'
-  noblank: true            # open link in current tab
+  # type: email
+  # icon: 'fas fa-envelope'
+  # noblank: true            # open link in current tab
 -
   type: rss
   icon: 'fas fa-rss'
