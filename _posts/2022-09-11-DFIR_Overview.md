@@ -12,6 +12,7 @@ DFIR consists of two main functions:
 - **Incident Response:** Covers personnel and the overarching process of the coordinated response to cyber security incidents. 
 
 There are several frameworks in existence that detail response lifecycles when responding to cyber security incidents, such as the [Lockheed Martin Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html), [The Diamond Model](https://www.threatintel.academy/diamond/), [SANS PICERL](https://www.cynet.com/incident-response/incident-response-sans-the-6-steps-in-depth/) and [NIST SP 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf). The most commonly used within the industry, within my experience anyway, are the PICERL and NIST frameworks which separate incident response into the following phases:
+
 - **PICERL**
   1. Preperation
   2. Identifiication
@@ -19,6 +20,7 @@ There are several frameworks in existence that detail response lifecycles when r
   4. Eradication
   5. Recovery
   6. Lessons Learned
+   
 - **NIST**
   1. Preperation
   2. Detection and Analysis
@@ -27,7 +29,70 @@ There are several frameworks in existence that detail response lifecycles when r
 
 Following an established reponse process or framework is crucial to the success in service restoration following an incident. Typically a process will contain several phases that the DFIR team must achieve in order to complete the response, NIST provide such a framework within publication [SP800-61: Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final). A short summary of the phases can be found below, with more specific recommendations and guides found in the phase links above.
 
-## NIST Response Lifecycle
+# Event Vs. Incident
+
+Understanding fundamental terminology and how to correctly categorize events, incidents, risk potential and efficacy is key to effective response. Although organizations should and will individually categorize and define their own specific methodologies, the baseline standards as described in the aforementioned NIST Guide as well as incorporating my own understanding and preferences.
+
+## Terminology
+### Event
+
+An event can span a wide variety of actions and behaviors and should be used to categorize system or network activities in which may be indicative of adverse actions. Alerts from products deployed in an environment should be considered initially as events before verification is carried out to determine whether is should be reclassified as an incident or not. Not every event will be an adverse incident, however ever incident will contain one or more events. The below quote comes directly from the NIST Computer Security Incident Handling Guide to define the term.
+
+> An event is any observable occurrence in a system or network. Events include a user connecting to a file share, a server receiving a request 
+> for a web page, a user sending email, and a firewall blocking a connection attempt. Adverse events are events with a negative consequence, such
+> as system crashes, packet floods, unauthorized use of system privileges, unauthorized access to sensitive data, and execution of malware that 
+> destroys data.
+
+### Incident
+
+Incidents encompass all events that negatively impact the Confidentiality, Integrity and/or Availability (CIA) of the Business in general. Again he below quote from the NIST Computer Security Incident Handling Guide defines the term and provides several examples of what may constitute an event to be escalated to Incident status.
+
+> A computer security incident is a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard
+> security practices. Examples of incidents are:
+> - An attacker commands a botnet to send high volumes of connection requests to a web server, causing it to crash.
+> - Users are tricked into opening a “quarterly report” sent via email that is actually malware; running the tool has infected their computers 
+> and established connections with an external host.
+> - An attacker obtains sensitive data and threatens that the details will be released publicly if the organization does not pay a designated sum
+>  of money.
+> - A user provides or exposes sensitive information to others through peer-to-peer file sharing services.
+
+## Detection and Analysis
+### Event and Incident Categorization
+
+When data is ingested into a SIEM platform or ticketing system, it is the job of a security analyst to perform analysis of the events, initially determining the categorization of the event. This is perhaps the most challenging component of security monitoring, the determination of whether an incident has occurred. Categorization encompasses multiple considerations and objectives, such as:
+- **Event Verification:** Initial review of event type and high level verification of data source/alert. Has a server shutdown due to legitimate Administrative tasks?
+- **Scope:** Correlation and aggregation of events from multiple data sources. How wide spread is the event?
+- **Lifecycle Identification:** Is the event a potential precursor to further nefarious activity or is the event a clear indication of malicious activity? 
+- **Efficacy:** Based upon the potential impact to business operations and using knowledge of system processes, networking, threat intelligence and honed skills in analysis a determination of alert efficacy will be made leading to a result of:
+  - **Incident:** A valid threat was detected.
+  - **False Positive:** – An event in which triggered an alert was incorrectly identified or posed no extant risk.
+  - **Benign:** A valid threat was detected, however there is no apparent risk due to the condition being explained or expected.
+  - **Normal:** Events that have been previously triaged and determined to be normal and expected within the environment.
+  - **Indeterminable/Noteworthy:** Not enough evidence or context to confidently decide, events that appear suspicious however non-impactful to operations but do require further monitoring. Often events under this category require further investigation.
+
+### Incident Prioritization
+Once an event has been determined to be an incident that negatively impacts the CIA, prioritization is the next logical step and perhaps one of the most critical in organizing responsive actions. Determining incident priority should be based on relevant factors, such as the following:
+- **Impact:** How the incident impacts existing functionality of the affected systems. Not only the current functional impact of the incident should be taken into consideration, but also the likely future functional impact of the incident if it is not immediately contained.
+- **Recoverability:** Possible responses that the team may take when handling the incident. An incident with a high impact and low effort to recover from is an ideal candidate for immediate action from the team. The team should prioritize the response to each incident based on its estimate of the business impact caused by the incident and the estimated efforts required to recover from the incident.
+
+#### [Impact Categories](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
+| Category |                                                   Definition                                                  |
+|:--------:|:-------------------------------------------------------------------------------------------------------------:|
+|   None   | No effect to the organization’s ability to provide all services to all users                                  |
+|    Low   | Minimal effect; the organization can still provide all critical services to all users but has lost efficiency |
+|  Medium  | Organization has lost the ability to provide a critical service to a subset of system users                   |
+|   High   | Organization is no longer able to provide some critical services to any users                                 |
+
+#### [Recoverability Categories](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
+
+|     Category    |                                                        Definition                                                       |
+|:---------------:|:-----------------------------------------------------------------------------------------------------------------------:|
+| Regular         | Time to recovery is predictable with existing resources                                                                 |
+| Supplemented    | Time to recovery is predictable with additional resources                                                               |
+| Extended        | Time to recovery is unpredictable; additional resources and outside help are needed                                     |
+| Not Recoverable | Recovery from the incident is not possible (e.g., sensitive data exfiltrated and posted publicly); launch investigation |
+
+# NIST Response Lifecycle
 ### Preperation
 The goal of the preparation phase in perspective of IR is to identify the specific requirements of the organization to effectively respond to a multitude of different incident scenarios. Core components off include:
 - People (Roles, Training, Vendor Relationships)
