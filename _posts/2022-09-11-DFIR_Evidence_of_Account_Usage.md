@@ -80,7 +80,7 @@ Analyze logs for suspicious services starting at boot and review services that h
     - On Request
     - Disabled
   - **7045:** A service was installed on the system (WINDOWS 2008R2 >)
-  - **4697: **A service was installed on the system (Security.evtx)
+  - **4697:** A service was installed on the system (Security.evtx)
 - All event IDs, except 4697 reference the System event log.
 - It is common for malware to utilize services, an example being Cobalt Strike.
 - Services that are scheduled to start on boot may be indicative of persistence.
