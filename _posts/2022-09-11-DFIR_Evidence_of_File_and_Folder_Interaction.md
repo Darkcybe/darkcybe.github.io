@@ -1,11 +1,10 @@
 ---
-title: Evidence of File Interaction
+title: Evidence of File and Folder Interaction
 categories: [DFIR]
-order: 3
-tags: [evidence, acmru, thumbcache, wordwheelquery, recycle bin, lastvisitedmru, internet explorer, microsoft edge]
+tags: [acmru, thumbcache, wordwheelquery, recycle bin, lastvisitedmru, opensavemru, jump list, shell bag, .lnk, prefetch]
 comments: true
 ---
-Techniques that can be used to discover evidence in support of an attackers interaction with files such as search, deletion and opening post-breach.
+Techniques that can be used to discover evidence in support of an attackers interaction with files and folders such as search, deletion and opening post-breach.
 
 # Windows
 
@@ -184,3 +183,139 @@ Deleted Time and Original Filename contained in separate files for each deleted 
 Tracks the specific executable used by an application to open files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was access by that application.
 
 [Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/)
+
+## OpenSaveMRU
+Tracks files that have been opened or saved within a Windows shell dialog box. This happens to be a big data set, not only including web browsers like Internet Explorer and Firefox, but also a majority of commonly used applications.
+
+[Darkcybe - Evidence of Download](https://darkcybe.github.io/posts/DFIR_Evidence_of_Download/)
+
+## Recent Files
+Registry Key that will track the last files and folder opened and is used to populate data in "recent" menus of the Start Menu.
+
+**WIN:** XP+ <br>
+**SRV:** Not Tested
+
+### Location
+```plaintext
+NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
+```
+
+### Interpretation and Investigative Notes
+- RecentDocs
+  - Overall key will track the overall order of the last 150 files or folders opened. MRU list will keep track of the temporal order in which each file/folder was opened.
+  - Includes last entry time which mirrors the last opening time.
+- The `.%%%` key (Three Letter Extension)
+  - Stores file opening operations based of a specific extension in temporal order.
+- Folder
+  - Stores folder access based on opening in temporal order.
+  
+### Tools
+- [Registry Explorer](https://www.sans.org/tools/registry-explorer/)
+
+### Sources
+- [Forensic4cast - The Recentdocs Key in Windows 10](https://forensic4cast.com/2019/03/the-recentdocs-key-in-windows-10/)
+
+## Jump Lists
+The Windows task bar (Jump List) is engineered to allow users to "jump" or access items they have frequently or recently used quickly and easily. This funcationality cannot only include recent media files; it must also include recent tasks. 
+
+The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application on Windows 7 through 10 machines. Windows 11 contains a shortcut (.LNK) files that direct to the application, file, or directory.
+
+[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/)
+
+## Shell Bags
+Which folders were accessed on the local machine, the network and/or removable devices. Evidence of previously existing folders after deletion/overwrite. When certain folders are created.
+
+**WIN:** XP+ <br>
+**SRV:** Not Tested
+
+### Location
+```plaintext
+# Access via Explorer
+USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\Bags
+USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\BagsMRU
+
+# Access via Desktop
+NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags
+NTUSER.DAT\Software\Microsoft\Windows\Shell\BagsMRU
+```
+
+### Interpretation and Investigative Notes
+
+  
+### Tools
+- [Registry Explorer](https://www.sans.org/tools/registry-explorer/)
+- [Shell Bags Explorer](https://ericzimmerman.github.io/#!index.md)
+- [Windows Shell Bag Parser](https://tzworks.com/prototype_page.php?proto_id=14)
+
+### Sources
+- [CE Digital Forensics - Shellbag Analysis](https://medium.com/ce-digital-forensics/shellbag-analysis-18c9b2e87ac7)
+
+## Shortcut Files (.LNK)
+Shortcut files automatically created by windows when accessing recent items and opening local and remote data files and documents. Windows 11 contains a shortcut (.LNK) files that direct to the application, file, or directory.
+
+**WIN:** XP+ <br>
+**SRV:** Not Tested
+
+### Location
+```plaintext
+# WINDOWS XP
+C:%USERPROFILE%\Recent
+
+# WINDOWS 7+
+C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\
+
+C:%USERPROFILE%\AppData\Roaming\Microsoft\Office\Recent\
+```
+
+### Interpretation and Investigative Notes
+- Although the locations listed are the default, they can be created anywhere.
+- Date/Time file of that name was first opened
+  - Creation Date of .LNK file
+- Date/Time file of that name was last opened
+  - Last Modification Date of .LNK file
+- LNKTarget File (Internal LNK file details) Details:
+  - Modified, Accessed and creation times of target file
+  - Volume information
+  - Network Share information
+  - Original location
+  - Name of system
+  
+### Tools
+- [LNK Explorer (LECmd)](https://github.com/EricZimmerman/LECmd)
+- [Windows LNK Parsing Utility](https://tzworks.com/prototype_page.php?proto_id=11)
+
+### Sources
+- [Magnet Forensics - Forensic Analysis of LNK Files](https://www.magnetforensics.com/blog/forensic-analysis-of-lnk-files/)
+
+## Prefetch
+Increases performance of a system by pre-loading code pages of commonly used applications. Cache Manager monitors all files and directories referenced for each application or process and maps them into a .pf file. Utilized to know an application was executed on a system.
+- Limited to 128 files on XP and Windows 7
+- Limited to 1024 files on Windows 8
+- `<EXE_NAME>-<HASH>.pf`
+
+[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/)
+
+## Microsoft Office Recent Files
+Microsoft Office programs will track their own recent files list to make it easier for users to remember the last file they were editing.
+
+**WIN:** XP+ <br>
+**SRV:** Not Tested
+
+### Location
+```plaintext
+# MICROSOFT OFFICE
+# Versions 10-14 (XP - 2010)
+NTUSER.DAT\Software\Microsoft\Office\VERSION
+
+# Version 15 (Office365)
+NTUSER.DAT\Software\Microsoft\Office\VERSION\UserMRU\LiveID_####\FileMRU
+```
+
+### Interpretation and Investigative Notes
+Similar to recent files, this will track the last files that were opened by each Microsoft Office application. The last entry added, per the MRU, will be the time the last filewas opened by a specific application.
+  
+### Tools
+- [Registry Explorer](https://www.sans.org/tools/registry-explorer/)
+
+### Sources
+- [DF Stream - Microsoft Office Forensics](https://df-stream.com/category/microsoft-office-forensics/)

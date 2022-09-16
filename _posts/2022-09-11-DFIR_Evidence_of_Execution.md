@@ -1,8 +1,7 @@
 ---
 title: Evidence of Execution
 categories: [DFIR]
-order: 2
-tags: [userassist, shimcache, appcompatcache, amcache, lastvisitedmru, activitiescache, recentapps, jumplists, srum, prefetch, bam, dam, evidence]
+tags: [userassist, shimcache, appcompatcache, amcache, lastvisitedmru, activitiescache, recentapps, jumplists, srum, prefetch, bam, dam]
 comments: true
 ---
 Techniques that can be used to discover evidence in support of program execution post-breach or during an attack.
@@ -174,19 +173,17 @@ NTUSER.DAT\Software\Microsoft\Windows\Current Version\Search\RecentApps
 - [Think DFIR - When Did RecentApps Go?](https://thinkdfir.com/2020/10/23/when-did-recentapps-go/)
 
 ## Jump Lists
-The Windows task bar (Jump List) is engineered to allow users to "jump" or access items they have frequently or recently used quickly and easily. This funcationality cannot only include recent media files; it must also include recent tasks. 
+The Windows task bar (Jump List) is engineered to allow users to "jump" or access items they have frequently or recently used quickly and easily. 
 
-The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application on Windows 7 through 10 machines. Windows 11 contains a shortcut (.LNK) files that direct to the application, file, or directory.
+The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application.
 
 **WIN:** 7+ <br>
 **SRV:** NULL
 
 ### Location
 ```plaintext
-# WINDOWS: 7, 8, 9, 10
+# WINDOWS: 7+
 C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
-# WINDOWS: 11+
-C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\
 ```
 
 ### Interpretation and Investigative Notes
