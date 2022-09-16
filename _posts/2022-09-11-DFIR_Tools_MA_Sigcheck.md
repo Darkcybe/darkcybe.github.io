@@ -15,7 +15,9 @@ Unsigned files within legitimate paths such as `\System32` should be investigate
 | [SigCheck](https://docs.microsoft.com/en-us/sysinternals/downloads/sigcheck) | V2.90 | [Defence Evasion](https://attack.mitre.org/tactics/TA0005/) | [Masquearading](https://attack.mitre.org/techniques/T1036/)<br> [Subvert Trust Controls](https://attack.mitre.org/techniques/T1553/)| [Invalid Code Signature](https://attack.mitre.org/techniques/T1036/001/)<br> [Code Signing](https://attack.mitre.org/techniques/T1553/002/)|
 
 # Instructions
+
 ## Scanning a Single File
+
 General output of information to the command line, including:
 Signature Verification, Publisher Information, Entropy, Hashes, VirusTotal Detections, etc.
 ```powershell
@@ -23,6 +25,7 @@ sigcheck64.exe -a -vt -h ruby.exe
 ```
 
 ### Output
+
 ```plaintext
 Sigcheck v2.90 - File version and signature viewer
 Copyright (C) 2004-2022 Mark Russinovich
@@ -55,18 +58,24 @@ C:\Ruby31-x64\bin\ruby.exe:
 ```
 
 ## Scanning Files Within a Directory
+
 Scans identified directory for executable files. Results are then written to a csv file.
 
 **Additional Parameters:**
+
 - `-tv` and `-tuv`: Lists all trusted root certificates that weren’t explicitly trusted by Microsoft. Good way to identify a cloned and trusted MS root cert.
 ```powershell
 sigcheck64.exe -a -s -e -v -vt -h -c -w C:\Users\User\Desktop\Cases\sigcheck_Case1.csv C:\Program Files\Slack\
 ```
+
 ### Output
+
 ![SigCheck .csv Output](/assets/img/posts/DFIR/DFIR_Tools_Execution_SigCheck.png "SigCheck .csv Output")
 
 # Additional Detail
+
 ## Importing of Digital Signature Catalog for Offline Analysis
+
 Before running SigCheck against an acquired suspect victim machine via forensic imaging, the machines Digital Signature Catalog must be uploaded to the analysis machine. Without doing this, SigCheck will be unable to verify most of the signed file from the image.
 
 1. Copy the signature folders from the victim machine image to your analysis machine:
@@ -77,6 +86,7 @@ Before running SigCheck against an acquired suspect victim machine via forensic 
 4. SigCheck may now be run against the collected victim image.
 
 # Sources
+
 - [Channel 9 - License to Kill: Malware Hunting with the SysInternals Tools](https://channel9.msdn.com/events/teched/northamerica/2013/atc-b308#fbid=mb6_bvqq9jj)
 - [The Windows Club - Check for Dangerous or Unsigned Certificates](https://www.thewindowsclub.com/sigcheck-unsigned-certificates-windows)
 - [Microsoft - SysInternals/SigCheck](https://docs.microsoft.com/en-us/sysinternals/downloads/sigcheck)
