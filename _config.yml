@@ -26,7 +26,7 @@ title: darkcybe                          # the main title
 tagline: All things Cyber Security   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  All things Cyber Security
+  Cyber Security technical guides and resources for Blue and Red teams
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://darkcybe.github.io'
