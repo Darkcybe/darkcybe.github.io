@@ -60,13 +60,14 @@ Wazuh is free and open source. Its components abide by the GNU General Public Li
    - Changing the wazuh-wui user password will impede the Wazuh UI. The Wazuh configuration file accordingly with the new credentials. 
      - `/usr/share/wazuh-dashboard/data/wazuh/config/wazuh.yml`
   
-  ```plaintext
-  GET /security/users
-  PUT /security/users/#
-    {
-        "password": "@BC1"
-    }
-  ``` {: .nolineno }
+    ```plaintext
+    GET /security/users
+    PUT /security/users/#
+        {
+            "password": "@BC1"
+        }
+    ``` 
+    {: .nolineno }
 
 # Configurations
 
