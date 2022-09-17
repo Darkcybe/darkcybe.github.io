@@ -1,9 +1,10 @@
 ---
 title: SigCheck
 categories: [DFIR Tools, Malware and File Analysis]
-tags: [sigcheck, sysinternals, defencse evasion (TA0005), masquearading (T1036), subvert trust controls (T1553)]
+tags: [sigcheck, sysinternals, defense evasion (TA0005), masquearading (T1036), subvert trust controls (T1553)]
 comments: true
 ---
+
 # Overview
 
 SigCheck is a command line tool from the SysInternals Suite developed to scan PE files and verify if they’re signed. A majority of malware identified in the wild is not signed, however it should be kept in mind that advanced malware have leveraged stolen certificates. SigCheck also contains an option to check files hashes against [VirusTotal](https://www.virustotal.com/gui/home/upload).
@@ -20,9 +21,11 @@ Unsigned files within legitimate paths such as `\System32` should be investigate
 
 General output of information to the command line, including:
 Signature Verification, Publisher Information, Entropy, Hashes, VirusTotal Detections, etc.
-```powershell
-sigcheck64.exe -a -vt -h ruby.exe
-```
+
+   ```powershell
+   sigcheck64.exe -a -vt -h ruby.exe
+   ```
+   {: .nolineno }
 
 ### Output
 
@@ -64,9 +67,11 @@ Scans identified directory for executable files. Results are then written to a c
 **Additional Parameters:**
 
 - `-tv` and `-tuv`: Lists all trusted root certificates that weren’t explicitly trusted by Microsoft. Good way to identify a cloned and trusted MS root cert.
-```powershell
-sigcheck64.exe -a -s -e -v -vt -h -c -w C:\Users\User\Desktop\Cases\sigcheck_Case1.csv C:\Program Files\Slack\
-```
+
+   ```powershell
+   sigcheck64.exe -a -s -e -v -vt -h -c -w C:\Users\User\Desktop\Cases\sigcheck_Case1.csv C:\Program Files\Slack\
+   ```
+   {: .nolineno }
 
 ### Output
 
