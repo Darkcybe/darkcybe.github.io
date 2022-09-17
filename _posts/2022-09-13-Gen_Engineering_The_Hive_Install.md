@@ -125,83 +125,106 @@ This post will run through the steps involved in the installation and configurat
    - The default admin user is `admin@thehive.local` with password `secret`. It is recommended to change the default password.
 
 # Installing Cortex
+
 Cortex allows the automatic analysis of observables stored with a TheHive case. Examples are such things as IP reputation checks, VirusTotal checks, and intelligence scanning for IOCs. The developers behind TheHive created and maintain Cortex, making the linkage between the two seamless. Cortex works via API calls to various external sources. The following example outlines the steps to install and configure Cortex on the same server running TheHive.
 
 1. Cortex requires Elasticsearch v7.x prior to installation, therefore the initial step is to add the Elasticsearch repo to the sources list and install the package.
-   - Once the package has installed, configure the `elasticsearch.yml` file accordingly. Once edited, start the Elasticsearch service.
+
+   ```bash
+   wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+   echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+   sudo apt install apt-transport-https
+   sudo apt update && sudo apt install elasticsearch
+   ```
+   {: .nolineno }
+
+   - Once the package has installed, configure the `elasticsearch.yml` file accordingly. 
+
+   ```yaml
+   http.host: <IP ADDR>
+   cluster.name: hive
+   thread_pool.search.queue_size: 100000
+   ```
+   {: .nolineno }
+
+   - Once edited, start the Elasticsearch service.
+
+   ```bash
+   sudo systemctl enable elasticsearch.service
+   sudo systemctl start elasticsearch.service
+   ```
+   {: .nolineno }
+
 2. Install Cortex via APT package
    - TheHive repo should already be added to the APT sources list, however if not it can be added using the commands displayed.
    - If already added, simply run the cortex install command.
+
+   ```bash
+   curl https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY | sudo apt-key add -
+   echo 'deb https://deb.thehive-project.org release main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
+   sudo apt-get update
+   sudo apt-get install cortex
+   ```
+   {: .nolineno }
+
 3. Configure Cortex
-   - Create the Cortex secret key and apply it to the `/etc/cortex/application.conf` file.
-   - Amend the Elasticsearch IP address
-   - Start the Cortex service
-     - Once started, the hive can be access via the web-gui `http://YOUR_SERVER_ADDRESS:9001/`
-     - Set an admin username and password
+   - Create the Cortex secret key and apply it to the `/etc/cortex/application.conf` file. Amend the Elasticsearch IP address
 
-```bash
-# Step 1
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
-sudo apt install apt-transport-https
-sudo apt update && sudo apt install elasticsearch
-
-## Elasticsearch.yml
-http.host: <IP ADDR>
-cluster.name: hive
-thread_pool.search.queue_size: 100000
-
-## Service Restart
-sudo systemctl enable elasticsearch.service
-sudo systemctl start elasticsearch.service
-
-# Step 2
-curl https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY | sudo apt-key add -
-echo 'deb https://deb.thehive-project.org release main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
-sudo apt-get update
-sudo apt-get install cortex
-
-# Step 3
-## Application.conf
-play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
+   ```conf
+   play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
     ## ElasticSearch
         search {
             # Name of the index
             index = cortex
             # ElasticSearch instance address.
             uri = "http://<IP ADDR>:9200"
+   ```
+   {: .nolineno }
 
-## Service Restart
-sudo systemctl enable cortex
-sudo service cortex start
-```
+   - Restart the Cortex service
+
+   ```bash
+   sudo systemctl enable cortex
+   sudo service cortex start
+   ```
+   {: .nolineno }
+
+     - Once started, the hive can be access via the web-gui `http://YOUR_SERVER_ADDRESS:9001/`
+     - Set an admin username and password
 
 ## Installing and Configuring Cotex Analyzers and Responders
 1. Install pre-requisite python packages
+
+   ```bash
+   sudo apt-get install -y --no-install-recommends python2.7-dev python3-pip python3-dev ssdeep libfuzzy-dev libfuzzy2 libimage-exiftool-perl libmagic1 build-essential git libssl-dev
+
+   wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+   
+   python2 get-pip.py
+   
+   sudo pip install -U pip setuptools && sudo pip3 install -U pip setuptools
+   ```
+   {: .nolineno }
+
 2. Clone GibHub repo containing pre-build analyzers and responders
+
+   ```bash
+   cd /opt/cortex/
+   git clone https://github.com/TheHive-Project/Cortex-Analyzers
+   ```
+   {: .nolineno }
+
 3. Install required packages for analyzers and responders
+
+   ```bash
+   for I in $(find Cortex-Analyzers -name 'requirements.txt'); do sudo -H pip2 install -r $I; done && \
+   for I in $(find Cortex-Analyzers -name 'requirements.txt'); do sudo -H pip3 install -r $I || true; done
+   ```
+   {: .nolineno }
+
 4. Add directory to `application.conf`
-
-```bash
-# Install Pre-requisuite packages
-sudo apt-get install -y --no-install-recommends python2.7-dev python3-pip python3-dev ssdeep libfuzzy-dev libfuzzy2 libimage-exiftool-perl libmagic1 build-essential git libssl-dev
-wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
-python2 get-pip.py
-sudo pip install -U pip setuptools && sudo pip3 install -U pip setuptools
-
-# Clone Guthub Repo
-cd /opt/cortex/
-git clone https://github.com/TheHive-Project/Cortex-Analyzers
-
-# Install pip packages
-for I in $(find Cortex-Analyzers -name 'requirements.txt'); do sudo -H pip2 install -r $I; done && \
-for I in $(find Cortex-Analyzers -name 'requirements.txt'); do sudo -H pip3 install -r $I || true; done
-
-# Add analyzer and responder directories to /etc/cortex/application.conf
-/path/to/directory/analyzer
-/path/to/directory/responder
-```
-{: .nolineno }
+   - `/path/to/directory/analyzer`
+   - `/path/to/directory/responder`
 
 # Installing MISP
 "A threat intelligence platform for sharing, storing and correlating Indicators of Compromise of targeted attacks, threat intelligence, financial fraud information, vulnerability information or even counter-terrorism information. Discover how MISP is used today in multiple organisations. Not only to store, share, collaborate on cyber security indicators, malware analysis, but also to use the IoCs and information to detect and prevent attacks, frauds or threats against ICT infrastructures, organisations or people." [MISP](https://www.misp-project.org/)
@@ -218,5 +241,5 @@ bash /tmp/INSTALL.sh -A
 
 # Sources
 - [TheHive Project Documentation](https://docs.thehive-project.org/thehive/)
-- [TheHive, Cortex, and MISP](https://blog.thehive-project.org/2017/06/19/thehive-cortex-and-misp-how-they-all-fit-together/#:~:text=Cortex%20is%20our%20standalone%20analysis%20engine%20and%20a,case%20in%20TheHive%20%28or%20in%20an%20alternate%20SIRP%29.)
+- [TheHive, Cortex, and MISP](https://blog.thehive-project.org/2017/06/19/thehive-cortex-and-misp-how-they-all-fit-together/)
 - [Cortex Guide](https://github.com/TheHive-Project/CortexDocs/blob/master/installation/install-guide.md)
