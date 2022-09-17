@@ -21,66 +21,77 @@ This post will run through the steps involved in the installation and configurat
 # Installing TheHive4
 
 1. TheHive requires Java OpenJDK version 8 or 11 (LTS) in order to load, although 8 is required to load the Cassandra nodes in the following database setup
+   
    ```bash
    apt-get install -y openjdk-8-jre-headless
    echo JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
    export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
    ```
    {: .nolineno }
+
 2. Install the Apache Cassandra database, note that version 3.11.x is supported by TheHive with its repo added to the sources list. Cassandra is the backend database in which TheHive will write to.
+
+   ```bash
+   curl -fsSL https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
+   echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+   sudo apt update
+   sudo apt install cassandra
+
+   cqlsh localhost 9042
+   cqlsh> UPDATE system.local SET cluster_name = 'thp' where key='local';
+   nodetool flush
+   ```
+   {: .nolineno }
+
    - Configure Cassandra by amending the cluster name and cassandra.yaml file. For this post, a single node is being created so the host IP address is the only parameter required in the IP options.
+
+   ```yaml
+   # /etc/cassandra/cassandra.yaml
+   cluster_name: 'thp'
+   listen_address: 'xx.xx.xx.xx' # address for nodes
+   rpc_address: 'xx.xx.xx.xx' # address for clients
+   seed_provider:
+      - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+         parameters:
+         # Ex: "<ip1>,<ip2>,<ip3>"
+      - seeds: 'xx.xx.xx.xx' # self for the first node
+   data_file_directories:
+      - '/var/lib/cassandra/data'
+   commitlog_directory: '/var/lib/cassandra/commitlog'
+   saved_caches_directory: '/var/lib/cassandra/saved_caches'
+   hints_directory:
+      - '/var/lib/cassandra/hints'
+   ```
+   {: .nolineno }
+
 3. Install TheHive via APT package
    - Create a local file storage path for TheHive installation
+
+   ```bash
+   mkdir -p /opt/thp/thehive/files
+   curl https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY | sudo apt-key add -
+   echo 'deb https://deb.thehive-project.org release main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
+   sudo apt-get update
+   sudo apt-get install thehive4
+   ```
+   {: .nolineno }
+
 4. Create an indexing directory for TheHive and change permissions.
+
+   ```bash
+   mkdir /opt/thp/thehive/index
+   chown -R thehive:thehive /opt/thp/thehive/index
+   chown -R thehive:thehive /opt/thp/thehive/files
+   ```
+   {: .nolineno }
+
    > This may already be set during the installation process, however if not follow the steps to add the directories and change permissions. There should be 3 directories with all permissions set to `thehive:thehive` (databse, files, index). 
    {: .prompt-info }
+
 5. Configure `etc/thehive/application.conf`
-   - Once complete, change ownership permissions for the `/opt/thp/thehive/files` directory
-6. Start TheHive service
-   - Once started, the hive can be access via the web-gui `http://YOUR_SERVER_ADDRESS:9000/`
-   - The default admin user is `admin@thehive.local` with password `secret`. It is recommended to change the default password.
 
-```bash
-# Step 2
-curl -fsSL https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
-echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
-sudo apt update
-sudo apt install cassandra
-
-cqlsh localhost 9042
-cqlsh> UPDATE system.local SET cluster_name = 'thp' where key='local';
-nodetool flush
-
-## /etc/cassandra/cassandra.yaml
-cluster_name: 'thp'
-listen_address: 'xx.xx.xx.xx' # address for nodes
-rpc_address: 'xx.xx.xx.xx' # address for clients
-seed_provider:
-- class_name: org.apache.cassandra.locator.SimpleSeedProvider
-    parameters:
-    # Ex: "<ip1>,<ip2>,<ip3>"
-    - seeds: 'xx.xx.xx.xx' # self for the first node
-data_file_directories:
-- '/var/lib/cassandra/data'
-commitlog_directory: '/var/lib/cassandra/commitlog'
-saved_caches_directory: '/var/lib/cassandra/saved_caches'
-hints_directory:
-- '/var/lib/cassandra/hints'
-
-# Step 3
-mkdir -p /opt/thp/thehive/files
-curl https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY | sudo apt-key add -
-echo 'deb https://deb.thehive-project.org release main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
-sudo apt-get update
-sudo apt-get install thehive4
-
-# Step 4
-mkdir /opt/thp/thehive/index
-chown -R thehive:thehive /opt/thp/thehive/index
-chown -R thehive:thehive /opt/thp/thehive/files
-
-# Step 5
-db {
+   ```conf
+   db {
     provider: janusgraph
     janusgraph {
         storage {
@@ -93,15 +104,25 @@ db {
             }
         }
     }
-    ## Storage configuration
+
+    # Storage configuration
     storage {
         provider = localfs
         localfs.location = /opt/thp/thehive/files }
+   ```
+   {: .nolineno }
 
-# Step 6
-service thehive start
-```
-{: .nolineno }
+   - Once complete, change ownership permissions for the `/opt/thp/thehive/files` directory
+  
+6. Start TheHive service
+
+   ```bash
+   service thehive start
+   ```
+   {: .nolineno }
+
+   - Once started, the hive can be access via the web-gui `http://YOUR_SERVER_ADDRESS:9000/`
+   - The default admin user is `admin@thehive.local` with password `secret`. It is recommended to change the default password.
 
 # Installing Cortex
 Cortex allows the automatic analysis of observables stored with a TheHive case. Examples are such things as IP reputation checks, VirusTotal checks, and intelligence scanning for IOCs. The developers behind TheHive created and maintain Cortex, making the linkage between the two seamless. Cortex works via API calls to various external sources. The following example outlines the steps to install and configure Cortex on the same server running TheHive.
