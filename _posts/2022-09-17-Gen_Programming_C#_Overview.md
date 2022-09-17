@@ -58,7 +58,7 @@ An item of note within Methods are Access Modifiers, of which there are six. The
 Variables in C# are categorized into three difference types which define the type of data being represented by the variable. Ensuring the correct type is implied is important when coding application in C#. For reference tin the above code excerpt, the type 'Void' (an example of a reference type) declares that the entire method does not have an assigned type.
 
 | Keyword | Description |
-|:---:|:---:|
+|:---:|---|
 | Value | Assigned a direct value and are derived from the class 'System.ValueType'. Value types contain numerical, alphabetical for floating point numbers. There are multiple types of data which can be assigned as per the 'Value Data Types' table below. |
 | Reference | Reference types do not contain actual data, rather they contain a reference to the variable that does. References can be to either an object, a string or dynamic. |
 | Pointer | Pointers store memory addresses of another type. |
@@ -66,7 +66,7 @@ Variables in C# are categorized into three difference types which define the typ
 ## Value Data Types
 
 | Keyword | Description | Range | Data Example |
-|:---:|---|---|:---:|
+|:---:|---|---|---|
 | bool | Boolean value | True or False |   |
 | byte | 8-bit unsigned integer | 0 to 255 |   |
 | char | Stores a single character/letter, surrounded by single quotes | U +0000 to U +ffff | 'A' |
@@ -104,7 +104,7 @@ Expressions are similar to statements however are not executable on their own, s
 ## Arithmetic Operators
 
 | Operator | Description | Data Example |
-|:---:|---|:---:|
+|:---:|---|---|
 | + | Adds two operands | A + B = 30 |
 | - | Subtracts second operand from the first | A - B = -10 |
 | * | Multiplies both operands | A * B = 200 |
@@ -116,7 +116,7 @@ Expressions are similar to statements however are not executable on their own, s
 ## Relational/Comparison Operators
 
 | Operator | Description | Data Example |
-|:---:|---|:---:|
+|:---:|---|---|
 | == | Checks if the values of two operands are equal or not, if yes then condition becomes true. | (A == B) is not true. |
 | != | Checks if the values of two operands are equal or not, if values are not equal then condition becomes true. | (A != B) is true. |
 | > | Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true. | (A > B) is not true. |
@@ -127,7 +127,7 @@ Expressions are similar to statements however are not executable on their own, s
 ## Logical Operators
 
 | Operator | Description | Data Example |
-|:---:|---|:---:|
+|:---:|---|---|
 | && | Called Logical AND operator. If both the operands are non zero then condition becomes true. | (A && B) is false. |
 | \|\| | Called Logical OR Operator. If any of the two operands is non zero then condition becomes true. | (A \|\| B) is true. |
 | ! | Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false. | !(A && B) is true. |
@@ -135,7 +135,7 @@ Expressions are similar to statements however are not executable on their own, s
 ## Bitwise Operators
 
 | Operator | Description | Data Example |
-|:---:|:---:|:---:|
+|:---:|---|---|
 | & | Binary AND Operator copies a bit to the result if it exists in both operands. | (A & B) = 12, which is 0000 1100 |
 | \| | Binary OR Operator copies a bit if it exists in either operand. | (A \| B) = 61, which is 0011 1101 |
 | ^ | Binary XOR Operator copies the bit if it is set in one operand but not both. | (A ^ B) = 49, which is 0011 0001 |
@@ -146,7 +146,7 @@ Expressions are similar to statements however are not executable on their own, s
 ## Assignment Operators
 
 | Operator | Description | Data Example |
-|:---:|---|:---:|
+|:---:|---|---|
 | = | Simple assignment operator, Assigns values from right side operands to left side operand | C = A + B assigns value of A + B into C |
 | += | Add AND assignment operator, It adds right operand to the left operand and assign the result to left operand | C += A is equivalent to C = C + A |
 | -= | Subtract AND assignment operator, It subtracts right operand from the left operand and assign the result to left operand | C -= A is equivalent to C = C - A |
@@ -162,7 +162,7 @@ Expressions are similar to statements however are not executable on their own, s
 ## Miscellaneous Operators
 
 | Operator | Description | Data Example |
-|:---:|---|:---:|
+|:---:|---|---|
 | sizeof() | Returns the size of a data type. | sizeof(int), returns 4. |
 | typeof() | Returns the type of a class. | typeof(StreamReader); |
 | & | Returns the address of an variable. | `&a;` returns actual address of the variable. |
