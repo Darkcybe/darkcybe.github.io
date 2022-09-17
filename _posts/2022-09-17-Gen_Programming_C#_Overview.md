@@ -34,7 +34,7 @@ OOP is used to structure a software application into simple, reusable pieces of 
     ```
 - **Objects:** An object is defined as an entity that can be utilized by using commands in a programming language. An object can be a variable, value, data structure or function. In OOP, an object is referred to as an instance of a class. An object contains properties and methods which are needed to make a certain type of data useful.
 
-![Class and Object Diagram](/assets/img/posts/GEN/Programming/C#_Overview_Class_Object.png "Class and Object Diagram")
+![Class and Object Diagram](/assets/img/posts/GEN/Programming/CS_Overview_Class_Object.png "Class and Object Diagram")
 
 # Methods
 
@@ -50,8 +50,8 @@ An item of note within Methods are Access Modifiers, of which there are six. The
 | Private | Only accessible inside a class |
 | Protected | Accessible inside a class or in all classes derived from that class |
 | Internal | Accessible only to the current assembly |
-| Protected Internal | A combination of Protected and Internal, can only be accessed in the same assembly or in a derived class in other assemblies. |
-| Private Protected | A combination of Private and Protected, accessible only by members inside of a containing class or in a class that derives from a containing class. |
+| Protected Internal | A combination of Protected and Internal, <br> can only be accessed in the same assembly or in a derived class in other assemblies. |
+| Private Protected | A combination of Private and Protected, <br> accessible only by members inside of a containing class or in a class that derives from a containing class. |
 
 # Data Types
 
@@ -59,8 +59,8 @@ Variables in C# are categorized into three difference types which define the typ
 
 | Keyword | Description |
 |:---:|---|
-| Value | Assigned a direct value and are derived from the class 'System.ValueType'. Value types contain numerical, alphabetical for floating point numbers. There are multiple types of data which can be assigned as per the 'Value Data Types' table below. |
-| Reference | Reference types do not contain actual data, rather they contain a reference to the variable that does. References can be to either an object, a string or dynamic. |
+| Value | Assigned a direct value and are derived from the class 'System.ValueType'. <br> Value types contain numerical, alphabetical for floating point numbers. <br> There are multiple types of data which can be assigned as per the 'Value Data Types' table below. |
+| Reference | Reference types do not contain actual data, rather they contain a reference to the variable that does. <br> References can be to either an object, a string or dynamic. |
 | Pointer | Pointers store memory addresses of another type. |
 
 ## Value Data Types
@@ -89,7 +89,7 @@ Statements are the core component of a programs execution, the logic behind what
 | Keyword | Description | Statement Example |
 |:---:|---|---|
 | Selection | Enables logical branches to different sections of code depending one one nor more specific conditions. | `if (condition) { do something }`<br><br>`switch (example) { case <1: do this; break; }` |
-| Iternation | Enables code to loop through collections such as arrays or perform the same set of statement repeatedly until a specified condition is met | `foreach (item in list) { do something }`<br><br>`int d = 999;`<br>`while ( d < 999) { do this; d++; }` |
+| Iternation | Enables code to loop through collections such as arrays or perform the same set of statement <br> repeatedly until a specified condition is met | `foreach (item in list) { do something }`<br><br>`int d = 999;`<br>`while ( d < 999) { do this; d++; }` |
 | Declaration | Used to declare and initialize variables | `string darkcybe;` |
 | Expression | Calculate a value and must store the value in a variable | `int sum = 900 + 99;` |
 | Exception Handling | Enable graceful recovery from exceptional conditions that occur at run time. | `try { this } catch { stop }`<br><br>`throw [e];` |
@@ -99,7 +99,7 @@ Statements are the core component of a programs execution, the logic behind what
 
 Expressions are similar to statements however are not executable on their own, statements use expressions and keywords in order to give expressions meaning in to operationalize them. Operators are useful keys that allow operations to be performed on variables and values. There are several different categories that operators are broken into; Arithmetic, Relational/Comparison, Logical, Bitwise, Assignment and Miscellaneous. An operator performs an action to one or more operands.
 
-![Expression, Operand, and Operator](/assets/img/posts/GEN/Programming/C#_Overview_Expression_Operators.png"Expression, Operand, and Operator")
+![Expression, Operand, and Operator](/assets/img/posts/GEN/Programming/CS_Overview_Expression_Operators.png "Expression, Operand, and Operator")
 
 ## Arithmetic Operators
 
@@ -118,19 +118,19 @@ Expressions are similar to statements however are not executable on their own, s
 | Operator | Description | Data Example |
 |:---:|---|---|
 | == | Checks if the values of two operands are equal or not, if yes then condition becomes true. | (A == B) is not true. |
-| != | Checks if the values of two operands are equal or not, if values are not equal then condition becomes true. | (A != B) is true. |
-| > | Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true. | (A > B) is not true. |
-| < | Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true. | (A < B) is true. |
-| >= | Checks if the value of left operand is greater than or equal to the value of right operand, if yes then condition becomes true. | (A >= B) is not true. |
-| <= | Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true. | (A <= B) is true. |
+| != | Checks if the values of two operands are equal or not, if values are not equal then <br> condition becomes true. | (A != B) is true. |
+| > | Checks if the value of left operand is greater than the value of right operand, if yes <br> then condition becomes true. | (A > B) is not true. |
+| < | Checks if the value of left operand is less than the value of right operand, if yes then <br> condition becomes true. | (A < B) is true. |
+| >= | Checks if the value of left operand is greater than or equal to the value of right <br> operand, if yes then condition becomes true. | (A >= B) is not true. |
+| <= | Checks if the value of left operand is less than or equal to the value of right operand, <br> if yes then condition becomes true. | (A <= B) is true. |
 
 ## Logical Operators
 
 | Operator | Description | Data Example |
 |:---:|---|---|
 | && | Called Logical AND operator. If both the operands are non zero then condition becomes true. | (A && B) is false. |
-| \|\| | Called Logical OR Operator. If any of the two operands is non zero then condition becomes true. | (A \|\| B) is true. |
-| ! | Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false. | !(A && B) is true. |
+| \|\| | Called Logical OR Operator. If any of the two operands is non zero then condition becomes <br> true. | (A \|\| B) is true. |
+| ! | Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition <br> is true then Logical NOT operator will make false. | !(A && B) is true. |
 
 ## Bitwise Operators
 
@@ -140,19 +140,19 @@ Expressions are similar to statements however are not executable on their own, s
 | \| | Binary OR Operator copies a bit if it exists in either operand. | (A \| B) = 61, which is 0011 1101 |
 | ^ | Binary XOR Operator copies the bit if it is set in one operand but not both. | (A ^ B) = 49, which is 0011 0001 |
 | ~ | Binary Ones Complement Operator is unary and has the effect of 'flipping' bits. | (~A ) = -61, which is 1100 0011 in 2's complement due to a signed binary number. |
-| << | Binary Left Shift Operator. The left operands value is moved left by the number of bits specified by the right operand. | A << 2 = 240, which is 1111 0000 |
-| >> | Binary Right Shift Operator. The left operands value is moved right by the number of bits specified by the right operand. | A >> 2 = 15, which is 0000 1111 |
+| << | Binary Left Shift Operator. The left operands value is moved left by the <br> number of bits specified by the right operand. | A << 2 = 240, which is 1111 0000 |
+| >> | Binary Right Shift Operator. The left operands value is moved right by the <br> number of bits specified by the right operand. | A >> 2 = 15, which is 0000 1111 |
 
 ## Assignment Operators
 
 | Operator | Description | Data Example |
 |:---:|---|---|
 | = | Simple assignment operator, Assigns values from right side operands to left side operand | C = A + B assigns value of A + B into C |
-| += | Add AND assignment operator, It adds right operand to the left operand and assign the result to left operand | C += A is equivalent to C = C + A |
-| -= | Subtract AND assignment operator, It subtracts right operand from the left operand and assign the result to left operand | C -= A is equivalent to C = C - A |
-| *= | Multiply AND assignment operator, It multiplies right operand with the left operand and assign the result to left operand | C *= A is equivalent to C = C * A |
-| /= | Divide AND assignment operator, It divides left operand with the right operand and assign the result to left operand | C /= A is equivalent to C = C / A |
-| %= | Modulus AND assignment operator, It takes modulus using two operands and assign the result to left operand | C %= A is equivalent to C = C % A |
+| += | Add AND assignment operator, It adds right operand to the left operand and assign the <br> result to left operand | C += A is equivalent to C = C + A |
+| -= | Subtract AND assignment operator, It subtracts right operand from the left operand and <br> assign the result to left operand | C -= A is equivalent to C = C - A |
+| *= | Multiply AND assignment operator, It multiplies right operand with the left operand and <br> assign the result to left operand | C *= A is equivalent to C = C * A |
+| /= | Divide AND assignment operator, It divides left operand with the right operand and assign <br> the result to left operand | C /= A is equivalent to C = C / A |
+| %= | Modulus AND assignment operator, It takes modulus using two operands and assign the result <br> to left operand | C %= A is equivalent to C = C % A |
 | <<= | Left shift AND assignment operator | C <<= 2 is same as C = C << 2 |
 | >>= | Right shift AND assignment operator | C >>= 2 is same as C = C >> 2 |
 | &= | Bitwise AND assignment operator | C &= 2 is same as C = C & 2 |
@@ -168,8 +168,8 @@ Expressions are similar to statements however are not executable on their own, s
 | & | Returns the address of an variable. | `&a;` returns actual address of the variable. |
 | * | Pointer to a variable. | `*a;` creates pointer named 'a' to a variable. |
 | ? : | Conditional Expression | If Condition is true ? Then value X : Otherwise value Y |
-| is | Determines whether an object is of a certain type. | If( Ford is Car) // checks if Ford is an object of the Car class. |
-| as | Cast without raising an exception if the cast fails. | Object obj = new StringReader("Hello"); StringReader r = obj as StringReader; |
+| is | Determines whether an object is of a certain type. | If( Ford is Car) // checks if <br> Ford is an object of the Car class. |
+| as | Cast without raising an exception if the cast fails. | Object obj = new StringReader("Hello"); <br> StringReader r = obj as StringReader; |
 
 # Sources
 - [Tutorials Point - C Sharp](https://www.tutorialspoint.com/csharp/index.htm)
