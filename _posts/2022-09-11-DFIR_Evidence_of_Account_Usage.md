@@ -1,7 +1,7 @@
 ---
 title: Evidence of Account Usage
-categories: [DFIR]
-tags: [rdp, port:3389, evtx:security, evtx:system]
+categories: [DFIR, Evidence Artifacts]
+tags: [rdp, port:3389, evtx:security, evtx:system, persistence (TA0003), privilege escalation (TA0004)]
 comments: true
 ---
 Techniques that can be used to discover evidence in support of at attackes usage of a specific account.

@@ -1,6 +1,6 @@
 ---
 title: Evidence of External Device Activity
-categories: [DFIR]
+categories: [DFIR, Evidence Artifacts]
 tags: []
 comments: true
 ---

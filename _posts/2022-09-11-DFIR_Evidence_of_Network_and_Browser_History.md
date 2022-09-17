@@ -1,6 +1,6 @@
 ---
 title: Evidence of Network and Browser History
-categories: [DFIR]
+categories: [DFIR, Evidence Artifacts]
 tags: [cookies, evtx:wlan, srum]
 comments: true
 ---

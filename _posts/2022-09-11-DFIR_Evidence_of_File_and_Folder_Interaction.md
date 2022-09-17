@@ -1,6 +1,6 @@
 ---
 title: Evidence of File and Folder Interaction
-categories: [DFIR]
+categories: [DFIR, Evidence Artifacts]
 tags: [acmru, thumbcache, wordwheelquery, recycle bin, lastvisitedmru, opensavemru, jump list, shell bag, .lnk, prefetch]
 comments: true
 ---

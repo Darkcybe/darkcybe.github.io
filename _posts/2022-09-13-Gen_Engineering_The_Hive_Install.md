@@ -4,6 +4,8 @@ categories: [General IT and Security, Engineering]
 tags: [the hive, cortex, misp]
 comments: true
 ---
+# Overview
+
 "TheHive is a scalable 3-in-1 open source and free Security Incident Response Platform designed to make life easier for SOCs, CSIRTs, CERTs and any information security practitioner dealing with security incidents that need to be investigated and acted upon swiftly. It is the perfect companion to MISP. You can synchronize it with one or multiple MISP instances to start investigations out of MISP events. You can also export an investigation's results as a MISP event to help your peers detect and react to attacks you've dealt with. Additionally, when TheHive is used in conjunction with Cortex, security analysts and researchers can easily analyze tens if not hundred of observables." [The Hive](https://github.com/TheHive-Project/TheHive)
 
 This post will run through the steps involved in the installation and configuration of The Hive 4.x and Cortex on a single server deployment. Additionally, MISP will also be installed on the same server.

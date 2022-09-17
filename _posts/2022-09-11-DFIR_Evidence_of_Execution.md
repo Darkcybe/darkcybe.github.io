@@ -1,7 +1,7 @@
 ---
 title: Evidence of Execution
-categories: [DFIR]
-tags: [userassist, shimcache, appcompatcache, amcache, lastvisitedmru, activitiescache, recentapps, jumplists, srum, prefetch, bam, dam]
+categories: [DFIR, Evidence Artifacts]
+tags: [userassist, shimcache, appcompatcache, amcache, lastvisitedmru, activitiescache, recentapps, jumplists, srum, prefetch, bam, dam, execution (TA0002)]
 comments: true
 ---
 Techniques that can be used to discover evidence in support of program execution post-breach or during an attack.

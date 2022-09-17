@@ -1,6 +1,6 @@
 ---
 title: Evidence of Download
-categories: [DFIR]
+categories: [DFIR, Evidence Artifacts]
 tags: [opensavemru, outlook, skype, browser, zone.identifier, alternate data stream]
 comments: true
 ---
