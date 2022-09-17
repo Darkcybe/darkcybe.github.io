@@ -44,10 +44,11 @@ Wazuh is free and open source. Its components abide by the GNU General Public Li
 
 1. Download and execute the pre-built installation wizard provided by Wazuh. This will automatically run through the installation of pre-requisuite packages, Elasticsearch (indexer, Kibana, filebeat) and Wazuh server setup and configuration
    - Once the installation is complete, initial admin credentials will be displayed to the terminal. Make sure they are noted down as they are required to access the web interface in the following step.
-  ```bash
-  curl -sO https://packages.wazuh.com/4.3/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
-  ```
-  {: .nolineno }
+    
+    ```bash
+    curl -sO https://packages.wazuh.com/4.3/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+    ```
+    {: .nolineno }
 
 2. Access the Wazuh web interface at `https://<wazuh-dashboard-ip/` and your credentials from Step 1.
    - Username: `admin`
@@ -95,7 +96,8 @@ The Wazuh agent is deployed to hosts in order to monitor various artifacts and r
    
    ```powershell
    NET START WazuhSvc
-   ``` {: .nolineno }
+   ``` 
+   {: .nolineno }
 
 ### Ubuntu Agents
 
@@ -110,7 +112,8 @@ The Wazuh agent is deployed to hosts in order to monitor various artifacts and r
    sudo systemctl daemon-reload
    sudo systemctl enable wazuh-agent
    sudo systemctl start wazuh-agent
-   ``` {: .nolineno }
+   ``` 
+   {: .nolineno }
 
 ## Adding Integrations to Wazuh
 
@@ -127,13 +130,15 @@ Wazuh integrations are configured on the Wazuh server `ossec.conf` file, located
      <alert_format>json</alert_format>
      <level>%</level>
    </integration>
-   ``` {: .nolineno }
+   ``` 
+   {: .nolineno }
 
 2. After saving the configuration, restart the Wazuh-Manager service 
    
    ```bash
    sudo systemctl restart wazuh-manager
-   ``` {: .nolineno }
+   ``` 
+   {: .nolineno }
 
 > The default alert threshold is set to 3 - Successful/Authorized events. This will cause a lot of unnecessary alerts to be generated. Changing the threshold to 6 - Low relevance attack can assist in limiting noise. The [Rules Classification](https://documentation.wazuh.com/current/user-manual/ruleset/rules-classification.html) table describes each alert level from 0 - 16.
 
