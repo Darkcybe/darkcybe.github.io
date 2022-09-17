@@ -13,7 +13,7 @@ Entropy is used to represent a measurement of code density. Results with higher 
 
 | Tool Name | Version | MITRE ATT&CK Tactic | MITRE ATT&CK Technique | MITRE ATT&CK Sub-Technique |
 | --------- | ------- | ------------------- | ---------------------- | --------------------------
-| [DensityScount](https://www.cert.at/en/downloads/software/software-densityscout) | Build 45 | [Defence Evasion](https://attack.mitre.org/tactics/TA0005/) | [Obfuscated Files or Information](https://attack.mitre.org/techniques/T1027/) [Software Packing](https://attack.mitre.org/techniques/T1036/002/) |
+| [DensityScount](https://www.cert.at/en/downloads/software/software-densityscout) | Build 45 | [Defence Evasion](https://attack.mitre.org/tactics/TA0005/) | [Obfuscated Files or Information](https://attack.mitre.org/techniques/T1027/) | [Software Packing](https://attack.mitre.org/techniques/T1036/002/) |
 
 # Instructions
 
