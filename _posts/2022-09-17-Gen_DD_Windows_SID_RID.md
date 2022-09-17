@@ -31,27 +31,27 @@ Digging further into these components can help with quickly identifying potentia
 |           Name           |   SID/RID Value   | Identifies                                                                                     |
 |:------------------------:|:-----------------:|------------------------------------------------------------------------------------------------|
 |         Null SID         |      S-1-0-0      | A group with no members                                                                        |
-|         Everyone         |      S-1-1-0      | Generic group that automatically includes all users of the computer                            |
+|         Everyone         |      S-1-1-0      | Generic group that automatically includes all users of the <br> computer                            |
 |           Local          |      S-1-2-0      | Users who log on physically to terminals                                                       |
 |          Console         |      S-1-2-1      | Users who log on to the physical console                                                       |
-|          Network         |      S-1-5-2      | A group that includes users logged on through a network connection.                            |
-|        Interactive       |      S-1-5-4      | A group that includes all users that have logged on interactively.                             |
+|          Network         |      S-1-5-2      | A group that includes users logged on through a network <br> connection.                            |
+|        Interactive       |      S-1-5-4      | A group that includes all users that have logged on <br> interactively.                             |
 |          Service         |      S-1-5-6      | A group that includes all service logons                                                       |
 |         Anonymous        |      S-1-5-7      | A group that includes all anonymous logon sessions                                             |
 |    Authenticated Users   |      S-1-5-11     | A group that includes all authenticated user logons                                            |
-| Remote Interactive Logon |      S-1-5-14     | A group that includes all users logged on through terminal services                            |
+| Remote Interactive Logon |      S-1-5-14     | A group that includes all users logged on through <br> terminal services                            |
 |       Local System       |      S-1-5-18     | A service account used by the system                                                           |
-|       Administrator      | S-1-5-21-xxxx-500 | A user account for the System Administrator. This account is <br> given full control of the system. |
-|           Guest          | S-1-5-21-xxxx-501 | A built-in guest account used for users without an account <br> (disabled by default)               |
+|       Administrator      | S-1-5-21-xxxx-500 | A user account for the System Administrator. This <br> account is given full control of the system. |
+|           Guest          | S-1-5-21-xxxx-501 | A built-in guest account used for users without an <br> account (disabled by default)               |
 |          Krbtgt          | S-1-5-21-xxxx-502 | A service account used by the Kerberos KDC                                                     |
-|       Domain Admins      | S-1-5-21-xxxx-512 | A global group of whose members are authorized to administer <br> the domain.                       |
+|       Domain Admins      | S-1-5-21-xxxx-512 | A global group of whose members are authorized to <br> administer the domain.                       |
 |       Domain Users       | S-1-5-21-xxxx-513 | A global group that includes all domain users by default                                       |
 |       Domain Guests      | S-1-5-21-xxxx-514 | A global group consisting of the built-in Guest account                                        |
-|     Domain Computers     | S-1-5-21-xxxx-515 | A global group that includes all clients and servers connected <br> to the domain                   |
-|      Administrators      | S-1-5-32-xxxx-544 | A built-in group that is populated with the Administrator and <br> Domain Admin accounts            |
+|     Domain Computers     | S-1-5-21-xxxx-515 | A global group that includes all clients and servers <br> connected to the domain                   |
+|      Administrators      | S-1-5-32-xxxx-544 | A built-in group that is populated with the Administrator <br> and Domain Admin accounts            |
 |           Users          | S-1-5-32-xxxx-545 | A built-in group that contains all authenticated users                                         |
 |          Guests          | S-1-5-32-xxxx-546 | A built-in group with the default guest account held within                                    |
-|        Power Users       | S-1-5-32-xxxx-547 | A built-in group that by default has no members unless added <br> through associated group          |
+|        Power Users       | S-1-5-32-xxxx-547 | A built-in group that by default has no members unless <br> added through associated group          |
 
 # Sources
 - [Microsoft - Well Known SIDS](https://docs.microsoft.com/en-us/windows/win32/secauthz/well-known-sids)
