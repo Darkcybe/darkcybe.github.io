@@ -125,10 +125,10 @@ Tracks the application executables used to open files in OpenSaveMRU and the las
 - [Forensafe - LastVisitedMRU](https://www.forensafe.com/blogs/lastvisitedmru.html)
 
 ## Windows Timeline (Activities Cache.db)
-Windows 10 records recently used applications and files in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains.
+Windows 10 introduced a background feature that records recently used applications and files in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains.
 
 **WIN:** 10+ <br>
-**SRV:** NULL
+**SRV:** 2022+
 
 ### Location
 ```plaintext
@@ -139,8 +139,6 @@ C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\L.%PROFILE%\Activities
 Tracks application execution and provides a focus count per application.
   
 ### Tools
-- [Registry Explorer (RECmd)](https://www.sans.org/tools/registry-explorer/)
-- [RECmd - Registry Plugins](https://github.com/EricZimmerman/RegistryPlugins)
 - [WxTCmd](https://ericzimmerman.github.io/#!index.md)
 - [ActivitiesCache Parser](https://tzworks.com/prototype_page.php?proto_id=41)
 

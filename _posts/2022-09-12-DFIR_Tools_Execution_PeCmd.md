@@ -13,7 +13,7 @@ PECmd is a command line tool developed by Eric Zimmerman, to process Prefetch fi
 - Executions time (up to last 8 for Win8 and Win10)
 - Total execution count
 
-PECmd can output the parsed prefect files into .csv, json and HTML formats for further analysis. It should be noted that Windows Servers do not have prefetch enabled by default.
+PECmd can output the parsed prefetch files into .csv, json and HTML formats for further analysis. It should be noted that Windows Servers do not have prefetch enabled by default.
 
 | Tool Name | Version | MITRE ATT&CK Tactic | MITRE ATT&CK Technique |
 | --------- | ------- | ------------------- | ---------------------- |
