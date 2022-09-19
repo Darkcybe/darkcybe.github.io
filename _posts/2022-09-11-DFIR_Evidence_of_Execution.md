@@ -128,7 +128,7 @@ Tracks the application executables used to open files in OpenSaveMRU and the las
 Windows 10 introduced a background feature that records recently used applications and files in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains.
 
 **WIN:** 10+ <br>
-**SRV:** 2022+
+**SRV:** 2019+
 
 ### Location
 ```plaintext
