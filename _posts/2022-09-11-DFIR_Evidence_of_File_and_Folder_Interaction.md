@@ -319,3 +319,10 @@ Similar to recent files, this will track the last files that were opened by each
 
 ### Sources
 - [DF Stream - Microsoft Office Forensics](https://df-stream.com/category/microsoft-office-forensics/)
+
+## Windows Timeline (ActivitiesCache.db)
+Windows 10 introduced a background feature that records recently used applications and accessed files over a 30 day duration in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains.
+
+Research identified that Windows Server 2016 also maintains an ActivitiesCache.db file, however `ActivityOperation`, `Activity_PackageId`, and `Activity` entries were not recorded.
+
+[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/)

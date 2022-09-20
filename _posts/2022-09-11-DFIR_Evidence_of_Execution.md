@@ -124,27 +124,44 @@ Tracks the application executables used to open files in OpenSaveMRU and the las
 - [SANS - OpenSaveMRU and LastVisitedMRU](https://www.sans.org/blog/opensavemru-and-lastvisitedmru/)
 - [Forensafe - LastVisitedMRU](https://www.forensafe.com/blogs/lastvisitedmru.html)
 
-## Windows Timeline (Activities Cache.db)
-Windows 10 introduced a background feature that records recently used applications and files in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains.
+## Windows Timeline (ActivitiesCache.db)
+Windows 10 introduced a background feature that records recently used applications and accessed files over a 30 day duration in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains.
+
+Research identified that Windows Server 2016 also maintains an ActivitiesCache.db file, however `ActivityOperation`, `Activity_PackageId`, and `Activity` entries were not recorded.
 
 **WIN:** 10+ <br>
 **SRV:** 2019+
 
 ### Location
 ```plaintext
+# Local Account
 C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\L.%PROFILE%\ActivitiesCache.db
+
+# Online Account
+C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\%CID%\ActivitiesCache.db
 ```
 
 ### Interpretation and Investigative Notes
-Tracks application execution and provides a focus count per application.
+- Files within the `L.%USERPROFILE%` directory.
+  - **ActivitiesCache.db:** SQLite Database
+  - **ActivitiesCache.db-wal:** 'Write ahead' Log (Holds activity events prior to pushing them to the database - Reboot system to write to database)
+  - **ActivitiesCache.db-shm:** 'Shared memory' file
+- The database contains evidence such as;
+  -   `ActivityType`: Activity performed (ExecuteOpen, InFocus, CopyPaste, etc)
+  -   `Executable`: Parent application used to open or execute file
+  -   `DisplayText`: Title of file or application
+  -   `ContentInfo`: Possible content information, not always present
+  -   Timestamps: `StartTime`, `EndTime`, and `Duration` are some of the most interesting recorded events.
   
 ### Tools
-- [WxTCmd](https://ericzimmerman.github.io/#!index.md)
-- [ActivitiesCache Parser](https://tzworks.com/prototype_page.php?proto_id=41)
+- [Darkcybe - WxTCmd](https://darkcybe.github.io/posts/DFIR_Tools_Execution_WxTCmd/)
+- [ActivitiesCache Parser -- Requires License](https://tzworks.com/prototype_page.php?proto_id=41)
+- [Log2timeline - `windows-timeline` parser](https://github.com/log2timeline/plaso)
 
 ### Sources
 - [Kacos2000 - Windows Timeline](https://kacos2000.github.io/WindowsTimeline/)
 - [Microsoft - Windows Activity History and Your Privacy](https://support.microsoft.com/en-us/windows/-windows-activity-history-and-your-privacy-2b279964-44ec-8c2f-e0c2-6779b07d2cbd)
+- [Salt 4N6 - Windows 10 Timeline Forensic Artefacts](https://salt4n6.com/2018/05/03/windows-10-timeline-forensic-artefacts/)
 
 ## RecentApps
 GUI Program execution launched on the Windows 10 System is tracked in the RecentApps key.
