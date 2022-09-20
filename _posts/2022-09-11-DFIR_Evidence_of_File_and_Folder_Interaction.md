@@ -325,4 +325,4 @@ Windows 10 introduced a background feature that records recently used applicatio
 
 Research identified that Windows Server 2016 also maintains an ActivitiesCache.db file, however `ActivityOperation`, `Activity_PackageId`, and `Activity` entries were not recorded.
 
-[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/)
+[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/#windows-timeline-activitiescachedb)
