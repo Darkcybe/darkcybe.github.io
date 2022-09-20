@@ -73,7 +73,7 @@ Any executable run on the Windows system can be found in this key. You can use t
 ## AmCache.hve
 ProgramDataUpdater (a task associated with the Application Experience Service) uses the registry file Amcache.hve to store data during process creation. Details of program installation and execution are stored.
 
-**WIN:** 7, 8, 10, 11<br>
+**WIN:** 7+ <br>
 **SRV:** 2008 R2+
 
 ### Location
@@ -84,12 +84,13 @@ C:\Windows\AppCompat\Programs\Amcache.hve
 ### Interpretation and Investigative Notes
 - Amcache.hve - Keys = `Amcache.hve\Root\File\{Volume GUID}\#######`
 - Entry for every executable run, full path information, files `$StandardInfo` Last Modification Time, and Disk Volume the executable was run from.
-- Fire Run Time = Last Modification Time of key
+- First Run Time = Last Modification Time of key
 - SHA1 hash of executable also contained in the key.
   
 ### Tools
 - [AmCache Parser](https://github.com/EricZimmerman/AmcacheParser)
 - [Get-ForensicAmcache)](https://powerforensics.readthedocs.io/en/latest/modulehelp/Get-ForensicAmcache/)
+- [Log2timeline (amcache parser)](https://github.com/log2timeline/plaso)
 - [Registry Explorer (RECmd)](https://www.sans.org/tools/registry-explorer/)
 - [RECmd - Registry Plugins](https://github.com/EricZimmerman/RegistryPlugins)
 
@@ -156,7 +157,7 @@ C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\%CID%\ActivitiesCache.
 ### Tools
 - [Darkcybe - WxTCmd](https://darkcybe.github.io/posts/DFIR_Tools_Execution_WxTcmd/)
 - [ActivitiesCache Parser -- Requires License](https://tzworks.com/prototype_page.php?proto_id=41)
-- [Log2timeline - `windows-timeline` parser](https://github.com/log2timeline/plaso)
+- [Log2timeline (windows-timeline parser)](https://github.com/log2timeline/plaso)
 
 ### Sources
 - [Kacos2000 - Windows Timeline](https://kacos2000.github.io/WindowsTimeline/)
