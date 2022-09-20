@@ -182,12 +182,12 @@ Deleted Time and Original Filename contained in separate files for each deleted 
 ## LastVisitedMRU
 Tracks the specific executable used by an application to open files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was access by that application.
 
-[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/)
+[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/#lastvisitedmru)
 
 ## OpenSaveMRU
 Tracks files that have been opened or saved within a Windows shell dialog box. This happens to be a big data set, not only including web browsers like Internet Explorer and Firefox, but also a majority of commonly used applications.
 
-[Darkcybe - Evidence of Download](https://darkcybe.github.io/posts/DFIR_Evidence_of_Download/)
+[Darkcybe - Evidence of Download](https://darkcybe.github.io/posts/DFIR_Evidence_of_Download/#opensavemru)
 
 ## Recent Files
 Registry Key that will track the last files and folder opened and is used to populate data in "recent" menus of the Start Menu.
@@ -220,7 +220,7 @@ The Windows task bar (Jump List) is engineered to allow users to "jump" or acces
 
 The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application on Windows 7 through 10 machines. Windows 11 contains a shortcut (.LNK) files that direct to the application, file, or directory.
 
-[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/)
+[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/#jump-lists)
 
 ## Shell Bags
 Which folders were accessed on the local machine, the network and/or removable devices. Evidence of previously existing folders after deletion/overwrite. When certain folders are created.
@@ -293,7 +293,7 @@ Increases performance of a system by pre-loading code pages of commonly used app
 - Limited to 1024 files on Windows 8
 - `<EXE_NAME>-<HASH>.pf`
 
-[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/)
+[Darkcybe - Evidence of Execution](https://darkcybe.github.io/posts/DFIR_Evidence_of_Execution/#prefetch)
 
 ## Microsoft Office Recent Files
 Microsoft Office programs will track their own recent files list to make it easier for users to remember the last file they were editing.
