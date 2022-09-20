@@ -26,4 +26,4 @@ Two .csv files will be output to the location preceeding the `--csv` parameter;
 - Activity_PackageIDs.csv
 	- Contains a smaller subset of data and can provide full filepath for recently executed applications.
 
-![WxTCmd Output - Filtered](/assets/img/posts/DFIR/DFIR_Tools_Execution_WxTCmd.png "WxTCmd Output - Filtered")
+![WxTCmd Output (Filtered)](/assets/img/posts/DFIR/DFIR_Tools_Execution_WxTCmd.png "WxTCmd Output (Filtered)")
