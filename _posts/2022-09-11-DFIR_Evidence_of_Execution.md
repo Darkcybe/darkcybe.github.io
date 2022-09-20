@@ -154,7 +154,7 @@ C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\%CID%\ActivitiesCache.
   -   Timestamps: `StartTime`, `EndTime`, and `Duration` are some of the most interesting recorded events.
   
 ### Tools
-- [Darkcybe - WxTCmd](https://darkcybe.github.io/posts/DFIR_Tools_Execution_WxTCmd/)
+- [Darkcybe - WxTCmd](https://darkcybe.github.io/posts/DFIR_Tools_Execution_WxTcmd/)
 - [ActivitiesCache Parser -- Requires License](https://tzworks.com/prototype_page.php?proto_id=41)
 - [Log2timeline - `windows-timeline` parser](https://github.com/log2timeline/plaso)
 
