@@ -1,7 +1,7 @@
 ---
 title: Evidence of File and Folder Interaction
 categories: [DFIR, Evidence Artifacts]
-tags: [acmru, thumbcache, wordwheelquery, recycle bin, lastvisitedmru, opensavemru, jump list, shell bag, .lnk, prefetch]
+tags: [acmru, thumbcache, wordwheelquery, recycle bin, lastvisitedmru, opensavemru, jump list, shell bag, .lnk, prefetch, activitiescache]
 comments: true
 ---
 Techniques that can be used to discover evidence in support of an attackers interaction with files and folders such as search, deletion and opening post-breach.
