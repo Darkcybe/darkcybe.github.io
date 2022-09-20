@@ -6,9 +6,7 @@ comments: true
 ---
 
 # Overview
-Windows 10 introduced a background feature that records recently used applications and files in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains, providing a wealth of information in support of digital forensic investigations in which program execution is being traced.
-
-Further research has identified that Windows Server 2022 also maintains an ActivitiesCache.db file.
+WxTcmd is a tool used to parse the SQLite ActivitiesCache.db file to provide forensic evidence of execution and file interaction.
 
 | Tool Name | Version | MITRE ATT&CK Tactic | MITRE ATT&CK Technique |
 | --------- | ------- | ------------------- | ---------------------- |
@@ -16,6 +14,16 @@ Further research has identified that Windows Server 2022 also maintains an Activ
 
 # Instructions
 ## Extracting the ActivitiesCache.db file to a CSV
+The ActivitiesCache database is stored under the userprofile and can be copied from the directory `C:\Users\%USERPROFILE%\AppData\Local\ConnectedDevicesPlatform\L.%USERPROFILE%\ActivitiesCache.db`
+```powershell
+WxTcmd.exe -f 'C:\Path\To\ActivitiesCache.db' --csv 'C:\Path\To\Output'
+```
 
 ## Output
-Interperating the output sections
+Two .csv files will be output to the location preceeding the `--csv` parameter;
+- Activity.csv
+	- Contains verbose details for accessed files and program execution such as executable name, filepath, Explorer search terms, and timestamps including a duration count. 
+- Activity_PackageIDs.csv
+	- Contains a smaller subset of data and can provide full filepath for recently executed applications.
+
+![WxTCmd Output - Filtered](assets\img\posts\DFIR\DFIR_Tools_Execution_WxTCmd.png "WxTCmd Output - Filtered")
