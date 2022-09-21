@@ -15,9 +15,11 @@ WxTcmd is a tool used to parse the SQLite ActivitiesCache.db file to provide for
 # Instructions
 ## Extracting the ActivitiesCache.db file to a CSV
 The ActivitiesCache database is stored under the userprofile and can be copied from the directory `C:\Users\%USERPROFILE%\AppData\Local\ConnectedDevicesPlatform\L.%USERPROFILE%\ActivitiesCache.db`
+
 ```powershell
 WxTcmd.exe -f 'C:\Path\To\ActivitiesCache.db' --csv 'C:\Path\To\Output'
 ```
+{: .nolineno }
 
 ## Output
 Two .csv files will be output to the location preceeding the `--csv` parameter;
