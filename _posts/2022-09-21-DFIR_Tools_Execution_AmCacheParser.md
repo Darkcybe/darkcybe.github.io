@@ -1,7 +1,7 @@
 ---
 title: AmcacheParser
 categories: [DFIR Tools, Program Execution]
-tags: [amcache]
+tags: [amcache, execution (TA0002)]
 comments: true
 ---
 
@@ -24,9 +24,9 @@ Using the minimum options, AmcacheParser will only export Unassociated file entr
 ## Extracting Application Data from a Live Host
 The AmCache Parser can be deployed onto a host system to extract hive details. If a forensic image or copy of the amcache.hve file has been collected, the tool csn also parse these in place of live extraction. 
 
-'''powershell
+```powershell
 amcacheparser.exe -f "C:\Path\To\amcache.hve" --csv "C:\Path\To\Output"
-'''
+```
 {: .nolineno }
 
 > must be run as Administrator in order to interrogate the live hive.
