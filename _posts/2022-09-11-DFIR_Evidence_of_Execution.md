@@ -35,26 +35,34 @@ C:\Windows\AppCompat\Programs\Amcache.hve
 - [Andrea Fortuna - AmCache and Shimcache in Forensic Analysis](https://www.andreafortuna.org/2017/10/16/amcache-and-shimcache-in-forensic-analysis/)
 
 ## Background Activity (BAM) and Desktop Activity Moderator (DAM)
-Windows BAM is updated when Windows boots and controls the activity of background applications and is found on all Windows devices. DAM on the other hand is only found on Windows Tablets and Mobile devices.
+Windows BAM and DAM are updated when Windows boots and controls the activity of background applications and is found on all Windows devices and is managed by `C:\Windows\System32\drivers\bam.sys`. DAM is only populated with details of applications on Windows Tablets and Mobile devices although the empty registry key will be present on host devices.
+
+BAM and DAM entries are only stored during a session, with events clearing upon reboot or when entries have been present in the key for over 7 days. Another item to consider is that executables hosted on removable media are not recorded in the BAM or DAM.
 
 **WIN:** 10+ <br>
-**SRV:** NULL
+**SRV:** 2019+
 
 ### Location
 ```plaintext
-SYSTEM\CurrentControlSet\Services\bam\UserSettings{SID}
+# BAM
+HKLM\System\CurrentControlSet\Services\bam\state\UserSettings\{SID}
 
-SYSTEM\CurrentControlSet\Services\dam\UserSettings{SID}
+# DAM
+HKLM\System\CurrentControlSet\Services\dam\state\UserSettings\{SID}
 ```
 
+> `CurrentControlSet` may be substituted by `ControlSet001` or `ControlSet002`. The `ControlSet00x` are alternating backups of the `CurrentControlSet`.
+{: .prompt-info }
+
 ### Interpretation and Investigative Notes
-Provides full path of the executable file that was run on the system and last time of execution date/time.
+Provides full path of the executable file that was run on the system and the last time date time group of execution.
   
 ### Tools
-- [Registry Explorer (RECmd)](https://www.sans.org/tools/registry-explorer/)
+- [Darkcybe - Registry Explorer](https://darkcybe.github.io/posts/DFIR_Tools_Toolkits_RegistryExplorer/#Parsing-the-BAM/DAM-for-Evidence-of-Execution)
 
 ### Sources
 - [Costas K - An Alternative to Prefetch -> BAM](https://www.linkedin.com/pulse/alternative-prefetch-bam-costas-katsavounidis/)
+- [DFIR.ru - BAM Internals](https://dfir.ru/2020/04/08/bam-internals/)
 
 ## Jump Lists
 The Windows task bar (Jump List) is engineered to allow users to "jump" or access items they have frequently or recently used quickly and easily. 

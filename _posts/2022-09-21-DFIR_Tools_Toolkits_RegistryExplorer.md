@@ -32,4 +32,9 @@ Interesting Keys
 
 ![Registry Explorer - AmCache.hve](/assets/img/posts/DFIR/DFIR_Tools_Toolkits_RegistryExplorer_AmCache.png "Registry Explorer - AmCache.hve")
 
-##
+# Parsing the BAM/DAM for Evidence of Execution
+
+![Registry Explorer - BAM/DAM](/assets/img/posts/DFIR/DFIR_Tools_Toolkits_RegistryExplorer_BAM_DAM.png "Registry Explorer - BAM/DAM")
+
+#
+
