@@ -1,12 +1,12 @@
 ---
 title: Registry Explorer
 categories: [DFIR Tools, Toolkits]
-tags: [registry, amcache, execution (TA0002)]
+tags: [registry, amcache, bam, dam, execution (TA0002)]
 comments: true
 ---
 
 # Overview
-Registry Explorer allows Windows registry hives to be interrogated and parsed for a wide variety of forensic artifacts. The tool comes in two versions, a GUI and a commandline interface. Eric Zimmerman has created several [plugins](https://github.com/EricZimmerman/RegistryPlugins) that allow automated analysis parsing for certain forensic techniques.
+Registry Explorer allows Windows registry hives to be interrogated and parsed for a wide variety of forensic artifacts. The tool comes in two versions, a GUI and a commandline interface. Eric Zimmerman has created several [plugins](https://github.com/EricZimmerman/RegistryPlugins) that allow automated parsing for certain forensic objects.
 
 | Tool Name | Version | MITRE ATT&CK Tactic | MITRE ATT&CK Technique |
 | --------- | ------- | ------------------- | ---------------------- |
@@ -33,6 +33,7 @@ Interesting Keys
 ![Registry Explorer - AmCache.hve](/assets/img/posts/DFIR/DFIR_Tools_Toolkits_RegistryExplorer_AmCache.png "Registry Explorer - AmCache.hve")
 
 # Parsing the BAM/DAM for Evidence of Execution
+The `Execution Time` column is a reference to the last execution time.
 
 ![Registry Explorer - BAM/DAM](/assets/img/posts/DFIR/DFIR_Tools_Toolkits_RegistryExplorer_BAM_DAM.png "Registry Explorer - BAM/DAM")
 

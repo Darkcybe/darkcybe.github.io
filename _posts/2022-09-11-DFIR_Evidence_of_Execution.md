@@ -70,11 +70,10 @@ The Windows task bar (Jump List) is engineered to allow users to "jump" or acces
 The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application.
 
 **WIN:** 7+ <br>
-**SRV:** NULL
+**SRV:** 2012+
 
 ### Location
 ```plaintext
-# WINDOWS: 7+
 C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
 ```
 
@@ -87,7 +86,7 @@ C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
   
 ### Tools
 - [Jump List Explorer (JLE)](https://www.sans.org/tools/jumplist-explorer/)
-- [Windows Jump List Parser](https://tzworks.com/prototype_page.php?proto_id=20)
+- [Windows Jump List Parser -- Requires License](https://tzworks.com/prototype_page.php?proto_id=20)
 
 ### Sources
 - [Superuser - What is a Jump List in Windows?](https://superuser.com/questions/496059/what-is-a-jump-list-in-windows)
