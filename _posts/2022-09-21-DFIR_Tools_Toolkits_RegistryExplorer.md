@@ -21,7 +21,7 @@ Registry Explorer allows Windows registry hives to be interrogated and parsed fo
 > Hive details can be exported to several formats via the menu option File and Export
 {: .prompt-info }
 
-## Parsing the AmCache.hve for Evidence of Execution
+# Parsing the AmCache.hve for Evidence of Execution
 Interesting Keys
 - `Root\`
 	- **InventoryDeviceContainer:** OS devices such as bluetooth, printers, etc. Has links to DevicePnps
