@@ -12,7 +12,9 @@ Registry Explorer allows Windows registry hives to be interrogated and parsed fo
 | --------- | ------- | ------------------- | ---------------------- |
 | [Registry Explorer (RECmd)](https://github.com/EricZimmerman/RECmd) <br> [Registry Explorer (GUI)](https://www.sans.org/tools/registry-explorer/) | V1.6.0.0 | [Execution](https://attack.mitre.org/tactics/TA0002/) <br> [Persistence](https://attack.mitre.org/tactics/TA0003/) <br> [Defense Evasion](https://attack.mitre.org/tactics/TA0005/) <br> [Credential Access](https://attack.mitre.org/tactics/TA0006/) <br> | | 
 
-# Loading a Hosts Registry via Registry Explorer
+# Instructions
+
+## Loading a Hosts Registry via Registry Explorer
 1. Run RegistryExplorer.exe as an Administrator if interrogating a live host
 2. Hive Selection
 - **Live Host:** Navigate to menu option File and Live System and then select the desired registry hive
@@ -21,7 +23,7 @@ Registry Explorer allows Windows registry hives to be interrogated and parsed fo
 > Hive details can be exported to several formats via the menu option File and Export
 {: .prompt-info }
 
-# Parsing the AmCache.hve for Evidence of Execution
+## Parsing the AmCache.hve for Evidence of Execution
 Interesting Keys
 - `Root\`
 	- **InventoryDeviceContainer:** OS devices such as bluetooth, printers, etc. Has links to DevicePnps
@@ -32,7 +34,7 @@ Interesting Keys
 
 ![Registry Explorer - AmCache.hve](/assets/img/posts/DFIR/DFIR_Tools_Toolkits_RegistryExplorer_AmCache.png "Registry Explorer - AmCache.hve")
 
-# Parsing the BAM/DAM for Evidence of Execution
+## Parsing the BAM/DAM for Evidence of Execution
 - `Execution Time` is a reference to the last execution time.
 
 ![Registry Explorer - BAM/DAM](/assets/img/posts/DFIR/DFIR_Tools_Toolkits_RegistryExplorer_BAM_DAM.png "Registry Explorer - BAM/DAM")
