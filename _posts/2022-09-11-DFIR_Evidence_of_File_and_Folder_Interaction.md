@@ -65,7 +65,7 @@ Hidden file in directory where images on a machine exist stored in a smaller thu
 ### Location
 ```plaintext
 # WINDOWS XP-8
-Automatically created anywhere with homegroup enabled
+Automatically created anywhere with home group enabled
 # WINDOWS 7+
 Automatically created anywhere and accessed via a UNC Path (local or remote)
 ```
@@ -169,7 +169,7 @@ Deleted Time and Original Filename contained in separate files for each deleted 
   - Filenames proceeded by `$I######`, contain:
     - Original PATH and name
     - Deletion Date/Time
-  - Filenames procceded by `$R######`, contain:
+  - Filenames proceeded by `$R######`, contain:
     - Recovery Data
   
 ### Tools
@@ -216,7 +216,7 @@ NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
 - [Forensic4cast - The Recentdocs Key in Windows 10](https://forensic4cast.com/2019/03/the-recentdocs-key-in-windows-10/)
 
 ## Jump Lists
-The Windows task bar (Jump List) is engineered to allow users to "jump" or access items they have frequently or recently used quickly and easily. This funcationality cannot only include recent media files; it must also include recent tasks. 
+The Windows task bar (Jump List) is engineered to allow users to "jump" or access items they have frequently or recently used quickly and easily. This functionality cannot only include recent media files; it must also include recent tasks. 
 
 The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application on Windows 7 through 10 machines. Windows 11 contains a shortcut (.LNK) files that direct to the application, file, or directory.
 
@@ -312,7 +312,7 @@ NTUSER.DAT\Software\Microsoft\Office\VERSION\UserMRU\LiveID_####\FileMRU
 ```
 
 ### Interpretation and Investigative Notes
-Similar to recent files, this will track the last files that were opened by each Microsoft Office application. The last entry added, per the MRU, will be the time the last filewas opened by a specific application.
+Similar to recent files, this will track the last files that were opened by each Microsoft Office application. The last entry added, per the MRU, will be the time the last file was opened by a specific application.
   
 ### Tools
 - [Registry Explorer](https://www.sans.org/tools/registry-explorer/)

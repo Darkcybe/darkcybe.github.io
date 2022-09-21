@@ -9,7 +9,7 @@ Techniques that can be used to discover evidence in support of an assets physica
 # Windows
 
 ## Timezone
-Identification of the systems timezone can grant information that could indicate the an assets phyiscal locale.
+Identification of the systems timezone can grant information that could indicate the an assets physical locale.
 
 **WIN:** XP+ <br>
 **SRV:** 2003+
@@ -61,9 +61,9 @@ Cookies give insight into which sites have been visited and the activities that 
 
 ### Interpretation and Investigative Notes
 - Google Analytics (GA) has developed an extremely sophisticated methodology for tracking site visits, user activity, and paid search. Since GA is largely free, it has a commanding share of the market, estimated at over 80% of sites using traffic analysis and over 50% of all sites.
-  - _utma (Unique Vistors)
+  - _utma (Unique Visitors)
     - Domain Hash
-    - Vistor ID
+    - Visitor ID
     - Cookie Creation Time
     - Time of 2nd most recent visit
     - Time of most recent visit
@@ -76,8 +76,8 @@ Cookies give insight into which sites have been visited and the activities that 
   - _utmz (Traffic Sources)
     - Domain Hash
     - last Update Time
-    - Number of vists
-    - Number of different types of vists
+    - Number of visits
+    - Number of different types of visits
     - Source used to access site
     - Google AdWords campaign name
     - Access Method (organic, referral, cpc, email, direct)
@@ -188,7 +188,7 @@ C:\Windows\System32\SRU\
 - [Velociraptor - Digging Into the System Resource Usage Monitor (SRUM)](https://velociraptor.velocidex.com/digging-into-the-system-resource-usage-monitor-srum-afbadb1a375)
 
 ## Browser Cache
-The Broswer cache is where web page components can be stored locally to speed up subsequent visits. It can be used to glean further information on what a user was actively looking at online. Providing the following information:
+The Browser cache is where web page components can be stored locally to speed up subsequent visits. It can be used to glean further information on what a user was actively looking at online. Providing the following information:
 - Websites visited
 - Files viewed on a website visited (caches files are linked to specific local accounts)
 - Timestamps indicate when site was first saved and last accessed.
@@ -286,7 +286,7 @@ Automatic Crash Recovery features built into the browser.
 - Referring Websites
 - Time session ended
 - Modified time of .dat files in LastActive folder
-- Time each tab opened (only when crash occured)
+- Time each tab opened (only when crash occurred)
 - Creation time of .dat files in Active Folder
 
 ### Tools

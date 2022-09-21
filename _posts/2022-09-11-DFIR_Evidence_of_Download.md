@@ -87,7 +87,7 @@ C:\Documents and Settings<USERNAME>\Application\Skype<SKYPE-NAME>
 - [Acquire Forensics - Skype](https://www.acquireforensics.com/services/tech/skype.html)
 
 ## Browser Artifacts
-Not directly related to 'file download', however can give insight into pages visited which may link to other forensic artifacts such as prefetch etc. More verbsose download details can be found int he Browser Download Manager artifact
+Not directly related to 'file download', however can give insight into pages visited which may link to other forensic artifacts such as prefetch etc. More verbose download details can be found int he Browser Download Manager artifact
 
 **WIN:** XP+ <br>
 **SRV:** NULL
@@ -163,7 +163,7 @@ Downloads will Include the following data types:
 - [Nasbench - Web Browser Forensics](https://nasbench.medium.com/web-browsers-forensics-7e99940c579a)
 
 ## Alternate Data Stream (ADS) Zone.Identifier
-Starting with XP SP2 when files are downloaded from the "Internet Zone" via a browser to an NTFS volume, an alternate data stream is added to the file which is named the Zone Identifer.
+Starting with XP SP2 when files are downloaded from the "Internet Zone" via a browser to an NTFS volume, an alternate data stream is added to the file which is named the Zone Identifier.
 
 **WIN:** XP SP2+ <br>
 **SRV:** 2003+

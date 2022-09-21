@@ -54,7 +54,7 @@ SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
 ```
 
 ### Interpretation and Investigative Notes
-Any executable run on the Windows system can be found in this key. You can use this key to identify systems specific malware was executed on. In addition, based on the interpretation of the time-based data you might be able to determine the last time of execution or activty on the system.
+Any executable run on the Windows system can be found in this key. You can use this key to identify systems specific malware was executed on. In addition, based on the interpretation of the time-based data you might be able to determine the last time of execution or activity on the system.
 - Windows XP - Contains 96 entries at most
   - LastUpdateTime is updated when the files are executed
 - Windows 7+ - Contains 1024 entries at most
@@ -162,7 +162,7 @@ C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\%CID%\ActivitiesCache.
 ### Sources
 - [Kacos2000 - Windows Timeline](https://kacos2000.github.io/WindowsTimeline/)
 - [Microsoft - Windows Activity History and Your Privacy](https://support.microsoft.com/en-us/windows/-windows-activity-history-and-your-privacy-2b279964-44ec-8c2f-e0c2-6779b07d2cbd)
-- [Salt 4N6 - Windows 10 Timeline Forensic Artefacts](https://salt4n6.com/2018/05/03/windows-10-timeline-forensic-artefacts/)
+- [Salt 4N6 - Windows 10 Timeline Forensic Artifacts](https://salt4n6.com/2018/05/03/windows-10-timeline-forensic-artefacts/)
 
 ## RecentApps
 GUI Program execution launched on the Windows 10 System is tracked in the RecentApps key.
@@ -274,7 +274,7 @@ C:\Windows\Prefetch
 - [Geeks for Geeks - Prefetch Files in Windows](https://www.geeksforgeeks.org/prefetch-files-in-windows/)
 
 ## Windows Backgroud Activity (BAM) and Desktop Activity Moderator (DAM)
-Windows BAM is updated when Windows boots and controls the activity of background applications and is found on all Windows devices. DAM on the otherhand is only found on Windows Tablets and Mobile devices.
+Windows BAM is updated when Windows boots and controls the activity of background applications and is found on all Windows devices. DAM on the other hand is only found on Windows Tablets and Mobile devices.
 
 **WIN:** 10+ <br>
 **SRV:** NULL

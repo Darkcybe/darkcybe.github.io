@@ -17,7 +17,7 @@ Hack The Box provides several pricing options, from a free basic account with ac
 | [ParrotOS](https://parrotlinux.org/) or [Kali Linux](https://www.kali.org/) | ParrotOS and Kali Linux are the two major pen testing distributions that you will run into. Both have OpenVPN pre-installed making connection to the HTB servers that little bit easier. |
 | [OpenVPN](https://openvpn.net/) | If you would prefer to use a customized environment for connecting to the HTB servers, OpenVPN will need to be installed. |
 
-## Connecing to HTB Labs via OpenVPN
+## Connecting to HTB Labs via OpenVPN
 ParrotOS is my preference when performing HTB challenges, so we will start here with how to connect to the vulnerable challenge subnets. The process is basically replicated for what ever environment you are connecting from.
 
 1. Login to the HTB platform using your account credentials and select the ‘Connect to HTB’ option at the top right of the screen to open the connection settings.

@@ -4,7 +4,7 @@ categories: [DFIR, Evidence Artifacts]
 tags: [rdp, port:3389, evtx:security, evtx:system, persistence (TA0003), privilege escalation (TA0004)]
 comments: true
 ---
-Techniques that can be used to discover evidence in support of at attackes usage of a specific account.
+Techniques that can be used to discover evidence in support of at attack's usage of a specific account.
 
 # Windows
 
@@ -109,7 +109,7 @@ Determine which accounts have been used for attempted logons. Track account usag
 - Event IDs
   - **4624:** Successful Logon
   - **4625:** Failed Logon
-  - **4634 & 4647:** Sucessful Logoff
+  - **4634 & 4647:** Successful Logoff
   - **4648:** Logon using explicit credentials (Runas)
   - **4672:** Account logon with supervisor rights (Administrator)
   - **4720:** An account was created
@@ -120,7 +120,7 @@ Determine which accounts have been used for attempted logons. Track account usag
   - **4:** Batch logon
   - **5:** Windows Service Logon
   - **7:** Credentials used to unlock screen
-  - **8:** Network logon sending credentials (cleartext)
+  - **8:** Network logon sending credentials (clear text)
   - **9:** Different credentials used than logged on user
   - **10:** Remote interactive logon (RDP)
   - **11:** Cached credentials used to logon
@@ -135,7 +135,7 @@ Determine which accounts have been used for attempted logons. Track account usag
 ### Sources
 - [Infosec Institute - Relevance of Windows Event IDs in Investigation](https://resources.infosecinstitute.com/topic/relevance-of-windows-eventids-in-investigation/)
 
-## Account Authenication Events
+## Account Authentication Events
 Authentication mechanism artifacts, logging details regarding Local Account and Domain authentication.
 
 **WIN:** XP+ <br>

@@ -42,7 +42,7 @@ Wazuh is free and open source. Its components abide by the GNU General Public Li
 
 # Installing Wazuh 4.3.6 on Ubuntu 20.04
 
-1. Download and execute the pre-built installation wizard provided by Wazuh. This will automatically run through the installation of pre-requisuite packages, Elasticsearch (indexer, Kibana, filebeat) and Wazuh server setup and configuration
+1. Download and execute the pre-built installation wizard provided by Wazuh. This will automatically run through the installation of pre-requisite packages, Elasticsearch (indexer, Kibana, filebeat) and Wazuh server setup and configuration
    - Once the installation is complete, initial admin credentials will be displayed to the terminal. Make sure they are noted down as they are required to access the web interface in the following step.
     
     ```bash

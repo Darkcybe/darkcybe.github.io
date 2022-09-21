@@ -22,25 +22,25 @@ Using the minimum options, AmcacheParser will only export Unassociated file entr
 
 # Instructions
 ## Extracting Application Data from a Live Host
-The AmCache Parser can be deployed onto a host system to extract hive details. If a forensic image or cooy of the amcache.hve file has been collected, the tool csn also parse these inplace of live extraction. 
+The AmCache Parser can be deployed onto a host system to extract hive details. If a forensic image or copy of the amcache.hve file has been collected, the tool csn also parse these in place of live extraction. 
 
 '''powershell
 amcacheparser.exe -f "C:\Path\To\amcache.hve" --csv "C:\Path\To\Output"
 '''
 {: .nolineno }
 
-> must be run as Administrator in order to interogate the live hive.
+> must be run as Administrator in order to interrogate the live hive.
 {: .prompt-info }
 
 ## Extracting Appliction Data with Exclusion List Post-processing
-AmCache Parser allows for exclusion lists to be configued during processing of the hive data. The format should be in the form of a new line seperate .txt document containing single SHA1 hash entries for all applications wishing to be exluded from the results. This is a great option to minimize results for common or expected applications.
+AmCache Parser allows for exclusion lists to be configured during processing of the hive data. The format should be in the form of a new line separate .txt document containing single SHA1 hash entries for all applications wishing to be excluded from the results. This is a great option to minimize results for common or expected applications.
 
 ```powershell
 amcacheparser.exe -f "C:\Path\To\amcache.hve" -w "C:\Path\To\Exclusions.txt" --csv "C:\Path\To\Output"
 ```
 {: .nolineno }
 
-> must be run as Administrator in order to interogate the live hive.
+> must be run as Administrator in order to interrogate the live hive.
 {: .prompt-info }
 
 ## Output

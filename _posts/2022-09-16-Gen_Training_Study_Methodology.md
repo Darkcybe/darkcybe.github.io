@@ -7,7 +7,7 @@ comments: true
 
 # Overview
 
-There are millions (don't quote me on that) of courses and certifications availble within he IT and Cyber Security realm with new ones popping up just as frequently as the sun rises. No matter the certification, applying a study methodology I find is an essential piece in not only sucessfully obtaining the titled certification, but actually understanding the material and being able to practically apply it and build on the information that you learn. Some may have a tried and true method for approacing certification exams and some may still be searching for guidance on how to proceed, which is why I've dropped this post. This is how I personally approach exams and if it can help just a single person, im over the deathstar!
+There are millions (don't quote me on that) of courses and certifications available within he IT and Cyber Security realm with new ones popping up just as frequently as the sun rises. No matter the certification, applying a study methodology I find is an essential piece in not only successfully obtaining the titled certification, but actually understanding the material and being able to practically apply it and build on the information that you learn. Some may have a tried and true method for approaching certification exams and some may still be searching for guidance on how to proceed, which is why I've dropped this post. This is how I personally approach exams and if it can help just a single person, im over the deathstar!
 
 # Routine
 
@@ -15,7 +15,7 @@ Routine is essential to effectively learn and study, until such time that we can
 
 ## Daily
 
-- **Schedule:** Schedule yourself time throughout the day that is dedicated solely to study! I sectioned my learning plan into chapters and topics, scheduling 1-2hrs per day, Monday-Friday, to cover that said chapter/topic. It doesnt have to be in full blocks, 20mins here and 30mins there until you can get that section complete.
+- **Schedule:** Schedule yourself time throughout the day that is dedicated solely to study! I sectioned my learning plan into chapters and topics, scheduling 1-2hrs per day, Monday-Friday, to cover that said chapter/topic. It doesn't have to be in full blocks, 20mins here and 30mins there until you can get that section complete.
 
 - **Isolation:** Be in the ZONE! Headphones on, noise cancelling to max and let your partner know that this time is dedicated to study and focus. Set your calendar to remind you 15mins prior to your scheduled study allotment to prepare yourself and others around you. It's not an excuse to get out of housework, believe me i've tried.
 

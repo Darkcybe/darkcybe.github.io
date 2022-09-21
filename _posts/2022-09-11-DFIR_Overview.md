@@ -5,13 +5,13 @@ tags: []
 comments: true
 ---
 # DFIR Overview
-Digital Forensics and Incident Response (DFIR) describes the process of responding in a coordinated effort to a Cyber Security Incident. The main objective of DFIR is to return the organization or impacted assets to a Business as Usual (BaU) state whilst providing Root Cause Analysis on the incident in terms of executive and technical reporting. Typically, a DFIR process will incorporate several team members that form a Cyber Security Incident Response Team (CSIRT), activated upon the identification of a suspected breach and will respond to the incident collecting and recording evidence and carrying out mitigation actions in order to protect the organisation.
+Digital Forensics and Incident Response (DFIR) describes the process of responding in a coordinated effort to a Cyber Security Incident. The main objective of DFIR is to return the organization or impacted assets to a Business as Usual (BaU) state whilst providing Root Cause Analysis on the incident in terms of executive and technical reporting. Typically, a DFIR process will incorporate several team members that form a Cyber Security Incident Response Team (CSIRT), activated upon the identification of a suspected breach and will respond to the incident collecting and recording evidence and carrying out mitigation actions in order to protect the organization.
 
 DFIR consists of two main functions:
-- **Digital Forensics:** Responsible for examining system data, user activity, and other evidence (digtial or physical) to verbosely map the activities performed by and attacker and possible attribution of the actor.
+- **Digital Forensics:** Responsible for examining system data, user activity, and other evidence (digital or physical) to verbosely map the activities performed by and attacker and possible attribution of the actor.
 - **Incident Response:** Covers personnel and the overarching process of the coordinated response to cyber security incidents. 
 
-There are several frameworks in existence that detail response lifecycles when responding to cyber security incidents, such as the [Lockheed Martin Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html), [The Diamond Model](https://www.threatintel.academy/diamond/), [SANS PICERL](https://www.cynet.com/incident-response/incident-response-sans-the-6-steps-in-depth/) and [NIST SP 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf). The most commonly used within the industry, within my experience anyway, are the PICERL and NIST frameworks which separate incident response into the following phases:
+There are several frameworks in existence that detail an response lifecycle when responding to cyber security incidents, such as the [Lockheed Martin Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html), [The Diamond Model](https://www.threatintel.academy/diamond/), [SANS PICERL](https://www.cynet.com/incident-response/incident-response-sans-the-6-steps-in-depth/) and [NIST SP 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf). The most commonly used within the industry, within my experience anyway, are the PICERL and NIST frameworks which separate incident response into the following phases:
 
 - **PICERL**
   1. Preperation
@@ -27,7 +27,7 @@ There are several frameworks in existence that detail response lifecycles when r
   3. Containment, Eradication, and Recovery
   4. Post-Incident Activity
 
-Following an established reponse process or framework is crucial to the success in service restoration following an incident. Typically a process will contain several phases that the DFIR team must achieve in order to complete the response, NIST provide such a framework within publication [SP800-61: Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final). A short summary of the phases can be found below, with more specific recommendations and guides found in the phase links above.
+Following an established response process or framework is crucial to the success in service restoration following an incident. Typically a process will contain several phases that the DFIR team must achieve in order to complete the response, NIST provide such a framework within publication [SP800-61: Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final). A short summary of the phases can be found below, with more specific recommendations and guides found in the phase links above.
 
 # Event Vs. Incident
 
@@ -94,7 +94,7 @@ Once an event has been determined to be an incident that negatively impacts the 
 | Not Recoverable | Recovery from the incident is not possible (e.g., sensitive data exfiltrated and posted publicly); launch investigation |
 
 # NIST Response Lifecycle
-### Preperation
+### Preparation
 The goal of the preparation phase in perspective of IR is to identify the specific requirements of the organization to effectively respond to a multitude of different incident scenarios. Core components off include:
 - People (Roles, Training, Vendor Relationships)
 - Process (Policies, Communications Plans)
@@ -112,11 +112,11 @@ Due to the multitude of avenues in which an incident can occur, several layers o
   - Data collection and retention
   - Artifact Interruption (Kill processes, Firewall Rule Modification, Account Blocking and Password Resets)
 - **Eradication**
-  - Removal of Artifacts (Files, Registry Entries, Backup Restoral)
+  - Removal of Artifacts (Files, Registry Entries, Backup Restorals)
   - System and Application Patching
 - **Recovery**
   - Return to BaU
-  - Monitoring and Environmental Baselining
+  - Monitoring and Environmental Baselines
 
 ### Post-Incident Activity
   - Lessons Learned
@@ -138,7 +138,7 @@ Primarily IR is established to answer key facts for an organizations management 
 - Protect Future Breaches from Occurring
 
 # DFIR Analysis Techniques
-There a number of specalist skills that a DFIR analyst or engineer may learn or individually speacalise in, some of the more common are:
+There a number of specialist skills that a DFIR analyst or engineer may learn or individually specialize in, some of the more common are:
 - Malware Analysis
 - Cyber Threat Intelligence
 - Threat Hunting
@@ -158,14 +158,14 @@ The overarching goals of malware analysis are focused on observing malware behav
 
 ### Types of Malware Analysis
 There are two common types of malware analysis that all malware professionals should be familiar with; Static and Dynamic Analysis.
-- **Static Analysis:** Static analysis is the initial phase of malware analysis in which a malicious file is examined without running the file itself. Determinations of potential classification and artefacts of interest are common outcomes of static analysis. However, there are complex scenarios in which static analysis can be hindered such as code packing and encryption which require an advanced level of understanding areas of disassembly, coding, and operating system architectures.
-- **Dynamic Analysis:** Dynamic analysis is typically a secondary phase after static analysis has been performed. Dynamic analysis involves observing the malwares behaviors during and after execution. Highly detailed signatures can be discovered during dynamic analysis such as registry modifications, dropped files and many more. Debugging may also be covered within dynamic analysis which is the examination of a running processes internal constructs.
+- **Static Analysis:** Static analysis is the initial phase of malware analysis in which a malicious file is examined without running the file itself. Determinations of potential classification and artefact of interest are common outcomes of static analysis. However, there are complex scenarios in which static analysis can be hindered such as code packing and encryption which require an advanced level of understanding areas of disassembly, coding, and operating system architectures.
+- **Dynamic Analysis:** Dynamic analysis is typically a secondary phase after static analysis has been performed. Dynamic analysis involves observing the malware's behaviors during and after execution. Highly detailed signatures can be discovered during dynamic analysis such as registry modifications, dropped files and many more. Debugging may also be covered within dynamic analysis which is the examination of a running processes internal constructs.
 
 ## Cyber Threat Intelligence and Threat Hunting
 CTI and Threat Hunting are both proactive operations that SOC teams can employ to better and faster detect threats, particularly unknown or targeted attacks. CTI is basically the ongoing analysis of adversaries, their capabilities, motivations, and goals with the end product of informed reporting and usable indicators that can be used by threat hunters and SOC analysts. Threat Hunting refers more to the process of hunting down potential indications that an environment has been breached, typically under the stance that there has been and it must be hunted down. By leveraging each others support, both CTI and Threat Hunting teams can work in parallel to create valuable situational awareness of the current state of affairs pertaining to attacker TTPs.
 
 ## System Forensics
-- Memory Fornensics
+- Memory Forensics
 - Host Forensics (All OS's)
 - Mobile Forensics
 

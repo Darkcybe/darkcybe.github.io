@@ -227,7 +227,7 @@ Cortex allows the automatic analysis of observables stored with a TheHive case. 
    - `/path/to/directory/responder`
 
 # Installing MISP
-"A threat intelligence platform for sharing, storing and correlating Indicators of Compromise of targeted attacks, threat intelligence, financial fraud information, vulnerability information or even counter-terrorism information. Discover how MISP is used today in multiple organisations. Not only to store, share, collaborate on cyber security indicators, malware analysis, but also to use the IoCs and information to detect and prevent attacks, frauds or threats against ICT infrastructures, organisations or people." [MISP](https://www.misp-project.org/)
+"A threat intelligence platform for sharing, storing and correlating Indicators of Compromise of targeted attacks, threat intelligence, financial fraud information, vulnerability information or even counter-terrorism information. Discover how MISP is used today in multiple organizations. Not only to store, share, collaborate on cyber security indicators, malware analysis, but also to use the IoCs and information to detect and prevent attacks, frauds or threats against ICT infrastructures, organizations or people." [MISP](https://www.misp-project.org/)
 1. As this instance of MISP is being installed on the same server hosting TheHive and Cortex, increase the memory assigned to the server by at least an additional 4GB of RAM and an adequate level of storage (100GB).
 2. Download the install script provided by the team over at MISP and run the script to begin the install.
    - The install should largely be unattended, however there may be a popup indicating that a user account ‘misp’ needs to be created, enter ‘y’ to accept this.

@@ -69,7 +69,7 @@ densityscout -pe -p 0.1 -o results.txt c:\Windows\System32
 
 ### Output
 
-![DensityScount Output](/assets/img/posts/DFIR/DFIR_Tools_MA_DensityScout.png "DensityScount Output")
+![DensityScout Output](/assets/img/posts/DFIR/DFIR_Tools_MA_DensityScout.png "DensityScout Output")
 
 # Sources
 - [YouTube - Aether Lab - Quick Search for Malware with DensityScout](https://www.youtube.com/watch?v=vMu912jV6uc)

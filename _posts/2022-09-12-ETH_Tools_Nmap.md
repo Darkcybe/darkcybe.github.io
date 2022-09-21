@@ -185,7 +185,7 @@ nmap --script-help "smb-os-discovery"
 
 Nmap provides a GUI frontend for the application called ZenMap. Commands are still entered as previous examples display, however the GUI interface can display network topology information in a graphical view.
 
-## Analysing Output
+## Analyzing Output
 ```
 Nmap scan report for 10.20.30.40
 Host is up (0.0081s latency).
@@ -212,7 +212,7 @@ Host script results:
 |   date: 2022-08-14T05:30:32
 |_  start_date: N/A
 ```
-1. From the example above are several open ports, with Nmap attributing Service and Version details based on header details returnd by the target host. This information can provide valuable insight into the hosts role, potential vulnerabilities, targets for further enumeration consequently and attack entry points.
+1. From the example above are several open ports, with Nmap attributing Service and Version details based on header details returned by the target host. This information can provide valuable insight into the hosts role, potential vulnerabilities, targets for further enumeration consequently and attack entry points.
 2. Based on the above port details, we can ascertain the the server 10.20.30.40 is a Domain Controller, with ports relating to Kerberos and LDAP being observed. The trailing section details Nmap script execution details that identify that SMB version 3.1.1 is in use on the host.
 
 # Sources
