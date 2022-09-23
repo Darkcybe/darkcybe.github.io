@@ -82,7 +82,7 @@ C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
 - AppIDs are universally used across Windows and Server versions from 2007/2012 onwards. Correlations for common applications can be found [here](https://forensicswiki.xyz/wiki/index.php?title=List_of_Jump_List_IDs).
   
 ### Tools
-- [Darkcybe - JumpListExplorer (JLE)](https://darkcybe.github.io/posts/DFIR_Tools_Execution_JumpListExplorer_JLE)
+- [Darkcybe - JumpListExplorer (JLE)](https://darkcybe.github.io/posts/DFIR_Tools_Execution_JLE/)
 - [Windows Jump List Parser -- Requires License](https://tzworks.com/prototype_page.php?proto_id=20)
 
 ### Sources
