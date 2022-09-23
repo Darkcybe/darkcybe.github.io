@@ -1,7 +1,7 @@
 ---
 title: Evidence of Execution
 categories: [DFIR, Evidence Artifacts]
-tags: [userassist, shimcache, appcompatcache, amcache, lastvisitedmru, activitiescache, recentapps, jumplists, srum, prefetch, bam, dam, execution (TA0002), registry]
+tags: [userassist, shimcache, appcompatcache, amcache, lastvisitedmru, activitiescache, recentapps, jump list, srum, prefetch, bam, dam, execution (TA0002), registry]
 comments: true
 ---
 Techniques that can be used to discover evidence in support of program execution post-breach or during an attack.
@@ -64,10 +64,10 @@ Provides full path of the executable file that was run on the system and the las
 - [Costas K - An Alternative to Prefetch -> BAM](https://www.linkedin.com/pulse/alternative-prefetch-bam-costas-katsavounidis/)
 - [DFIR.ru - BAM Internals](https://dfir.ru/2020/04/08/bam-internals/)
 
-## Jump Lists
-The Windows task bar (Jump List) is engineered to allow users to "jump" or access items they have frequently or recently used quickly and easily. 
+## Jump List
+The Windows task bar (Jump List) is engineered to allow users to “jump” or access items they have frequently or recently. This can include files, applications, and directories to name the major items of significance for forensic investigations.
 
-The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application.
+The data stored in the AutomaticDestinations directory contains a unique file for each application prepended with a unique Application ID (AppID) correlated to the associated application, such as the following example which depicts the AppID of Windows Explorer 8.1: `f01b4d95cf55d32a.automaticDestinations-ms`.
 
 **WIN:** 7+ <br>
 **SRV:** 2012+
@@ -78,18 +78,16 @@ C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
 ```
 
 ### Interpretation and Investigative Notes
-- First time of execution of application
-  - Creation Time = First time item added to the AppID file.
-- Last time of execution with file open.
-  - Modification Time = Last time item added to the AppID file.
-- [List of Jump List IDs](https://forensicswiki.xyz/wiki/index.php?title=List_of_Jump_List_IDs)
+- The Jump List files contain information relating to program execution times, execution count and local file paths of the application being investigated. 
+- AppIDs are universally used across Windows and Server versions from 2007/2012 onwards. Correlations for common applications can be found [here](https://forensicswiki.xyz/wiki/index.php?title=List_of_Jump_List_IDs).
   
 ### Tools
-- [Jump List Explorer (JLE)](https://www.sans.org/tools/jumplist-explorer/)
+- [Darkcybe - JumpListExplorer (JLE)](https://darkcybe.github.io/posts/DFIR_Tools_Execution_JumpListExplorer_JLE)
 - [Windows Jump List Parser -- Requires License](https://tzworks.com/prototype_page.php?proto_id=20)
 
 ### Sources
 - [Superuser - What is a Jump List in Windows?](https://superuser.com/questions/496059/what-is-a-jump-list-in-windows)
+- [DFRWS - Windows 10 Jump Lists and Link File Artifacts - Saved, Copied and Moved](https://dfir.pubpub.org/pub/wfuxlu9v/release/1)
 
 ## LastVisitedMRU
 Tracks the Specific executable used by an application to open files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application.

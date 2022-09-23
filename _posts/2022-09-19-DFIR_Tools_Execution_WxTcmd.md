@@ -22,7 +22,7 @@ WxTcmd.exe -f 'C:\Path\To\ActivitiesCache.db' --csv 'C:\Path\To\Output'
 {: .nolineno }
 
 ## Output
-Two .csv files will be output to the location preceding the `--csv` parameter;
+Two .csv files will be output to the location succeeding the `--csv` parameter;
 - Activity.csv
 	- Contains verbose details for accessed files and program execution such as executable name, filepath, Explorer search terms, and timestamps including a duration count. 
 - Activity_PackageIDs.csv
