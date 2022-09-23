@@ -1,7 +1,7 @@
 ---
 title: Registry Explorer
 categories: [DFIR Tools, Toolkits]
-tags: [registry, amcache, bam, dam, execution (TA0002)]
+tags: [registry, amcache, bam, dam, lastvisitedmru, ntuser.dat, execution (TA0002)]
 comments: true
 ---
 
@@ -38,3 +38,11 @@ Interesting Keys
 - `Execution Time` is a reference to the last execution time.
 
 ![Registry Explorer - BAM/DAM](/assets/img/posts/DFIR/DFIR_Tools_Toolkits_RegistryExplorer_BAM_DAM.png "Registry Explorer - BAM/DAM")
+
+## Parsing the LastVisitedMRU for Evidence of Execution
+Interesting Fields
+- **Executable:** Records the parent application
+- **Absolute Path:** Records the file opened
+- **Opened On:** Date-time-group of last access time
+
+![Registry Explorer - LastVisitedMRU](/assets/img/posts/DFIR/DFIR_Tools_Toolkits_RegistryExplorer_LastVisitedMRU.png "Registry Explorer - LastVisitedMRU")

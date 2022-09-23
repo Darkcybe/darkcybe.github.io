@@ -1,7 +1,7 @@
 ---
 title: Evidence of Execution
 categories: [DFIR, Evidence Artifacts]
-tags: [userassist, shimcache, appcompatcache, amcache, lastvisitedmru, activitiescache, recentapps, jump list, srum, prefetch, bam, dam, execution (TA0002), registry]
+tags: [userassist, shimcache, appcompatcache, amcache, lastvisitedmru, ntuser.dat, activitiescache, recentapps, jump list, automaticdestinations, srum, prefetch, bam, dam, execution (TA0002), registry]
 comments: true
 ---
 Techniques that can be used to discover evidence in support of program execution post-breach or during an attack.
@@ -90,28 +90,30 @@ C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
 - [DFRWS - Windows 10 Jump Lists and Link File Artifacts - Saved, Copied and Moved](https://dfir.pubpub.org/pub/wfuxlu9v/release/1)
 
 ## LastVisitedMRU
-Tracks the Specific executable used by an application to open files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application.
+The LastVisitedMRU is responsible for tracking specific executables used by an application to open files documented under the OpenSaveMRU registry key. In addition, each value tracks the directory location for the last file that was accessed by that application. The information can provide forensic insight into an applications execution and file and folder interaction.
 
-**Example:** Notepad.exe was last run using the C:\%USERPROFILE%\Desktop folder
-
-**WIN:** XP, 7, 8, 10, 11<br>
-**SRV:** NULL
+**WIN:** XP+<br>
+**SRV:** 2003+
 
 ### Location
 ```plaintext
 # WINDOWS: XP
-NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedMRU
+# SERVER: 2003
+NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDIg32\LastVisitedMRU
+
 # WINDOWS: 7+
-NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
+# SERVER: 2008+
+NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDIg32\LastVisitedPidlMRU
 ```
+> The NTUSER.DAT file is unique for each user on the target host.
+{: .prompt-info }
 
 ### Interpretation and Investigative Notes
-Tracks the application executables used to open files in OpenSaveMRU and the last file path used.
-  
+Tracks the application executables used to open files in OpenSaveMRU and the last file path used, for example: Notepad.exe was last run under the `C:\%USERPROFILE%\Desktop` directory.
+
 ### Tools
-- [Forensafe](https://www.forensafe.com/free.html)
-- [Registry Explorer (RECmd)](https://www.sans.org/tools/registry-explorer/)
-- [RECmd - Registry Plugins](https://github.com/EricZimmerman/RegistryPlugins)
+- [Darkcybe - Registry Explorer](https://darkcybe.github.io/posts/DFIR_Tools_Toolkits_RegistryExplorer/#Parsing-the-LastVisitedMRU-for-Evidence-of-Execution)
+- [ArtiFast Lite 4](https://www.forensafe.com/free.html)
 
 ### Sources
 - [SANS - OpenSaveMRU and LastVisitedMRU](https://www.sans.org/blog/opensavemru-and-lastvisitedmru/)
