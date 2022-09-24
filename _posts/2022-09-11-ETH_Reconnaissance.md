@@ -1,6 +1,6 @@
 ---
 title: Reconnaissance
-categories: [Ethical Hacking, Reconnaissance]
+categories: [Ethical Hacking]
 tags: [reconnaissance (TA0043), active scanning (T1595)]
 comments: true
 ---
