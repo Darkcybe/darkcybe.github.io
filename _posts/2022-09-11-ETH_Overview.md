@@ -5,6 +5,9 @@ tags: []
 comments: true
 ---
 
+> Using any mentioned tools, tactics or techniques against infrastructure that you do not own or have the express permission to perform select tasks on is not recommended nor condoned by myself. Always check local and corporate policy and regulation prior to downloading and using any of the tools listed in this repository. As a simple rule of measure, if in doubt of the actions you may be taking in terms of their applicability or legality, its safest to seek advice. A quick google search or a listen to the [Darknet Diaries](https://darknetdiaries.com/) podcast should fill you with enough fear of the consequences of performing any unsanctioned activity.
+{: .prompt-warning }
+
 # Overview
 
 Generally when a person hears the term hacker, they immediately link the person behind it to an individual in their parents basement wearing a faded black hoodie, fingers stained with Doritos flavouring and listening to techno music whilst hacking the mainframe of the NSA. This stereotype is not accurate however, we don't live in our parents' basements. I'm kidding, about the the basement, no that's also a joke.
