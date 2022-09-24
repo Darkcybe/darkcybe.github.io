@@ -14,15 +14,15 @@ DFIR consists of two main functions:
 There are several frameworks in existence that detail an response lifecycle when responding to cyber security incidents, such as the [Lockheed Martin Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html), [The Diamond Model](https://www.threatintel.academy/diamond/), [SANS PICERL](https://www.cynet.com/incident-response/incident-response-sans-the-6-steps-in-depth/) and [NIST SP 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf). The most commonly used within the industry, within my experience anyway, are the PICERL and NIST frameworks which separate incident response into the following phases:
 
 - **PICERL**
-  1. Preperation
-  2. Identifiication
+  1. Preparation
+  2. Identification
   3. Containment
   4. Eradication
   5. Recovery
   6. Lessons Learned
    
 - **NIST**
-  1. Preperation
+  1. Preparation
   2. Detection and Analysis
   3. Containment, Eradication, and Recovery
   4. Post-Incident Activity
@@ -127,7 +127,7 @@ Due to the multitude of avenues in which an incident can occur, several layers o
 Primarily IR is established to answer key facts for an organizations management team, who did what to which systems and how to we recover as quickly as possible. Digital Forensics on the other hand specialize in providing verbose evidence that can be used by an organization for any law or insurance proceedings arising from the incident. The work of both function is commonly joined during incidents which allows the simplification of achievable goals for the incident response team to follow into two main categories. 
 
 **Investigation**
-- Determine Pivot Points and Timeframe
+- Determine Pivot Points and Time frame
 - Initial Entry Vector Identification
 - Tools and Malware Used
 - Incident Scope (Identification of Impacted Systems and Accounts)
@@ -152,7 +152,7 @@ Malware can be categorized into several core types based upon their intended fun
 There are several challenges when analyzing a piece of malware. Each type of malware will have unique analysis phases and required environmental configurations in order to effectively understand it’s intended and possible functionality. Not only does each type of malware require a unique analysis technique, there are other factors that will be encountered such as encryption, programming languages, anti-debugging techniques, and many more.
 
 ### Goal of Malware Analysis
-During incident response, in-depth malware analysis or reverse engineering will not always be required. Known hacker toolkits are often detected via signature or behavioral characteristics that are used by security vendors to identify the malware family, type, and capabilities. In these circumstance, malware analysis is not always an efficient mechanism in assisting an organization with responding to and recovering from an attack.
+During incident response, in-depth malware analysis or reverse engineering will not always be required. Known hacker tool kits are often detected via signature or behavioral characteristics that are used by security vendors to identify the malware family, type, and capabilities. In these circumstance, malware analysis is not always an efficient mechanism in assisting an organization with responding to and recovering from an attack.
 
 The overarching goals of malware analysis are focused on observing malware behavior’s, deconstructing the file to gain import artifacts that can assist in understanding the capabilities and providing Indicators of Compromise (IOCs) containment and for future detection. Analyzing and de-constructing malware samples is a time consuming process, hence the opening paragraph stating that it is a techniques not always required during Incident Response engagements. Malware analysis and reverse engineering techniques really shine in circumstances where analysts are dealing with unknown or undetected malware strains, investigating suspicious behavior’s that do not trigger alerts, and for proving verbose documentation such as forensic reports.
 
