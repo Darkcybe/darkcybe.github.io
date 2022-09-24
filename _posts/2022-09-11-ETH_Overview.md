@@ -5,7 +5,46 @@ tags: []
 comments: true
 ---
 
-# Placeholder
+# Overview
+
+Generally when a person hears the term hacker, they immediately link the person behind it to an individual in their parents basement wearing a faded black hoodie, fingers stained with Doritos flavouring and listening to techno music whilst hacking the mainframe of the NSA. This stereotype is not accurate however, we don't live in our parents' basements. I'm kidding, about the the basement, no that's also a joke.
+
+Hacking can take many forms, from the general stereotype depicted above of the lone hacker causing mischief for fun and clout, to more practical applications such as the modern penetration tester or red team analyst. Regardless of the role, the fundamental essence of hacking remains the same, identifying weaknesses and attempting to exploit them.
+
+The posts under this category "Ethical Hacking" will aim to provide knowledge and advice surrounding hacking techniques, tools, and methodologies that can be used for conducting penetration tests and for use in capture the flag competitions. The term Ethical Hacking is used to describe legal activities surrounding the identification and exploitation of vulnerabilities on target systems. With this in mind, it would be careless for me not to include the warning presented at the top of this overview post.
+
+# Types of Hackers
+
+There is an established method of categorizing hackers based on the old 'hat' scenario.
+
+White Hat
+: Ethical Hackers who legally carry out hacking activities, largely to conduct penetration tests and vulnerability assessments or to complete bug bounty activities.
+
+Black Hat
+: The villains, these hackers are the ones behind some of the large scale attacks in the news and typically exploit vulnerability of target systems to steal information or gain a revenue via extortion or commonly in modern times via the deployment of Ransomware.
+
+Grey Hat
+: These folks are a mix of good and evil, depending on how they wake up in the morning and wether they had a decent cup of coffee. Grey Hat Hackers are typically people such as security researchers who carry out activities on target systems without permission and then report their findings to the organization in order to remedy the issues prior to a Black Hat Hacker exploiting them.
+
+# Ethical Hacking Process
+
+There are multiple variations or terminologies used to describe how to carryout an Ethical Hacking activity, let it be for the conduct of a penetration report, vulnerability assessment or capture the flag event. However, in general I prefer to represent the process in stages, as per the below, to follow in order to ensure completeness for the activities that are being carried out.
+
+1. **Reconnaissance**
+   1. Information Gathering
+   2. Scanning and Enumeration
+2. **Exploitation**
+   1. System/Network Access
+3. **Post-Exploitation**
+   1. Persistence
+   2. Defense Evasion
+   3. Credential Access
+   4. Privilege Escalation
+   5. Internal System/Network Discovery
+4. **Reporting**
+   1. Identified Vulnerabilities
+   2. Tools and Techniques
+   3. Remediation Recommendations
 
 # Sources
-- 
+- [EC-Council - Ethical Hacking](https://www.eccouncil.org/ethical-hacking/)
