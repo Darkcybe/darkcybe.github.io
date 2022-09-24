@@ -1,14 +1,31 @@
 ---
 title: Reconnaissance
-categories: [Ethical Hacking]
+categories: [Ethical Hacking, Reconnaissance]
 tags: [reconnaissance (TA0043), active scanning (T1595)]
 comments: true
 ---
+# Overview
+
 Gathering information on target infrastructure, operations, and personnel.
 
 "Reconnaissance consists of techniques that involve adversaries actively or passively gathering information that can be used to support targeting. Such information may include details of the victim organization, infrastructure, or staff/personnel. This information can be leveraged by the adversary to aid in other phases of the adversary lifecycle, such as using gathered information to plan and execute Initial Access, to scope and prioritize post-compromise objectives, or to drive and lead further Reconnaissance efforts." [MITRE ATT&CK](https://attack.mitre.org/tactics/TA0043/)
 
 # Techniques
+
+Different techniques can be used when conducting reconnaissance against a target or targets to identify hosts, networks, and users. Mapping a targets infrastructure and and environment conditions allows an attacker to uncover weaknesses that can provide a high chance of being exploitable. Generally, reconnaissance can be classified into the below categories:
+
+1. Infrastructure
+   1. Gaining intelligence surrounding the physical and digital infrastructure of the target.
+      1. IP Addresses, physical security controls, domains, technologies, etc
+2. Environmental
+   1. Gaining intelligence on the targets organization operational details.
+      1. Email and User nomenclature, website scraping, document parsing, etc 
+3. Users
+   1. Gaining intelligence on specific user weaknesses
+      1. Breached credential searches, social media searches, etc
+4. Vulnerabilities
+   1. Scanning infrastructure to identify potentially exploitable conditions
+   2. Investigation on avenues to exploit identified conditions
 
 ## Passive Scanning and Open Source Intelligence (OSINT)
 Adversaries may execute passive reconnaissance via services or gather information from open source repositories that can be used for target profiling. Typically passive reconnaissance will be near impossible to attribute back to an actor.
@@ -18,7 +35,7 @@ Adversaries may execute passive reconnaissance via services or gather informatio
 | Threat Hunting | Passive scanning is outside of internal defensive scopes, however reviews of <br> externally passive scanning and OSINT sources including employee password breaches can help |
 
 ### Identifying Target Infrastructure
-Passive reconnaissance can be performed against a target or in an attempt to identify a potetial target by searching for information such as IP address spaces, domains, subdomains, services, etc.
+Passive reconnaissance can be performed against a target or in an attempt to identify a potential target by searching for information such as IP address spaces, domains, subdomains, services, etc.
 
 #### Tools
 - [Shodan](https://www.shodan.io/)
