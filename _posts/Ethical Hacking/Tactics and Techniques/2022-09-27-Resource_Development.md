@@ -25,7 +25,7 @@ Capabilities
 
 | Detection      | Mitigation                                                                     |
 | -------------- | ------------------------------------------------------------------------------ |
-| Threat Hunting | Resource Development techniques are difficult to efficiently track and defend against. However <br> threat hunting tasks such as new [domain registration](https://attack.mitre.org/datasources/DS0038/#Domain%20Registration) and scans <br> on threat related infrastructure such as Cobalt Strike servers through tools like [Shodan](https://shodan.io) can provide early warning <br> detections for potential attack vectors. |
+| Threat Hunting | Resource Development techniques are difficult to efficiently track and defend against. However <br> threat hunting tasks such as new [domain registration](https://attack.mitre.org/datasources/DS0038/#Domain%20Registration) and scans on threat related <br> infrastructure such as Cobalt Strike servers through tools like [Shodan](https://shodan.io) can provide early warning detections for potential attack vectors. |
 
 # Tools
 
