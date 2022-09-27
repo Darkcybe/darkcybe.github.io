@@ -1,6 +1,6 @@
 ---
 title: Resource Development
-categories: [Ethical Hacking]
+categories: [Ethical Hacking, Tactics and Techniques]
 tags: [resource development (TA0042), acquire infrastructure (T1583), compromise accounts (T1586), compromise infrastructure (T1586), develop capabilities (T1587), establish accounts (T1585), obtain capabilities (T1588), stage capabilities (T1608)]
 comments: true
 ---
@@ -25,4 +25,8 @@ Capabilities
 
 | Detection      | Mitigation                                                                     |
 | -------------- | ------------------------------------------------------------------------------ |
-| Threat Hunting | Resource Development techniques are difficult to efficiently track and defend against. However threat hunting tasks such as new [domain registration](https://attack.mitre.org/datasources/DS0038/#Domain%20Registration) and scans on threat related infrastructure such as Cobalt Strike servers through tools like [Shodan](https://shodan.io) can provide early warning detections for potential attack vectors. |
+| Threat Hunting | Resource Development techniques are difficult to efficiently track and defend against. However <br> threat hunting tasks such as new [domain registration](https://attack.mitre.org/datasources/DS0038/#Domain%20Registration) and scans <br> on threat related infrastructure such as Cobalt Strike servers through tools like [Shodan](https://shodan.io) can provide early warning <br> detections for potential attack vectors. |
+
+# Tools
+
+There are various tools and services for the establishment of infrastructure. For more verbose procedures to carry out some of the techniques, see the [Resource Development - Capabilities]({% post_url 2022-09-27-Capabilities %}) post.
