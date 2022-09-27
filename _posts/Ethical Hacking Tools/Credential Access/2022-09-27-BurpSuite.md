@@ -38,9 +38,9 @@ The web browser must first be configured to proxy traffic to Burp in order to in
 1. Download and install FoxyProxy.
 2. Create a new proxy profile, set the Proxy IP address to `127.0.0.1` and the port to `8080`. 
 3. Enable the proxy in the web browser to allow Burpsuite to intercept the traffic.
-4. Open Burpsuite and navigate to the Proxy Tab, select the sub-tab Intercept and enable Interception via the `Intercept is off` button.
+4. Open Burpsuite and navigate to the Proxy Tab, select the sub-tab Intercept and enable Interception via the *Intercept is off* button.
 
-> Burpsuite proxy settings can be amended via the Proxy tab, Options sub-tab under the Proxy Listeners section.
+> Burpsuite proxy settings can be amended via the *Proxy* tab, *Options* sub-tab under the *Proxy Listeners* section.
 {: .prompt-info }
 
 # Brute Forcing WebApp Credentials
