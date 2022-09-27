@@ -31,23 +31,30 @@ Grey Hat
 
 # Ethical Hacking Process
 
-There are multiple variations or terminologies used to describe how to carryout an Ethical Hacking activity, let it be for the conduct of a penetration report, vulnerability assessment or capture the flag event. However, in general I prefer to represent the process in stages, as per the below, to follow in order to ensure completeness for the activities that are being carried out.
+There are multiple variations or terminologies used to describe how to carryout an Ethical Hacking activity, let it be for the conduct of a penetesting engagement, vulnerability assessment or capture the flag event. However, in general I prefer to represent the process in stages, as per the below, to follow in order to ensure completeness for the activities that are being carried out and to link to the [MITRE ATT&CK](https://attack.mitre.org/matrices/enterprise/) Enterprise Matrix to allow for detection and mitigation strategies to easily to transposed.
 
-1. **Reconnaissance**
-   1. Information Gathering
-   2. Scanning and Enumeration
+1. **Pre-Exploitation**
+   - [Reconnaissance](https://attack.mitre.org/tactics/TA0043/)
+   - [Resource Development](https://attack.mitre.org/tactics/TA0042/)
 2. **Exploitation**
-   1. System/Network Access
-3. **Post-Exploitation**
-   1. Persistence
-   2. Defense Evasion
-   3. Credential Access
-   4. Privilege Escalation
-   5. Internal System/Network Discovery
-4. **Reporting**
-   1. Identified Vulnerabilities
-   2. Tools and Techniques
-   3. Remediation Recommendations
+   - [Initial Access](https://attack.mitre.org/tactics/TA0001/)
+3. **Post-Exploitation and Entrenchment**
+   - [Execution](https://attack.mitre.org/tactics/TA0002/)
+   - [Persistence](https://attack.mitre.org/tactics/TA0003)
+   - [Privilege Escalation](https://attack.mitre.org/tactics/TA0004/)
+   - [Defense Evasion](https://attack.mitre.org/tactics/TA0005/)
+   - [Credential Access](https://attack.mitre.org/tactics/TA0006/)
+   - [Discovery](https://attack.mitre.org/tactics/TA0007/)
+   - [Lateral Movement](https://attack.mitre.org/tactics/TA0008/)
+   - [Collection](https://attack.mitre.org/tactics/TA0009/)
+   - [Command and Control (C2)](https://attack.mitre.org/tactics/TA0011/)
+   - [Exfiltration](https://attack.mitre.org/tactics/TA0010/)
+4. **Actions on Objectives**
+   -  [Impact](https://attack.mitre.org/tactics/TA0040/)
+5. **Reporting**
+   - Identified Vulnerabilities
+   - Tools and Techniques
+   - Remediation Recommendations
 
 # Sources
 - [EC-Council - Ethical Hacking](https://www.eccouncil.org/ethical-hacking/)
