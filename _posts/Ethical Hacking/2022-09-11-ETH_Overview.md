@@ -34,8 +34,8 @@ Grey Hat
 There are multiple variations or terminologies used to describe how to carryout an Ethical Hacking activity, let it be for the conduct of a penetesting engagement, vulnerability assessment or capture the flag event. However, in general I prefer to represent the process in stages, as per the below, to follow in order to ensure completeness for the activities that are being carried out and to link to the [MITRE ATT&CK](https://attack.mitre.org/matrices/enterprise/) Enterprise Matrix to allow for detection and mitigation strategies to easily to transposed.
 
 1. **Pre-Exploitation**
-   - [Reconnaissance]({ % post_url 2022-09-12-Reconnaissance %})
-   - [Resource Development]({% post_url 2022-09-27-Resource_Development %})
+   - [Reconnaissance](https://darkcybe.github.io/posts/Reconnaissance/)
+   - [Resource Development](https://darkcybe.github.io/posts/Resource_Development/)
 2. **Exploitation**
    - [Initial Access](https://attack.mitre.org/tactics/TA0001/)
 3. **Post-Exploitation and Entrenchment**
