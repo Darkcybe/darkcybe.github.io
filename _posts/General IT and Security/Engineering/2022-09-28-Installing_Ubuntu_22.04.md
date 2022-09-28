@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 22.04 Installation
+title: Building an Ubuntu Host on VMWare
 categories: [General IT and Security, Engineering]
 tag: [ubuntu]
 comments: true
