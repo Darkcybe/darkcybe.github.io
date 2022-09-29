@@ -8,7 +8,6 @@ comments: true
 
 Buffer overflow vulnerabilities are commonly targeted by exploiting buffer sizes. For example, if a buffer is set to allow 8 bytes however 10 are pushed to the buffer, the bytes can overflow into the next buffer. Below is a simple example depicting two buffers with a size of 8 bytes each. The second step depicts the push of 10 bytes to buffer 1, followed by the resulting buffer overflow of the extra two bytes that are ultimately pushed into buffer 2. Although the example depicts only 10 bytes being pushed to the buffer, this number can be increased and cause an overflow to multiple areas of memory that are located after the buffer. Buffer overflow will often result in an application crashing as integral data is overwritten by the overflow data.
 
-    ```plaintext
     buffer1[8] = 0
     buffer2[8] = 0
 
@@ -16,7 +15,6 @@ Buffer overflow vulnerabilities are commonly targeted by exploiting buffer sizes
 
     buffer1 = 0123456789
     buffer2 = 89
-    ```
 
 Buffer Overflows can be controlled to allow shellcode execution and the ability for an attacker to gain root/system access on a host or have the targeted application perform contradictory operations such as allowing authentication in some instances.
 
@@ -68,8 +66,7 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
             s_string("%INPUT% ");
             s_string_variable("0");
             ```
-            {: .nolineno }
-
+            
       - Running the test on `TRUN` identified a buffer overflow vulnerability. The below screenshot shows the evidence via immunity debugger. Note that the value `A` is repeated in register `EAX` and has overflowed into additional registers `ESP`, `EBP`, and `EIP`. The values of `EBP` and `EIP` are expressed in Hex equivalent (A = 41).
 
             ![Immunity Debugger - Buffer Overflow Example](/assets/img/posts/ETH/CAPEC/100_Experiment_ImmunityDBG.png "Immunity Debugger - Buffer Overflow Example")
