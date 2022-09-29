@@ -21,8 +21,9 @@ buffer2 = 89
 
 Buffer Overflows can be controlled to allow shellcode execution and the ability for an attacker to gain root/system access on a host or have the targeted application perform contradictory operations such as allowing authentication in some instances.
 
-[CAPEC](https://capec.mitre.org/data/definitions/100.html) Description
-: Buffer Overflow attacks target improper or missing bounds checking on buffer operations, typically triggered by input injected by an adversary. As a consequence, an adversary is able to write past the boundaries of allocated buffer regions in memory, causing a program crash or potentially redirection of execution as per the adversaries' choice.
+| [CAPEC](https://capec.mitre.org/data/definitions/100.html) |
+| ---------------------------------------------------------- |
+| Buffer Overflow attacks target improper or missing bounds checking on buffer operations, typically triggered by <br> input injected by an adversary. As a consequence, an adversary is able to write past the boundaries of allocated <br> buffer regions in memory, causing a program crash or potentially redirection of execution as per the adversaries' <br> choice. |
 
 # Techniques
 
@@ -31,10 +32,8 @@ Buffer Overflows can be controlled to allow shellcode execution and the ability 
 
 2. Experiment
     - **Find injection vector:** The adversary identifies an injection vector to deliver the excessive content to the targeted application's buffer.
-        > Techniques
         > Provide large input to a program or application and observe the behavior. If there is a crash, this means that a buffer overflow attack is possible.
     - **Craft overflow content:** The adversary crafts the content to be injected. If the intent is to simply cause the software to crash, the content need only consist of an excessive quantity of random data. If the intent is to leverage the overflow for execution of arbitrary code, the adversary crafts the payload in such a way that the overwritten return address is replaced with one of the adversary's choosing.
-        > Techniques
         > Create malicious shellcode that will execute when the program execution is returned to it.
         > Use a NOP-sled in the overflow content to more easily "slide" into the malicious code. This is done so that the exact return address need not be correct, only in the range of all of the NOPs
 3. Exploit
@@ -61,7 +60,6 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
         SRUN [srun_value]
         TRUN [trun_value]
         GMON [gmon_value]
-        ...
         ```
 
       - Using the `generic_send_tcp`, each buffer can be sent a large input in an attempt to identify buffer overflow vulnerabilities. The tool requires a `spike_script` to be compiled before running against an application. The generic command parameter to run the tool is `generic_send_tcp host port spike_script SKIPVAR SKIPSTR`. The spike_script should contain the following information, the %INPUT% field should be replaced with the application input being tested.
