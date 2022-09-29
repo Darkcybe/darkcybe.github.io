@@ -8,16 +8,15 @@ comments: true
 
 Buffer overflow vulnerabilities are commonly targeted by exploiting buffer sizes. For example, if a buffer is set to allow 8 bytes however 10 are pushed to the buffer, the bytes can overflow into the next buffer. Below is a simple example depicting two buffers with a size of 8 bytes each. The second step depicts the push of 10 bytes to buffer 1, followed by the resulting buffer overflow of the extra two bytes that are ultimately pushed into buffer 2. Although the example depicts only 10 bytes being pushed to the buffer, this number can be increased and cause an overflow to multiple areas of memory that are located after the buffer. Buffer overflow will often result in an application crashing as integral data is overwritten by the overflow data.
 
-```
-buffer1[8] = 0
-buffer2[8] = 0
+    ```plaintext
+    buffer1[8] = 0
+    buffer2[8] = 0
 
-push 0123456789 to buffer1
+    push 0123456789 to buffer1
 
-buffer1 = 0123456789
-buffer2 = 89
-```
-{: .nolineno }
+    buffer1 = 0123456789
+    buffer2 = 89
+    ```
 
 Buffer Overflows can be controlled to allow shellcode execution and the ability for an attacker to gain root/system access on a host or have the targeted application perform contradictory operations such as allowing authentication in some instances.
 
@@ -64,7 +63,7 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
 
       - Using the `generic_send_tcp`, each buffer can be sent a large input in an attempt to identify buffer overflow vulnerabilities. The tool requires a `spike_script` to be compiled before running against an application. The generic command parameter to run the tool is `generic_send_tcp host port spike_script SKIPVAR SKIPSTR`. The spike_script should contain the following information, the %INPUT% field should be replaced with the application input being tested.
         
-            ```
+            ```plaintext
             s_readline();
             s_string("%INPUT% ");
             s_string_variable("0");
