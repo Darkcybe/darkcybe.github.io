@@ -72,7 +72,7 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
         ```
         {: .nolineno }
 
-      - Running the test on `TRUN` identified a buffer overflow vulnerability. The below screenshot shows the evidence via immunity debugger. Note that the value `A` is repeated in register `EAX` and has overflowed into additional registers `ESP`, `EBP`, and `EIP`. The values of `EBP` and `EIP` are expressed in Hex equivalent (A = 41).
+      - Running the test on `TRUN` identified a buffer overflow vulnerability. The below screenshot shows the evidence via immunity debugger. Note that the value `A` is repeated in register `EAX` and has overflowed into additional registers `ESP`, `EBP`, and `EIP`. The values of `EBP` and `EIP` are expressed in Hex equivalent (A = 41). More information on x86 Assembly Language can be found on the [Assembly Overview](https://darkcybe.github.io/posts/Assembly_Overview/) post.
 
         ![Immunity Debugger - Buffer Overflow Example](/assets/img/posts/ETH/CAPEC/100_Experiment_ImmunityDBG.png "Immunity Debugger - Buffer Overflow Example")
 
