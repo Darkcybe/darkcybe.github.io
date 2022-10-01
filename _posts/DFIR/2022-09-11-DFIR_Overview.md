@@ -11,7 +11,7 @@ DFIR consists of two main functions:
 - **Digital Forensics:** Responsible for examining system data, user activity, and other evidence (digital or physical) to verbosely map the activities performed by and attacker and possible attribution of the actor.
 - **Incident Response:** Covers personnel and the overarching process of the coordinated response to cyber security incidents. 
 
-There are several frameworks in existence that detail an response lifecycle when responding to cyber security incidents, such as the [Lockheed Martin Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html), [The Diamond Model](https://www.threatintel.academy/diamond/), [SANS PICERL](https://www.cynet.com/incident-response/incident-response-sans-the-6-steps-in-depth/) and [NIST SP 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf). The most commonly used within the industry, within my experience anyway, are the PICERL and NIST frameworks which separate incident response into the following phases:
+There are several frameworks in existence that detail the response lifecycle when responding to cyber security incidents, such as the [Lockheed Martin Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html), [The Diamond Model](https://www.threatintel.academy/diamond/), [SANS PICERL](https://www.cynet.com/incident-response/incident-response-sans-the-6-steps-in-depth/) and [NIST SP 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf). There is also the [D3fend Framework](https://d3fend.mitre.org/) however this applies for to a SOC detection and mitigation stance rather than Incident Response. The most commonly used within the industry, within my experience anyway, are the PICERL and NIST frameworks which separate incident response into the following phases:
 
 - **PICERL**
   1. Preparation
@@ -93,7 +93,10 @@ Once an event has been determined to be an incident that negatively impacts the 
 | Extended        | Time to recovery is unpredictable; additional resources and outside help are needed                                     |
 | Not Recoverable | Recovery from the incident is not possible (e.g., sensitive data exfiltrated and posted publicly); launch investigation |
 
-# NIST Response Lifecycle
+# Response Lifecycle
+
+The way in which a team or single incident responder approaches an incident will differ based on the attack stage and type of attack launched against the organization. The aforementioned NIST framework provides a great high level understanding of how each phase can be categorized. To expand on each phase, other frameworks exist such as the [RE&CT framework](https://atc-project.github.io/atc-react/), which is designed to build on top of IR phases and the MITRE ATT&CK framework to provide an actionable template for Incident Response techniques.
+
 ### Preparation
 The goal of the preparation phase in perspective of IR is to identify the specific requirements of the organization to effectively respond to a multitude of different incident scenarios. Core components off include:
 - People (Roles, Training, Vendor Relationships)
