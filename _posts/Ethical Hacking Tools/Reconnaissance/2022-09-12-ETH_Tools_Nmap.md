@@ -143,7 +143,7 @@ nmap -p22 <IP ADDRESS>
 nmap -sn -oA <output Name/Directory> <IP ADDRESS>/CIDR
 
 # Scan a host, enabling OS detection, version detection, script scanning, and traceroute with verbose output
-nmap -v -A -sV <IP ADDRESS> or <DOMAIN>
+nmap -v -A <IP ADDRESS> or <DOMAIN>
 ```
 {: .nolineno }
 
@@ -156,11 +156,11 @@ nmap -sC -sV -p1-1023,[1024-] <IP ADDRESS> or <DOMAIN>
 # Scan a host with aggressive detection, in fast mode, and across all ports
 nmap -A -T4 -p- <IP ADDRESS>
 
-# Scan a host and return vulnerablity listings using NSE
-nmap -sV --script=vulners <IP ADDRESS>
+# Scan a host and return vulnerability listings using NSE
+nmap -sC --script=vulners <IP ADDRESS>
 
-# Scan a webserver and retrieve banner information via NSE
-nmap -sV --script=http-enum <IP ADDRESS>
+# Scan a web server and retrieve banner information via NSE
+nmap -sC --script=http-enum <IP ADDRESS>
 ```
 {: .nolineno }
 
@@ -186,7 +186,8 @@ nmap --script-help "smb-os-discovery"
 Nmap provides a GUI frontend for the application called ZenMap. Commands are still entered as previous examples display, however the GUI interface can display network topology information in a graphical view.
 
 ## Analyzing Output
-```
+
+```bash
 Nmap scan report for 10.20.30.40
 Host is up (0.0081s latency).
 Not shown: 989 filtered tcp ports (no-response)
@@ -212,6 +213,8 @@ Host script results:
 |   date: 2022-08-14T05:30:32
 |_  start_date: N/A
 ```
+{: .nolineno }
+
 1. From the example above are several open ports, with Nmap attributing Service and Version details based on header details returned by the target host. This information can provide valuable insight into the hosts role, potential vulnerabilities, targets for further enumeration consequently and attack entry points.
 2. Based on the above port details, we can ascertain the the server 10.20.30.40 is a Domain Controller, with ports relating to Kerberos and LDAP being observed. The trailing section details Nmap script execution details that identify that SMB version 3.1.1 is in use on the host.
 
