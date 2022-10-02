@@ -1,6 +1,6 @@
 ---
 title: SQL Databases
-categories: [Ethical Hacking, Ports, Protocols and Services]
+categories: [Ethical Hacking, Common Ports and Services]
 tags: [sql, mysql, mariadb, port:1433, port:3306, nmap, metasploit]
 comments: true
 ---
@@ -22,18 +22,19 @@ SQL platforms are  a valuable target for attackers, with sensitive information o
 
 ## Port Scanning and Enumeration
 
-Nmap has various scripts that can be run against the different versions, running a generic initial scan and including the `-sV` flag 
+Nmap has various scripts that can be run against the different versions, running a generic initial scan and including the `-sV` flag.
 
 ### Default Ports
 
-| Service       | Port  | 
-| ------------- | :---: |
-| MSSQL         | 1433  |
-| MySQL/MariaDB | 3306  |
-| PostgreSQL    | 5432  |
-| MongoDB       | 27027 |
+| Service       | Port  | Handy Nmap Scripts |
+| ------------- | :---: | ------------------ |
+| MSSQL         | 1433  | ms-sql-info <br> ms-sql-config <br> ms-sql-empty-password <br> |
+| MySQL/MariaDB | 3306  | mysql-info <br> mysql-enum <br> mysql-empty-password |
+| PostgreSQL    | 5432  | |
+| MongoDB       | 27027 | |
 
 ### MSSQL
+- Metasploit modules `admin/mssql/mssql_ping` and `admin/mssql/mssql_enum` can be run to gain verbose details on the MSSQL instance. A default credential of `sa`, representative of Sysadmin, can be attempted with a blank password or `sa` can be attempted. However, it should be noted that this could cause accounts to be locked.
 
 ### MySQL/MariaDB
 - Metasploit module `admin/mysql/mysql_enum` can be run to gain verbose details on the MySQL/MariaDB instance. A default credential of `root` with a blank password can be used for authentication.
