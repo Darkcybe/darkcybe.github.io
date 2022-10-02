@@ -7,7 +7,7 @@ comments: true
 
 # Overview
 
-Structured Query Language (SQL) is a language specifically designed for managing structured data within relational database systems and is commonly used as backend storage for many software and web applications.
+Structured Query Language (SQL) is a language specifically designed for managing structured data within relational database systems and is commonly used as backend storage for many software and web applications. See the post [SQL Overview](https://darkcybe.github.io/posts/SQL_Overview/) for more background information.
 
 There are multiple relational database management systems (RDBMS) that use SQL, some of the most commonly encountered are:
 - **Microsoft MSSQL**
