@@ -55,3 +55,5 @@ Nmap has various scripts that can be run against the different versions, running
 # Exploitation
 
 ## SQL Injection
+
+See [CAPEC 66 - SQL Injection](https://darkcybe.github.io/posts/../../../../CAPEC/2022-10-02-66-SQL_Injection.md-Overflow_Buffers/) for verbose information and steps involved in conducting a SQL Injection attack.
