@@ -22,7 +22,7 @@ SQL platforms are  a valuable target for attackers, with sensitive information o
 
 ## Port Scanning and Enumeration
 
-Nmap has various scripts that can be run against the different versions, running a generic initial scan and including the `-sV` flag.
+Nmap has various scripts that can be run against the different versions, running a generic initial scan and including the `-sC` or `-A` flag.
 
 ### Default Ports
 
