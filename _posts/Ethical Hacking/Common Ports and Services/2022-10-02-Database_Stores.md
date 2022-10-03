@@ -15,12 +15,12 @@ Structured Query Language (SQL) is a language specifically designed for managing
 
 There are multiple relational database management systems (RDBMS), some of the most commonly encountered, their default ports and tool applicability are listed in the below table:
 
-| Service       | Port  	 | Nmap | MSF | Hydra | SQLmap | Other        |
-| ------------- | :--------: | ---- | :-: | :---: | :----: | ------------ |
-| MSSQL         | 1433-1434  | [x]  | [x] | [x]   | [x]    | Crackmapexec <br> Impacket |
-| MySQL/MariaDB | 3306  	 | [x]  | [x] | [x]   | [x]    |			  |
-| PostgreSQL    | 5432  	 | [x]  | [x] | [x]   | [x]    |			  |
-| Oracle        | 1521  	 | [x]  | [x] | [x]   | [x]    | Oscanner <br> ODAT |
+| Service       | Port  	 | Nmap   | MSF   | Hydra   | SQLmap | Other        |
+| ------------- | :--------: | ------ | :---: | :-----: | :----: | ------------ |
+| MSSQL         | 1433-1434  | - [x]  | - [x] | - [x]   | - [x]  | Crackmapexec <br> Impacket |
+| MySQL/MariaDB | 3306  	 | - [x]  | - [x] | - [x]   | - [x]  |			    |
+| PostgreSQL    | 5432  	 | - [x]  | - [x] | - [x]   | - [x]  |			    |
+| Oracle        | 1521  	 | - [x]  | - [x] | - [x]   | - [x]  | Oscanner <br> ODAT |
 
 ### SQL Injection
 
