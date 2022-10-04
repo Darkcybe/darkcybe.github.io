@@ -31,7 +31,7 @@ PECmd.exe -f \PATH\TO\bad.exe-2222BD1A.pf
 
 ### Output
 
-![PeCmd - Single Prefetch](/assets/img/DFIR/DFIR_TOOLS/PeCmd_Single.png "PeCmd - Single Prefetch")
+![PeCmd - Single Prefetch](/assets/img/posts/DFIR/DFIR_TOOLS/PeCmd_Single.png "PeCmd - Single Prefetch")
 
 ## Parsing all Prefetch Files within a Directory
 Parses all prefetch files within a supplied directory. The example depicts parsing all .pf files within the default Windows prefetch directory and writes the output to a .csv file for further analysis. The `q` switch prevents the tool from printing the results to STDOUT. Two files will be output, a standard parsing of the entries Prefetch directory and a second timeline view of individual application executions.
@@ -52,7 +52,7 @@ PECmd.exe -d “E:\Windows\Prefetch” –csv “G:\Cases\001\Suspect_Machine_1\
 
 ### Output
 
-![PeCmd - Prefetch](/assets/img/DFIR/DFIR_TOOLS/PeCmd_Prefetch.png "PeCmd - Prefetch")
+![PeCmd - Prefetch](/darkcybe.github.io/assets/img/posts/DFIR/DFIR_TOOLS/PeCmd_Prefetch.png "PeCmd - Prefetch")
 
 >**Date/Time of Execution**
 > Prefetch files are created roughly ~10 seconds after an executable is executed, therefore the modification (last 
