@@ -1,7 +1,19 @@
 ---
 title: Database Stores
 categories: [Ethical Hacking, Common Ports and Services]
-tags: [sql, mysql, nosql, mariadb, port:1433, port:3306, nmap, metasploit, hydra, sqlmap]
+tags:
+  [
+    sql,
+    mysql,
+    nosql,
+    mariadb,
+    port:1433,
+    port:3306,
+    nmap,
+    metasploit,
+    hydra,
+    sqlmap,
+  ]
 comments: true
 ---
 
@@ -15,13 +27,12 @@ Structured Query Language (SQL) is a language specifically designed for managing
 
 There are multiple relational database management systems (RDBMS), some of the most commonly encountered, their default ports and tool applicability are listed in the below table:
 
-| Service       | Port  	 | Nmap   | MSF   | Hydra   | SQLmap | Other        |
-| ------------- | :--------: | :----: | :---: | :-----: | :----: | ------------ |
-| MSSQL         | 1433-1434  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  | Crackmapexec <br> Impacket |
-| MySQL/MariaDB | 3306  	 | <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  |			    |
-| PostgreSQL    | 5432  	 | <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  |			    |
-| Oracle        | 1521  	 | <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  | Oscanner <br> ODAT |
-{: .display}
+| Service       | Port      | Nmap                               | MSF                                | Hydra                              | SQLmap                             | Other                      |
+| ------------- | --------- | ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- | -------------------------- |
+| MSSQL         | 1433-1434 | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | Crackmapexec <br> Impacket |
+| MySQL/MariaDB | 3306      | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |                            |
+| Oracle        | 1521      | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | Oscanner <br> ODAT         |
+| PostgreSQL    | 5432      | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |                            |
 
 ### SQL Injection
 
@@ -33,45 +44,46 @@ Non-Relational databases store data in a different format than Relational databa
 
 As with the various RDBMS solutions, there are a number of Non-Relational systems, some of the most commonly encountered, their default ports and tool applicability are listed in the below table. Other solutions which aren't typically listed as NoSQL databases are added here also, such as Redis and Memcached which are memory storage solutions and Hadoop, NFS, AFP, and iSCSI which are file systems.
 
-| Service          | Port  	    | Nmap | MSF | Hydra | Other | 
-| ---------------- | :--------: | :--: | :-: | :---: | ----- |
-| MongoDB          | 27017 	 	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | |
-| Cassandra        | 9042      	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | | |
-| Redis			   | 6579	 	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | |
-| Memcached		   | 11211	 	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>    | |
-| Hadoop Mapreduce | 50030 <br> 50060  | <i class='fa fa-check-circle'></i> | | | |
-| Hadoop HDFS	   | 50070 <br> 50075 <br> 50090 | <i class='fa fa-check-circle'></i> | | | |
-| NFS			   | 2049    	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | | NFSshell |
-| AFP			   | 548     	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | |
-| iSCSI			   | 3260    	| <i class='fa fa-check-circle'></i>  | | | Open-iSCSI <br> iSCSIadm |
+| Service          | Port                        | Nmap                               | MSF                                | Hydra                              | Other                    |
+| ---------------- | --------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- | ------------------------ |
+| AFP              | 548                         | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |                          |
+| Cassandra        | 9042                        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |                                    |                          |
+| Hadoop HDFS      | 50070 <br> 50075 <br> 50090 | <i class='fa fa-check-circle'></i> |                                    |                                    |                          |
+| Hadoop Mapreduce | 50030 <br> 50060            | <i class='fa fa-check-circle'></i> |                                    |                                    |                          |
+| Memcached        | 11211                       | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |                          |
+| MongoDB          | 27017                       | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |                          |
+| NFS              | 2049                        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |                                    | NFSshell                 |
+| Redis            | 6579                        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |                          |
+| iSCSI            | 3260                        | <i class='fa fa-check-circle'></i> |                                    |                                    | Open-iSCSI <br> iSCSIadm |
 
 # MSSQL
 
 Microsoft SQL Server (MSSQL) often exposes two ports:
-1.	1433 - Used by clients to interact with the database
-2.	1434 - Used to list available instances (a Server can run multiple instances on high ports)
+
+1. 1433 - Used by clients to interact with the database
+2. 1434 - Used to list available instances (a Server can run multiple instances on high ports)
 
 Default credentials are often set to `sa:sa`, which sa equivalent to Sysadmin.
 
 ## MSSQL Scanning and Enumeration
 
-| Tool | Script/Module | Auth | MITRE ATT&CK Tactic             | Command                                    |
-| ---- | ------------- | :--: | ------------------------------- | ------------------------------------------ |
-| Nmap | ms-sql-info   | N    | Reconnaissance        		    | `sudo nmap -A -p 1433,1434 -n 10.10.10.10` |
-| MSF  | mssql_ping    | ?    | Reconnaissance                  | |           
-| MSF  | mssql_enum    | ?    | Reconnaissance                  | |
+| Tool | Script/Module | Auth | MITRE ATT&CK Tactic | Command                                    |
+| ---- | ------------- | ---- | ------------------- | ------------------------------------------ |
+| MSF  | mssql_enum    | ?    | Reconnaissance      |                                            |
+| MSF  | mssql_ping    | ?    | Reconnaissance      |                                            |
+| Nmap | ms-sql-info   | N    | Reconnaissance      | `sudo nmap -A -p 1433,1434 -n 10.10.10.10` |
 
 ## MSSQL Exploitation
 
-| Tool | Script/Module           | Auth | MITRE ATT&CK Tactic             | Command                                    |
-| ---- | ----------------------- | :--: | ------------------------------- | ------------------------------------------ |
-| MSF  | mssql_escalate_dbowner <br> mssql_escalate_escalate_as | Y | Privilege Escalation | |
-| MSF  | mssql_hashdump			 | Y    | Credential Access	     		  | |
-| MSF  | mssql_local_auth_bypass | Y    | Persistence <br> Privilege Escalation  | |
-| MSF  | mssql_ntlm_stealer      | Y    | Credential Access      		  | |
-| MSF  | mssql_idf               | Y    | Discovery                       | |
-| MSF  | mssql_payload           | Y    | Execution                       | |
-| MSF  | mssql_sql_file          | Y    | Execution                       | |
+| Tool | Script/Module                                          | Auth | MITRE ATT&CK Tactic                   | Command |
+| ---- | ------------------------------------------------------ | ---- | ------------------------------------- | ------- |
+| MSF  | mssql_escalate_dbowner <br> mssql_escalate_escalate_as | Y    | Privilege Escalation                  |         |
+| MSF  | mssql_hashdump                                         | Y    | Credential Access                     |         |
+| MSF  | mssql_idf                                              | Y    | Discovery                             |         |
+| MSF  | mssql_local_auth_bypass                                | Y    | Persistence <br> Privilege Escalation |         |
+| MSF  | mssql_ntlm_stealer                                     | Y    | Credential Access                     |         |
+| MSF  | mssql_payload                                          | Y    | Execution                             |         |
+| MSF  | mssql_sql_file                                         | Y    | Execution                             |         |
 
 ## MSSQL Database Interaction
 
@@ -98,22 +110,22 @@ Default credentials are often set to `root:`, within some instances as per the e
 
 ## MySQL/MariaDB Scanning and Enumeration
 
-| Tool | Script/Module | Auth | MITRE ATT&CK Tactic             | Command                                    |
-| ---- | ------------- | :--: | ------------------------------- | ------------------------------------------ |
-| Nmap | mysql-info    | N    | Reconnaissance                  | `sudo nmap -A -p 3306 -n 10.10.10.10`
-| MSF  | mysql_enum    | Y    | Reconnaissance                  | |
+| Tool | Script/Module | Auth | MITRE ATT&CK Tactic | Command                               |
+| ---- | ------------- | ---- | ------------------- | ------------------------------------- |
+| MSF  | mysql_enum    | Y    | Reconnaissance      |                                       |
+| Nmap | mysql-info    | N    | Reconnaissance      | `sudo nmap -A -p 3306 -n 10.10.10.10` |
 
 ## MySQL/MariaDB Exploitation
 
 ## MSSQL Database Interaction
 
 The MySQL command line tool can be used to interface with a remote MySQL/MariaDB instance.
-	
+
 ```bash
 # Accessing a Remote Server
 mysql -h 10.10.10.10 -u root
 mysql -h 10.10.10.10 -u root -e 'show databases;'
-	
+
 # Database Interaction
 show databases; # Shows all available databases
 use %DATABASE%; # Enter a select database
