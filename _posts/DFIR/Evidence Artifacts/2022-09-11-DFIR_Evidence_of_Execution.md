@@ -8,11 +8,56 @@ Techniques that can be used to discover evidence in support of program execution
 
 # Windows
 
+## ActivitiesCache.db (Windows Timeline)
+Windows 10 introduced a background feature that records recently used applications and accessed files over a 30 day duration in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains.
+
+Research identified that Windows Server 2016 also maintains an ActivitiesCache.db file, however `ActivityOperation`, `Activity_PackageId`, and `Activity` entries were not recorded.
+
+| Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            |        |        |        | ✅    | ✅    |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            |        |        |        |      | ✅    | ✅    |
+
+### Location
+```plaintext
+# Local Account
+C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\L.%PROFILE%\ActivitiesCache.db
+
+# Online Account
+C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\%CID%\ActivitiesCache.db
+```
+
+### Interpretation and Investigative Notes
+- Files within the `L.%USERPROFILE%` directory.
+  - **ActivitiesCache.db:** SQLite Database
+  - **ActivitiesCache.db-wal:** 'Write ahead' Log (Holds activity events prior to pushing them to the database - Reboot system to write to database)
+  - **ActivitiesCache.db-shm:** 'Shared memory' file
+- The database contains evidence such as;
+  -   `ActivityType`: Activity performed (ExecuteOpen, InFocus, CopyPaste, etc)
+  -   `Executable`: Parent application used to open or execute file
+  -   `DisplayText`: Title of file or application
+  -   `ContentInfo`: Possible content information, not always present
+  -   Timestamps: `StartTime`, `EndTime`, and `Duration` are some of the most interesting recorded events.
+  
+### Tools
+- [Darkcybe - WxTCmd](https://darkcybe.github.io/posts/DFIR_Tools_Execution_WxTcmd/)
+- [ActivitiesCache Parser -- Requires License](https://tzworks.com/prototype_page.php?proto_id=41)
+- [Log2timeline (windows-timeline parser)](https://github.com/log2timeline/plaso)
+
+### Sources
+- [Kacos2000 - Windows Timeline](https://kacos2000.github.io/WindowsTimeline/)
+- [Microsoft - Windows Activity History and Your Privacy](https://support.microsoft.com/en-us/windows/-windows-activity-history-and-your-privacy-2b279964-44ec-8c2f-e0c2-6779b07d2cbd)
+- [Salt 4N6 - Windows 10 Timeline Forensic Artifacts](https://salt4n6.com/2018/05/03/windows-10-timeline-forensic-artefacts/)
+
 ## AmCache.hve
 ProgramDataUpdater (a task associated with the Application Experience Service) uses the registry file Amcache.hve to store data during process creation. Details of program installation and execution are stored.
 
-**WIN:** 7+ <br>
-**SRV:** 2008 R2+
+| Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            |       | ✅      | ✅      | ✅    | ✅    |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            |       | ✅      | ✅      | ✅    | ✅    | ✅    |
 
 ### Location
 ```plaintext
@@ -39,8 +84,11 @@ Windows BAM and DAM are updated when Windows boots and controls the activity of 
 
 BAM and DAM entries are only stored during a session, with events clearing upon reboot or when entries have been present in the key for over 7 days. Another item to consider is that executables hosted on removable media are not recorded in the BAM or DAM.
 
-**WIN:** 10+ <br>
-**SRV:** 2019+
+| Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            |       |       |       | ✅    | ✅    |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            |       |       |       |     | ✅    | ✅    |
 
 ### Location
 ```plaintext
@@ -69,8 +117,11 @@ The Windows task bar (Jump List) is engineered to allow users to “jump” or a
 
 The data stored in the AutomaticDestinations directory contains a unique file for each application prepended with a unique Application ID (AppID) correlated to the associated application, such as the following example which depicts the AppID of Windows Explorer 8.1: `f01b4d95cf55d32a.automaticDestinations-ms`.
 
-**WIN:** 7+ <br>
-**SRV:** 2012+
+| Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            |        | ✅      | ✅      | ✅    | ✅    |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            |        |        | ✅      | ✅    | ✅    | ✅    |
 
 ### Location
 ```plaintext
@@ -92,8 +143,11 @@ C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
 ## LastVisitedMRU
 The LastVisitedMRU is responsible for tracking specific executables used by an application to open files documented under the OpenSaveMRU registry key. In addition, each value tracks the directory location for the last file that was accessed by that application. The information can provide forensic insight into an applications execution and file and folder interaction.
 
-**WIN:** XP+<br>
-**SRV:** 2003+
+| Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | ✅      | ✅      | ✅      | ✅    | ✅    |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | ✅      | ✅      | ✅      | ✅    | ✅    | ✅    |
 
 ### Location
 ```plaintext
@@ -125,8 +179,15 @@ Increases performance of a system by pre-loading code pages of commonly used app
 - Limited to 1024 files on Windows 8
 - `<EXE_NAME>-<HASH>.pf`
 
-**WIN:** XP+ <br>
-**SRV:** NULL
+| Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | ✅     | ✅    | ✅     | ✅  | ✅   |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | ✅*     | ✅*    | ✅*    | ✅*  | ✅*  |       |
+
+> Although prefetch is available on Windows Servers, it is disabled by default. To enable Prefetch on Windows Servers (I was unable to get this working on Windows Server 2022), the following steps can be taken. However, keep in mind that it will need to be enable prior to any nefarious activities occurring and will not provide retrospective artifacts. Prefetch can also be disabled by default when the system detected an SSD being used, enabling can be configured by the same.
+> 1. Update or create the `EnablePrefetcher` registry key in `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters`
+> 2. Set the `EnablePrefetcher` key value: `0` = Disabled, `1` = Application launch prefetching enabled, `2` = Boot prefetching enabled, `2` = Application launch and boot prefetching enabled.
 
 ### Location
 ```plaintext
@@ -146,6 +207,7 @@ C:\Windows\Prefetch
 
 ### Sources
 - [Geeks for Geeks - Prefetch Files in Windows](https://www.geeksforgeeks.org/prefetch-files-in-windows/)
+- [Microsoft - Disabling/Enabling Prefetch](https://learn.microsoft.com/en-us/previous-versions/windows/embedded/ms940847(v=winembedded.5)?redirectedfrom=MSDN)
 
 
 ## RecentApps
@@ -262,42 +324,3 @@ All values are ROT-13 Encoded
 ### Sources
 - [Aldeid - Windows UserAssist Keys](https://www.aldeid.com/wiki/Windows-userassist-keys)
 - [Didier Stevens - UserAssist](https://blog.didierstevens.com/programs/userassist/)
-
-## Windows Timeline (ActivitiesCache.db)
-Windows 10 introduced a background feature that records recently used applications and accessed files over a 30 day duration in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains.
-
-Research identified that Windows Server 2016 also maintains an ActivitiesCache.db file, however `ActivityOperation`, `Activity_PackageId`, and `Activity` entries were not recorded.
-
-**WIN:** 10+ <br>
-**SRV:** 2019+
-
-### Location
-```plaintext
-# Local Account
-C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\L.%PROFILE%\ActivitiesCache.db
-
-# Online Account
-C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\%CID%\ActivitiesCache.db
-```
-
-### Interpretation and Investigative Notes
-- Files within the `L.%USERPROFILE%` directory.
-  - **ActivitiesCache.db:** SQLite Database
-  - **ActivitiesCache.db-wal:** 'Write ahead' Log (Holds activity events prior to pushing them to the database - Reboot system to write to database)
-  - **ActivitiesCache.db-shm:** 'Shared memory' file
-- The database contains evidence such as;
-  -   `ActivityType`: Activity performed (ExecuteOpen, InFocus, CopyPaste, etc)
-  -   `Executable`: Parent application used to open or execute file
-  -   `DisplayText`: Title of file or application
-  -   `ContentInfo`: Possible content information, not always present
-  -   Timestamps: `StartTime`, `EndTime`, and `Duration` are some of the most interesting recorded events.
-  
-### Tools
-- [Darkcybe - WxTCmd](https://darkcybe.github.io/posts/DFIR_Tools_Execution_WxTcmd/)
-- [ActivitiesCache Parser -- Requires License](https://tzworks.com/prototype_page.php?proto_id=41)
-- [Log2timeline (windows-timeline parser)](https://github.com/log2timeline/plaso)
-
-### Sources
-- [Kacos2000 - Windows Timeline](https://kacos2000.github.io/WindowsTimeline/)
-- [Microsoft - Windows Activity History and Your Privacy](https://support.microsoft.com/en-us/windows/-windows-activity-history-and-your-privacy-2b279964-44ec-8c2f-e0c2-6779b07d2cbd)
-- [Salt 4N6 - Windows 10 Timeline Forensic Artifacts](https://salt4n6.com/2018/05/03/windows-10-timeline-forensic-artefacts/)

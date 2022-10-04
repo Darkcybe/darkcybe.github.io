@@ -21,6 +21,7 @@ Using the minimum options, AmcacheParser will only export Unassociated file entr
 | [AmCacheParser](https://github.com/EricZimmerman/AmcacheParser) | V1.5.1.0 | [Execution](https://attack.mitre.org/tactics/TA0002/) | | 
 
 # Instructions
+
 ## Extracting Application Data from a Live Host
 The AmCache Parser can be deployed onto a host system to extract hive details. If a forensic image or copy of the amcache.hve file has been collected, the tool csn also parse these in place of live extraction. 
 
@@ -32,7 +33,7 @@ amcacheparser.exe -f "C:\Path\To\amcache.hve" --csv "C:\Path\To\Output"
 > must be run as Administrator in order to interrogate the live hive.
 {: .prompt-info }
 
-## Extracting Appliction Data with Exclusion List Post-processing
+## Extracting Application Data with Exclusion List Post-processing
 AmCache Parser allows for exclusion lists to be configured during processing of the hive data. The format should be in the form of a new line separate .txt document containing single SHA1 hash entries for all applications wishing to be excluded from the results. This is a great option to minimize results for common or expected applications.
 
 ```powershell
@@ -44,6 +45,7 @@ amcacheparser.exe -f "C:\Path\To\amcache.hve" -w "C:\Path\To\Exclusions.txt" --c
 {: .prompt-info }
 
 ## Output
+
 ### DeviceContainers
 Contains a list of OS devices such as bluetooth, printers, etc. Has links to DevicePnps
 
