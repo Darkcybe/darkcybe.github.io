@@ -1,19 +1,7 @@
 ---
 title: Database Stores
 categories: [Ethical Hacking, Common Ports and Services]
-tags:
-  [
-    sql,
-    mysql,
-    nosql,
-    mariadb,
-    port:1433,
-    port:3306,
-    nmap,
-    metasploit,
-    hydra,
-    sqlmap,
-  ]
+tags: [sql, mysql, nosql, mariadb, port:1433, port:3306, nmap, metasploit, hydra, sqlmap]
 comments: true
 ---
 

@@ -70,13 +70,13 @@ Adversaries may execute active reconnaissance scans to gather information that c
 
 ### Tools
 - Scanning IP Blocks
-  - [Darkcybe - Nmap Guide](https://darkcybe.github.io/posts/ETH_Tools_Nmap/)
+  - [Darkcybe - Nmap Guide]({% post_url 2022-09-12-ETH_Tools_Nmap %})
 - Vulnerablity Scanning
-  - [Darkcybe - Nmap Guide](https://darkcybe.github.io/posts/ETH_Tools_Nmap/)
+  - [Darkcybe - Nmap Guide]({% post_url 2022-09-12-ETH_Tools_Nmap %})
   - [Darkcybe - Nessus Guide] Comming Soon
   - [Darkcybe - Nikto Guide] Comming Soon
 - Wordlist Scanning
-  - [Darkcybe - Nmap Guide](https://darkcybe.github.io/posts/ETH_Tools_Nmap/)
+  - [Darkcybe - Nmap Guide]({% post_url 2022-09-12-ETH_Tools_Nmap %})
   - [Darkcybe - Dirbuster Guide] Comming Soon
 
 ## Gather Victim Host Information [T1592](https://attack.mitre.org/techniques/T1592/)
