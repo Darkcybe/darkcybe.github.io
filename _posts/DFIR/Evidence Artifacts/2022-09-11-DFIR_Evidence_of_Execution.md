@@ -6,7 +6,7 @@ comments: true
 ---
 Techniques that can be used to discover evidence in support of program execution post-breach or during an attack.
 
-[y]: <i class='fa fa-check-circle'></i>
+[y]: "<i class='fa fa-check-circle'></i>"
 
 # Windows
 
