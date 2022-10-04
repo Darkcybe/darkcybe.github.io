@@ -13,11 +13,13 @@ Windows 10 introduced a background feature that records recently used applicatio
 
 Research identified that Windows Server 2016 also maintains an ActivitiesCache.db file, however `ActivityOperation`, `Activity_PackageId`, and `Activity` entries were not recorded.
 
-| Windows    | XP     | 7      | 8      | 10   | 11   |      |
-|------------|--------|--------|--------|------|------|------|
-|            |        |        |        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
-| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            |        |        |        |      | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+| Windows | XP     | 7      | 8      | 10   | 11   |
+|---------|--------|--------|--------|------|------|
+|         |        |        |        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+
+| Server | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|--------|--------|--------|--------|------|------|------|
+|        |        |        |        |      | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
 
 ### Location
 ```plaintext
@@ -53,11 +55,13 @@ C:\Users\%PROFILE%\AppData\Local\ConnectedDevicesPlatform\%CID%\ActivitiesCache.
 ## AmCache.hve
 ProgramDataUpdater (a task associated with the Application Experience Service) uses the registry file Amcache.hve to store data during process creation. Details of program installation and execution are stored.
 
-| Windows    | XP     | 7      | 8      | 10   | 11   |      |
-|------------|--------|--------|--------|------|------|------|
-|            |        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
-| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            |        |        |        |      | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+| Windows | XP     | 7      | 8      | 10   | 11   |
+|---------|--------|--------|--------|------|------|
+|         |        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+
+| Server | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|--------|--------|--------|--------|------|------|------|
+|        |        |        |        |      | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
 
 ### Location
 ```plaintext
@@ -84,11 +88,13 @@ Windows BAM and DAM are updated when Windows boots and controls the activity of 
 
 BAM and DAM entries are only stored during a session, with events clearing upon reboot or when entries have been present in the key for over 7 days. Another item to consider is that executables hosted on removable media are not recorded in the BAM or DAM.
 
-| Windows    | XP     | 7      | 8      | 10   | 11   |      |
-|------------|--------|--------|--------|------|------|------|
-|            |       |       |       | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |      |
-| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            |       |       |       |     | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+| Windows | XP     | 7      | 8      | 10   | 11   |
+|---------|--------|--------|--------|------|------|
+|         |        |        |        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+
+| Server | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|--------|--------|--------|--------|------|------|------|
+|        |        |        |        |      | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
 
 ### Location
 ```plaintext
@@ -117,11 +123,13 @@ The Windows task bar (Jump List) is engineered to allow users to “jump” or a
 
 The data stored in the AutomaticDestinations directory contains a unique file for each application prepended with a unique Application ID (AppID) correlated to the associated application, such as the following example which depicts the AppID of Windows Explorer 8.1: `f01b4d95cf55d32a.automaticDestinations-ms`.
 
-| Windows    | XP     | 7      | 8      | 10   | 11   |      |
-|------------|--------|--------|--------|------|------|------|
-|            |        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
-| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            |        |        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+| Windows | XP     | 7      | 8      | 10   | 11   |
+|---------|--------|--------|--------|------|------|
+|         |        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+
+| Server | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|--------|--------|--------|--------|------|------|------|
+|        |        |        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
 
 ### Location
 ```plaintext
@@ -143,11 +151,13 @@ C:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
 ## LastVisitedMRU
 The LastVisitedMRU is responsible for tracking specific executables used by an application to open files documented under the OpenSaveMRU registry key. In addition, each value tracks the directory location for the last file that was accessed by that application. The information can provide forensic insight into an applications execution and file and folder interaction.
 
-| Windows    | XP     | 7      | 8      | 10   | 11   |      |
-|------------|--------|--------|--------|------|------|------|
-|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
-| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+| Windows | XP     | 7      | 8      | 10   | 11   |      |
+|---------|--------|--------|--------|------|------|------|
+|         | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+
+| Server | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|--------|--------|--------|--------|------|------|------|
+|        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
 
 ### Location
 ```plaintext
@@ -179,11 +189,13 @@ Increases performance of a system by pre-loading code pages of commonly used app
 - Limited to 1024 files on Windows 8
 - `<EXE_NAME>-<HASH>.pf`
 
-| Windows    | XP     | 7      | 8      | 10   | 11   |      |
-|------------|--------|--------|--------|------|------|------|
-|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
-| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |
+| Windows | XP     | 7      | 8      | 10   | 11   |
+|---------|--------|--------|--------|------|------|
+|         | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+
+| Server | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|--------|--------|--------|--------|------|------|------|
+|        | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |
 
 > Although prefetch is available on Windows Servers, it is disabled by default. To enable Prefetch on Windows Servers (I was unable to get this working on Windows Server 2022), the following steps can be taken. However, keep in mind that it will need to be enable prior to any nefarious activities occurring and will not provide retrospective artifacts. Prefetch can also be disabled by default when the system detected an SSD being used, enabling can be configured by the same.
 > 1. Update or create the `EnablePrefetcher` registry key in `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters`
