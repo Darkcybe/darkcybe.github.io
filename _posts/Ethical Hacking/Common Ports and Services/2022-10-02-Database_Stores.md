@@ -17,7 +17,7 @@ There are multiple relational database management systems (RDBMS), some of the m
 
 | Service       | Port  	 | Nmap   | MSF   | Hydra   | SQLmap | Other        |
 | ------------- | :--------: | ------ | :---: | :-----: | :----: | ------------ |
-| MSSQL         | 1433-1434  | :white_check_mark: | -[x] | -[x]   | -[x]  | Crackmapexec <br> Impacket |
+| MSSQL         | 1433-1434  | <i class='fa fa-check-circle'></i> | -[x] | -[x]   | -[x]  | Crackmapexec <br> Impacket |
 | MySQL/MariaDB | 3306  	 | -[x]  | -[x] | -[x]   | -[x]  |			    |
 | PostgreSQL    | 5432  	 | -[x]  | -[x] | -[x]   | -[x]  |			    |
 | Oracle        | 1521  	 | -[x]  | -[x] | -[x]   | -[x]  | Oscanner <br> ODAT |
