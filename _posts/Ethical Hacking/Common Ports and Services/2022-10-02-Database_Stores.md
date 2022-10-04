@@ -21,6 +21,7 @@ There are multiple relational database management systems (RDBMS), some of the m
 | MySQL/MariaDB | 3306  	 | <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  |			    |
 | PostgreSQL    | 5432  	 | <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  |			    |
 | Oracle        | 1521  	 | <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  | Oscanner <br> ODAT |
+{: .display}
 
 ### SQL Injection
 
