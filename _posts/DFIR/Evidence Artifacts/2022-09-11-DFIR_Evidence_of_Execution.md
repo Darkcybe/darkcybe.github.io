@@ -215,7 +215,7 @@ C:\Windows\Prefetch
   
 ### Tools
 - [Darkcybe - PeCmd](https://darkcybe.github.io/posts/DFIR_Tools_Execution_PeCmd/)
-- [Windows Prefetch Parser](https://tzworks.com/prototype_page.php?proto_id=1)
+- [Windows Prefetch Parser - Requires License](https://tzworks.com/prototype_page.php?proto_id=1)
 
 ### Sources
 - [Geeks for Geeks - Prefetch Files in Windows](https://www.geeksforgeeks.org/prefetch-files-in-windows/)
