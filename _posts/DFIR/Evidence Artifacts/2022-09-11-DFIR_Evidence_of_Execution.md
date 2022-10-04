@@ -223,10 +223,17 @@ C:\Windows\Prefetch
 
 
 ## RecentApps
-GUI Program execution launched on the Windows 10 System is tracked in the RecentApps key.
+Windows 10 tracked Program execution via the RecentApps registry key for particular versions.
 
-**WIN:** 10 <br>
-**SRV:** NULL
+| Windows | XP     | 7      | 8      | 10   | 11   |
+|---------|--------|--------|--------|------|------|
+|         |        |        |        | <i class='fa fa-check-circle'></i> | |
+
+> Only Microsoft Windows 10 versions V1607-1709 appear to populate the RecentApps registry key.
+
+| Server | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|--------|--------|--------|--------|------|------|------|
+|        |        |        |        |      |      |      |
 
 ### Location
 ```plaintext
@@ -266,7 +273,7 @@ Any executable run on the Windows system can be found in this key. You can use t
 - Windows XP - Contains 96 entries at most
   - LastUpdateTime is updated when the files are executed
 - Windows 7+ - Contains 1024 entries at most
-  - LastUpdateTime does not exist on Windows 7 systems
+  - LastUpdateTime does not exist on Windows 7+ systems
   
 ### Tools
 - [ShimCacheParser](https://github.com/mandiant/ShimCacheParser)
@@ -321,7 +328,9 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist{
 ```
 
 ### Interpretation and Investigative Notes
-All values are ROT-13 Encoded
+- All values are ROT-13 Encoded
+  - `.RKR` = .exe
+  - `.YAX` = .lnk
 - GUID for XP
   - `75048700` - Active Desktop
 - GUID for Win7/8/10/11
