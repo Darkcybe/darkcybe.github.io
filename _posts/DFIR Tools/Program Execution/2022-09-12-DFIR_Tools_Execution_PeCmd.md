@@ -52,7 +52,7 @@ PECmd.exe -d “E:\Windows\Prefetch” –csv “G:\Cases\001\Suspect_Machine_1\
 
 ### Output
 
-![PeCmd - Prefetch](/darkcybe.github.io/assets/img/posts/DFIR/DFIR_TOOLS/PeCmd_Prefetch.png "PeCmd - Prefetch")
+![PeCmd - Prefetch](/darkcybe.github.io/assets/img/posts/DFIR/DFIR_TOOLS/PeCmd_Prefetch_CSV.png "PeCmd - Prefetch")
 
 >**Date/Time of Execution**
 > Prefetch files are created roughly ~10 seconds after an executable is executed, therefore the modification (last 
