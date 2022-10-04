@@ -15,9 +15,25 @@ Research identified that Windows Server 2016 also maintains an ActivitiesCache.d
 
 | Windows    | XP     | 7      | 8      | 10   | 11   |      |
 |------------|--------|--------|--------|------|------|------|
-|            |        |        |        | ✅    | ✅    |      |
+|            |        |        |        | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
 | **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            |        |        |        |      | ✅    | ✅    |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            |        |        |        |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    |
 
 ### Location
 ```plaintext
@@ -55,9 +71,45 @@ ProgramDataUpdater (a task associated with the Application Experience Service) u
 
 | Windows    | XP     | 7      | 8      | 10   | 11   |      |
 |------------|--------|--------|--------|------|------|------|
-|            |       | ✅      | ✅      | ✅    | ✅    |      |
+|            |       | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
 | **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            |       | ✅      | ✅      | ✅    | ✅    | ✅    |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            |       | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    |
 
 ### Location
 ```plaintext
@@ -86,9 +138,25 @@ BAM and DAM entries are only stored during a session, with events clearing upon 
 
 | Windows    | XP     | 7      | 8      | 10   | 11   |      |
 |------------|--------|--------|--------|------|------|------|
-|            |       |       |       | ✅    | ✅    |      |
+|            |       |       |       | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
 | **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            |       |       |       |     | ✅    | ✅    |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            |       |       |       |     | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    |
 
 ### Location
 ```plaintext
@@ -119,9 +187,41 @@ The data stored in the AutomaticDestinations directory contains a unique file fo
 
 | Windows    | XP     | 7      | 8      | 10   | 11   |      |
 |------------|--------|--------|--------|------|------|------|
-|            |        | ✅      | ✅      | ✅    | ✅    |      |
+|            |        | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
 | **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            |        |        | ✅      | ✅    | ✅    | ✅    |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            |        |        | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    |
 
 ### Location
 ```plaintext
@@ -145,9 +245,53 @@ The LastVisitedMRU is responsible for tracking specific executables used by an a
 
 | Windows    | XP     | 7      | 8      | 10   | 11   |      |
 |------------|--------|--------|--------|------|------|------|
-|            | ✅      | ✅      | ✅      | ✅    | ✅    |      |
+|            | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
 | **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            | ✅      | ✅      | ✅      | ✅    | ✅    | ✅    |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    |      |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |      | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    | | Windows    | XP     | 7      | 8      | 10   | 11   |      |
+|------------|--------|--------|--------|------|------|------|
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
+| **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |    |
 
 ### Location
 ```plaintext
@@ -181,9 +325,9 @@ Increases performance of a system by pre-loading code pages of commonly used app
 
 | Windows    | XP     | 7      | 8      | 10   | 11   |      |
 |------------|--------|--------|--------|------|------|------|
-|            | ✅     | ✅    | ✅     | ✅  | ✅   |      |
+|            | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | |
 | **Server** | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
-|            | ✅*     | ✅*    | ✅*    | ✅*  | ✅*  |       |
+|            | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | <i class='fa fa-check-circle'></i> * | |
 
 > Although prefetch is available on Windows Servers, it is disabled by default. To enable Prefetch on Windows Servers (I was unable to get this working on Windows Server 2022), the following steps can be taken. However, keep in mind that it will need to be enable prior to any nefarious activities occurring and will not provide retrospective artifacts. Prefetch can also be disabled by default when the system detected an SSD being used, enabling can be configured by the same.
 > 1. Update or create the `EnablePrefetcher` registry key in `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters`
