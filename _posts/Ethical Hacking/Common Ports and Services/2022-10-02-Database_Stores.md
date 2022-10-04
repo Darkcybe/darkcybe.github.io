@@ -16,11 +16,11 @@ Structured Query Language (SQL) is a language specifically designed for managing
 There are multiple relational database management systems (RDBMS), some of the most commonly encountered, their default ports and tool applicability are listed in the below table:
 
 | Service       | Port  	 | Nmap   | MSF   | Hydra   | SQLmap | Other        |
-| ------------- | :--------: | ------ | :---: | :-----: | :----: | ------------ |
-| MSSQL         | 1433-1434  | <i class='fa fa-check-circle'></i> | -[x] | -[x]   | -[x]  | Crackmapexec <br> Impacket |
-| MySQL/MariaDB | 3306  	 | -[x]  | -[x] | -[x]   | -[x]  |			    |
-| PostgreSQL    | 5432  	 | -[x]  | -[x] | -[x]   | -[x]  |			    |
-| Oracle        | 1521  	 | -[x]  | -[x] | -[x]   | -[x]  | Oscanner <br> ODAT |
+| ------------- | :--------: | :----: | :---: | :-----: | :----: | ------------ |
+| MSSQL         | 1433-1434  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  | Crackmapexec <br> Impacket |
+| MySQL/MariaDB | 3306  	 | <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  |			    |
+| PostgreSQL    | 5432  	 | <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  |			    |
+| Oracle        | 1521  	 | <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | <i class='fa fa-check-circle'></i>  | Oscanner <br> ODAT |
 
 ### SQL Injection
 
@@ -33,16 +33,16 @@ Non-Relational databases store data in a different format than Relational databa
 As with the various RDBMS solutions, there are a number of Non-Relational systems, some of the most commonly encountered, their default ports and tool applicability are listed in the below table. Other solutions which aren't typically listed as NoSQL databases are added here also, such as Redis and Memcached which are memory storage solutions and Hadoop, NFS, AFP, and iSCSI which are file systems.
 
 | Service          | Port  	    | Nmap | MSF | Hydra | Other | 
-| ---------------- | :--------: | ---- | :-: | :---: | ----- |
-| MongoDB          | 27017 	 	| [x]  | [x] | [x]   | |
-| Cassandra        | 9042      	| [x]  | [x] | []    | |
-| Redis			   | 6579	 	| [x]  | [x] | [x]   | |
-| Memcached		   | 11211	 	| [x]  | [x] | [x]    | |
-| Hadoop Mapreduce | 50030 <br> 50060  | [x] | [] | []  | |
-| Hadoop HDFS	   | 50070 <br> 50075 <br> 50090 | [x] | [] | []  | |
-| NFS			   | 2049    	| [x]  | [x] | []    | NFSshell |
-| AFP			   | 548     	| [x]  | [x] | [x]   | |
-| iSCSI			   | 3260    	| [x]  | []  | []    | Open-iSCSI <br> iSCSIadm |
+| ---------------- | :--------: | :--: | :-: | :---: | ----- |
+| MongoDB          | 27017 	 	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | |
+| Cassandra        | 9042      	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | | |
+| Redis			   | 6579	 	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | |
+| Memcached		   | 11211	 	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>    | |
+| Hadoop Mapreduce | 50030 <br> 50060  | <i class='fa fa-check-circle'></i> | | | |
+| Hadoop HDFS	   | 50070 <br> 50075 <br> 50090 | <i class='fa fa-check-circle'></i> | | | |
+| NFS			   | 2049    	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | | NFSshell |
+| AFP			   | 548     	| <i class='fa fa-check-circle'></i>  | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i>   | |
+| iSCSI			   | 3260    	| <i class='fa fa-check-circle'></i>  | | | Open-iSCSI <br> iSCSIadm |
 
 # MSSQL
 
