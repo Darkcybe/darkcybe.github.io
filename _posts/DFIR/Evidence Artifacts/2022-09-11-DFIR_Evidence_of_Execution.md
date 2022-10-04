@@ -6,13 +6,7 @@ comments: true
 ---
 Techniques that can be used to discover evidence in support of program execution post-breach or during an attack.
 
-[y]: "<i class='fa fa-check-circle'></i>"
-
 # Windows
-
-| Artifact  | Win XP | Win 7 | Win 8 | Win 10 | Win 11 | Srv 2003R2 | Srv 2008R2 | Srv 2012R2 | Srv 2016 | Srv 2019 | Srv 2022 |
-|-----------|:------:|:-----:|:-----:|:------:|:------:|:----------:|:----------:|:----------:|:--------:|:--------:|:--------:|
-|ActivitiesCache.db||||[y]|[y]|||||[y]|[y]|
 
 ## ActivitiesCache.db (Windows Timeline)
 Windows 10 introduced a background feature that records recently used applications and accessed files over a 30 day duration in a "timeline" accessible via the "WIN+TAB" key. The data is recorded in a SQLite database. Windows 11 removed the "WIN+TAB" functionality, however the ActivitiesCache.db still remains.
