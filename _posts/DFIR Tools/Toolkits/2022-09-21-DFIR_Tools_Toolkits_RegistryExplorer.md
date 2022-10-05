@@ -46,3 +46,10 @@ Interesting Fields
 - **Opened On:** Date-time-group of last access time
 
 ![Registry Explorer - LastVisitedMRU](/assets/img/posts/DFIR/DFIR_Tools_Toolkits_RegistryExplorer_LastVisitedMRU.png "Registry Explorer - LastVisitedMRU")
+
+## Parsing the ShimCache (AppCompatCache) for Evidence of Execution
+Interesting Fields
+- **Program Name:** Records the full executable filepath
+- **Modified Time:** Date-time-group of last access time
+
+![Registry Explorer - ShimCache](/assets/img/posts/DFIR/DFIR_Tools_Toolkits_RegistryExplorer_ShimCache.png "Registry Explorer - ShimCache")
