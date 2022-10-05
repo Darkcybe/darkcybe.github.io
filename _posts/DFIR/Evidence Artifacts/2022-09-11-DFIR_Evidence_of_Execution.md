@@ -254,12 +254,19 @@ NTUSER.DAT\Software\Microsoft\Windows\Current Version\Search\RecentApps
 - [Think DFIR - When Did RecentApps Go?](https://thinkdfir.com/2020/10/23/when-did-recentapps-go/)
 
 ## Shimcache (AppCompatCache)
-Windows Application Compatibility Database is used by Windows to identify possible application compatibility challenges with executables. Tracks the executables filename, file size, last modified time, and in Windows XP the last update time.
 
-**WIN:** XP, 7, 8, 10, 11<br>
-**SRV:** NULL
+The Shimcache (also known as AppCompatCache) allows applications to call properties from earlier Windows versions, avoiding the need to rewrite an application when the host operating system is upgraded. When an application launches, it checks for compatibility and creates a Shimcache item that maintains the executable's last modification date, file path, and file size.
+
+| Windows | XP     | 7      | 8      | 10   | 11   |
+|---------|--------|--------|--------|------|------|
+|         | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
+
+| Server | 2003R2 | 2008R2 | 2012R2 | 2016 | 2019 | 2022 |
+|--------|--------|--------|--------|------|------|------|
+|        | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> | <i class='fa fa-check-circle'></i> |
 
 ### Location
+
 ```plaintext
 # WINDOWS: XP
 SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatability
@@ -269,20 +276,24 @@ SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
 ```
 
 ### Interpretation and Investigative Notes
-Any executable run on the Windows system can be found in this key. You can use this key to identify systems specific malware was executed on. In addition, based on the interpretation of the time-based data you might be able to determine the last time of execution or activity on the system.
-- Windows XP - Contains 96 entries at most
-  - LastUpdateTime is updated when the files are executed
-- Windows 7+ - Contains 1024 entries at most
-  - LastUpdateTime does not exist on Windows 7+ systems
+
+This key contains any executable that runs on the Windows system. This key can be used to determine which computers malware or other applications of interest was executed on. Furthermore, depending on the interpretation of time-based data, you may be able to ascertain the last time the system was executed or that activity occurred.
+- Windows XP has a maximum of 96 entries, with the `LastUpdateTime` field being changed when the executable is run.
+- Windows 7 and later systems have a maximum of 1024 entries., However the `LastUpdateTime` field does not exist.
+
+The registry key itself is not displayed in an easy to read format if utilizing the native `regedit.exe` tool, therefore parsing with a third party tool is a requirement to analyze the data.
+
+> Entries do not always indicate execution as they may be shimmed prior to execution when first dropped on disk. Execution should be be proven via multiple methods where able.
+{: .prompt-info }
   
 ### Tools
-- [ShimCacheParser](https://github.com/mandiant/ShimCacheParser)
-- [AppCompatCache Parser)](https://github.com/EricZimmerman/AppCompatCacheParser)
-- [Registry Explorer (RECmd)](https://www.sans.org/tools/registry-explorer/)
-- [RECmd - Registry Plugins](https://github.com/EricZimmerman/RegistryPlugins)
-- [AppCompatibilityCache Utility](https://tzworks.com/prototype_page.php?proto_id=29)
+
+- [Darkcybe - Registry Explorer](https://darkcybe.github.io/posts/DFIR_Tools_Toolkits_RegistryExplorer/#Parsing-the-ShimCache-for-Evidence-of-Execution)
+- [Darkcybe - AppCompatCacheParser](https://darkcybe.github.io/posts/AppCompatCacheParser)
+- [AppCompatibilityCache Utility - Requires License](https://tzworks.com/prototype_page.php?proto_id=29)
 
 ### Sources
+
 - [Chris Menne - Windows Shimcache Analysis](https://chrismenne.com/windows-shimcache-analysis/)
 
 ## System Resource Usage Monitor (SRUM)
