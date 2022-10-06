@@ -107,7 +107,7 @@ Responder comes packaged with additional tools can be used together with Respond
 
 This will require three hosts; the attacker, the requesting LLMNR victim, and the target.
 
-1. Configure the Responder configuration file located at `/etc/Responder/Responder.conf` (On Kali Linux) to disable SMB and HTTP sever instances.
+1. Configure the Responder configuration file located at `/etc/Responder/Responder.conf` (On Kali Linux) to disable SMB and HTTP server replies.
 
     ```conf
     SMB = Off
