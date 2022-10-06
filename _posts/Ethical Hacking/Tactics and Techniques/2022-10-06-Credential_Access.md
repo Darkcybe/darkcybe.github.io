@@ -17,11 +17,11 @@ Credential Access consists of techniques for stealing credentials like account n
 
 Adversaries may attempt to position themselves between two or more networked devices using an adversary-in-the-middle (AiTM) technique to support follow-on behaviors such as Network Sniffing or Transmitted Data Manipulation. By abusing features of common networking protocols that can determine the flow of network traffic (e.g. ARP, DNS, LLMNR, etc.), adversaries may force a device to communicate through an adversary controlled system so they can collect information or perform additional actions.
 
-Specific procedures to conduct AiTM attack can be seen the [Darkcybe - CAPEC 94](https://darkcybe.github.io/posts/94-AiTM/) post.
+Specific procedures to conduct an AiTM attack can be seen the [Darkcybe - CAPEC 94](https://darkcybe.github.io/posts/94-AiTM/) post.
 
 ### Tools
-- Inveigh
-- Responder
+- [Inveigh](https://github.com/Kevin-Robertson/Inveigh)
+- [Responder](https://github.com/lgandx/Responder)
 
 # Sources
 - [^1]: [MITRE ATT&CK - Credential Access TA0006](https://attack.mitre.orc/tactics/TA0006/)
