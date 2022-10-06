@@ -8,7 +8,7 @@ comments: true
 
 Gathering information on target infrastructure, operations, and personnel.
 
-"Reconnaissance consists of techniques that involve adversaries actively or passively gathering information that can be used to support targeting. Such information may include details of the victim organization, infrastructure, or staff/personnel. This information can be leveraged by the adversary to aid in other phases of the adversary lifecycle, such as using gathered information to plan and execute Initial Access, to scope and prioritize post-compromise objectives, or to drive and lead further Reconnaissance efforts." [MITRE ATT&CK](https://attack.mitre.org/tactics/TA0043/)
+Reconnaissance consists of techniques that involve adversaries actively or passively gathering information that can be used to support targeting. Such information may include details of the victim organization, infrastructure, or staff/personnel. This information can be leveraged by the adversary to aid in other phases of the adversary lifecycle, such as using gathered information to plan and execute Initial Access, to scope and prioritize post-compromise objectives, or to drive and lead further Reconnaissance efforts. [^1]
 
 # Techniques
 
@@ -61,7 +61,7 @@ Historic and new collation of breached credentials contain millions of username,
 - [DeHashed](https://dehashed.com/)
 - [Have I Been Pwned?](https://haveibeenpwned.com/)
 
-## Active Scanning [T1595](https://attack.mitre.org/techniques/T1595/)
+## Active Scanning [^2]
 Adversaries may execute active reconnaissance scans to gather information that can be used during targeting. Active scans are those where the adversary probes victim infrastructure via network traffic, as opposed to other forms of reconnaissance that do not involve direct interaction. Scanning can be achieved via several categories such as port scanning, vulnerability scanning, and wordlist scanning to name a few of the most common.
 
 | Detection       | Mitigation                                                                     |
@@ -79,5 +79,10 @@ Adversaries may execute active reconnaissance scans to gather information that c
   - [Darkcybe - Nmap Guide]({% post_url 2022-09-12-ETH_Tools_Nmap %})
   - [Darkcybe - Dirbuster Guide] Comming Soon
 
-## Gather Victim Host Information [T1592](https://attack.mitre.org/techniques/T1592/)
+## Gather Victim Host Information [^3]
 Adversaries may gather information about the victim's hosts that can be used during targeting. Information about hosts may include a variety of details, including administrative data (ex: name, assigned IP, functionality, etc.) as well as specifics regarding its configuration (ex: operating system, language, etc.).
+
+# Sources
+- [^1]: [MITRE ATT&CK - Reconnaissance TA0043](https://attack.mitre.org/tactics/TA0043/)
+- [^2]: [MITRE ATT&CK - Reconnaissance: Active Scanning T1595](https://attack.mitre.org/techniques/T1595/)
+- [^3]: [MITRE ATT&CK - Reconnaissance: Gather Victim Host Information T1592](https://attack.mitre.org/techniques/T1592/)
