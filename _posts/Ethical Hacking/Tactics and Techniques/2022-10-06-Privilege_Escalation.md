@@ -5,7 +5,7 @@ tag: [privilege escalation (TA0004)]
 comments: true
 ---
 
-# Overview
+## Overview
 
 The adversary is trying to gain higher-level permissions.
 
@@ -15,8 +15,9 @@ Privilege Escalation consists of techniques that adversaries use to gain higher-
 - local administrator
 - user account with admin-like access
 - user accounts with access to specific system or perform specific function
-- 
+
 These techniques often overlap with Persistence techniques, as OS features that let an adversary persist can execute in an elevated context. [^1]
 
-# Sources
-- [^1]: [MITRE ATT&CK - Privilege Escalation TA0004](https://attack.mitre.org/tactics/TA0004/)
+## Sources
+
+[^1]: [MITRE ATT&CK - Privilege Escalation TA0004](https://attack.mitre.org/tactics/TA0004/)
