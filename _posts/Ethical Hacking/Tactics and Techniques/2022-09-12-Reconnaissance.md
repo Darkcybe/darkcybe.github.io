@@ -83,6 +83,6 @@ Adversaries may execute active reconnaissance scans to gather information that c
 Adversaries may gather information about the victim's hosts that can be used during targeting. Information about hosts may include a variety of details, including administrative data (ex: name, assigned IP, functionality, etc.) as well as specifics regarding its configuration (ex: operating system, language, etc.).
 
 # Sources
-- [^1]: [MITRE ATT&CK - Reconnaissance TA0043](https://attack.mitre.org/tactics/TA0043/)
-- [^2]: [MITRE ATT&CK - Reconnaissance: Active Scanning T1595](https://attack.mitre.org/techniques/T1595/)
-- [^3]: [MITRE ATT&CK - Reconnaissance: Gather Victim Host Information T1592](https://attack.mitre.org/techniques/T1592/)
+[^1]: [MITRE ATT&CK - Reconnaissance TA0043](https://attack.mitre.org/tactics/TA0043/)
+[^2]: [MITRE ATT&CK - Reconnaissance: Active Scanning T1595](https://attack.mitre.org/techniques/T1595/)
+[^3]: [MITRE ATT&CK - Reconnaissance: Gather Victim Host Information T1592](https://attack.mitre.org/techniques/T1592/)
