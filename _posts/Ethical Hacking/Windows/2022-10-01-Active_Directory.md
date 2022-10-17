@@ -66,8 +66,8 @@ If access has been gained to the same network as the AD server, there are variou
 
 Post exploitation discovery can yield a lot of valuable information regarding an AD controller environment. Some tools and techniques available to perform discovery tasks to extract these objects of interest are:
 
-1. [BloodHound](HOLDER)
-2. [PowerView](HOLDER)
+1. [BloodHound](https://github.com/BloodHoundAD/BloodHound)
+2. [PowerView](https://github.com/PowerShellEmpire/PowerTools/blob/master/PowerView/powerview.ps1)
 
 ## Sources
 
