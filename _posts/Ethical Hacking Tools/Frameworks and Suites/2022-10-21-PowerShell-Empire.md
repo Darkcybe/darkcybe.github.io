@@ -15,7 +15,7 @@ Kali Linux comes with PowerShell-Empire and Starkiller pre-installed. [^1]
 
 | Tool Name | Version | MITRE ATT&CK Tactic | MITRE ATT&CK Technique |
 | --------- | ------- | ------------------- | ---------------------- |
-| [PowerShell-Empire](https://github.com/BC-SECURITY/Empire) | V4.8.0 | [Credential Access](https://attack.mitre.org/tactics/TA0006/) <br> [Privilege Escalation](https://attack.mitre.org/tactics/TA0004/) <br> [Discovery](https://attack.mitre.org/tactics/TA0007/) <br> [Collection](https://attack.mitre.org/tactics/TA0009/) <br> [Command and Control](https://attack.mitre.org/tactics/TA0011/) <br> [Exfiltration](https://attack.mitre.org/tactics/TA0010/) <br> [Execution](https://attack.mitre.org/tactics/TA0002/ <br> [Persistence](https://attack.mitre.org/tactics/TA0003/) <br> [Defense Evasion](https://attack.mitre.org/tactics/TA0005/) <br> [Lateral Movement](https://attack.mitre.org/tactics/TA0008/)| |
+| [PowerShell-Empire](https://github.com/BC-SECURITY/Empire) | V4.8.0 | [Credential Access](https://attack.mitre.org/tactics/TA0006/) <br> [Privilege Escalation](https://attack.mitre.org/tactics/TA0004/) <br> [Discovery](https://attack.mitre.org/tactics/TA0007/) <br> [Collection](https://attack.mitre.org/tactics/TA0009/) <br> [Command and Control](https://attack.mitre.org/tactics/TA0011/) <br> [Exfiltration](https://attack.mitre.org/tactics/TA0010/) <br> [Execution](https://attack.mitre.org/tactics/TA0002/) <br> [Persistence](https://attack.mitre.org/tactics/TA0003/) <br> [Defense Evasion](https://attack.mitre.org/tactics/TA0005/) <br> [Lateral Movement](https://attack.mitre.org/tactics/TA0008/)| |
 
 ## Starting PowerShell-Empire with Starkiller on Kali Linux
 
@@ -75,7 +75,9 @@ Kali Linux comes with PowerShell-Empire and Starkiller pre-installed. [^1]
    - **Tasks:** A history of actions carried out on the host
    - **View:** Agent specific configuration
 
-## Discovery Modules
+## PowerShell-Empire Modules
+
+### Discovery Modules
 
 When executing the Bloodhound modules, the Sharphound archive defaults to `C:\Users\%USERNAME%\` on the target agent. The download directory on the attacking Kali host is `/var/lib/powershell-empire/server/downloads/%AGENT%/`.
 
@@ -85,7 +87,7 @@ When executing the Bloodhound modules, the Sharphound archive defaults to `C:\Us
 | Identify Antivirus       | powershell/situational_awareness/host/antivirusproduct                   |               |
 | Bloodhound AD Scanning   | powershell/situational_awareness/network/bloodhound3                     |               |
 
-## Credential Access Modules
+### Credential Access Modules
 
 Using the Mimkatz LogonPasswords modules automatically adds collected credentials to the credentials window within PowerShell-Empire.
 
@@ -94,7 +96,7 @@ Using the Mimkatz LogonPasswords modules automatically adds collected credential
 | Mimkatz Password Dump    | powershell/credentials/mimikatz/logonpasswords                           |               |
 | Browser Credential Dump  | powershell/collection/FoxDump <br> powershell/collection/ChromeDump      |               |
 
-## Privilege Escalation Modules
+### Privilege Escalation Modules
 
 | Action                   | Module                                                                   | Configuration |
 | ------------------------ | ------------------------------------------------------------------------ | ------------- |
