@@ -9,7 +9,7 @@ comments: true
 
 Responder is a LLMNR, NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication.
 
-Responder come packaged with Kali Linux by default. [^1]
+Responder comes packaged with Kali Linux by default. [^1]. Additionally, Inveigh (a PowerShell version of Responder) is baked into [PowerShell-Empire](https://darkcybe.github.io/posts/PowerShell-Empire/#credential-access-modules).
 
 | Tool Name | Version | MITRE ATT&CK Tactic | MITRE ATT&CK Technique |
 | --------- | ------- | ------------------- | ---------------------- |
