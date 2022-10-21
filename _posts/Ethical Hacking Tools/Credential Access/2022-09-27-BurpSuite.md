@@ -1,10 +1,11 @@
 ---
 title: BurpSuite
-categories: [Ethical Hacking Tools,Credential Access]
+categories: [Ethical Hacking Tools, Frameworks and Suites]
 tags: [burpsuite, credential access (TA0006), brute force (T1110)]
 comments: true
 ---
-# Overview
+
+## Overview
 
 Burp Suite is a Java application that can be used to secure or penetrate web applications. It comes pre-installed on Kali Linux and ParrotOS, however can be installed on your operating system of choice via the community edition download on their website. The suite consists of different tools, such as;
 
@@ -33,20 +34,23 @@ Scanner
 | --------- | ------- | ------------------- | ---------------------- |
 | [Burpsuite Community Edition](https://portswigger.net/burp/communitydownload) | V2022.8.4 | [Credential Access](https://attack.mitre.org/tactics/TA0006/) | [Brute Force](https://attack.mitre.org/techniques/T1110/) |
 
-# Setting the Browser to Proxy Traffic
+## Setting the Browser to Proxy Traffic
+
 The web browser must first be configured to proxy traffic to Burp in order to intercept traffic. The below example shows the configuration for the Mozilla Plugin FoxyProxy.
+
 1. Download and install FoxyProxy.
-2. Create a new proxy profile, set the Proxy IP address to `127.0.0.1` and the port to `8080`. 
+2. Create a new proxy profile, set the Proxy IP address to `127.0.0.1` and the port to `8080`.
 3. Enable the proxy in the web browser to allow Burpsuite to intercept the traffic.
 4. Open Burpsuite and navigate to the Proxy Tab, select the sub-tab Intercept and enable Interception via the *Intercept is off* button.
 
 > Burpsuite proxy settings can be amended via the *Proxy* tab, *Options* sub-tab under the *Proxy Listeners* section.
 {: .prompt-info }
 
-# Brute Forcing WebApp Credentials
-To brute force potential credentials for a webapp, Burpsuite can be used to fuzz username and password fields. 
+## Brute Forcing WebApp Credentials
 
-1. With Burpsuite intercepting traffic, attempt to enter credentials (application defaults are always a good start). In the example below the request has been intercepted and shows two fields of interest, `j_username` and `j_password` which can be fuzzed. 
+To brute force potential credentials for a webapp, Burpsuite can be used to fuzz username and password fields.
+
+1. With Burpsuite intercepting traffic, attempt to enter credentials (application defaults are always a good start). In the example below the request has been intercepted and shows two fields of interest, `j_username` and `j_password` which can be fuzzed.
   
     ![Burpsuite Fuzzing - Fields](/assets/img/posts/ETH/ETH_TOOLS/CRED_ACCESS/burpsuite_bf1.png "Burpsuite Fuzzing - Fields")
 
