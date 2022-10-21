@@ -49,6 +49,12 @@ Kali Linux comes with PowerShell-Empire and Starkiller pre-installed. [^1]
 
 4. Press `submit` to initiate the HTTP Listener
 
+> Additional configuration can be set, such as:
+> - KillDate: An expiration date that sets agent autocleanup
+> - DefaultProfile: Sets the URL GET request parameters to blend into normal traffic
+> - UserAgent: Set the UA string, useful to masquerade traffic
+> - ServerVersion: Set to a common Server Header to masquerade traffic
+
 ## Adding a Stager through Starkiller
 
 1. Navigate to the Stager window
@@ -61,6 +67,8 @@ Kali Linux comes with PowerShell-Empire and Starkiller pre-installed. [^1]
     ```
 
 4. Press `submit` to create the stager. The stager can then be downloaded and transferred to the target host.
+
+> Payloads can be created for Windows, MacOs, and Linux.
 
 ## Interacting with Agents through Starkiller
 
@@ -95,6 +103,7 @@ Using the Mimkatz LogonPasswords modules automatically adds collected credential
 | ------------------------ | ------------------------------------------------------------------------ | ------------- |
 | Mimkatz Password Dump    | powershell/credentials/mimikatz/logonpasswords                           |               |
 | Browser Credential Dump  | powershell/collection/FoxDump <br> powershell/collection/ChromeDump      |               |
+| Responder/Inveigh LLMNR Abuse | powershell/collection/inveigh                                       |               |
 
 ### Privilege Escalation Modules
 
