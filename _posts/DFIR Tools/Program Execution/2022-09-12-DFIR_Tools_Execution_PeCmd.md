@@ -5,7 +5,8 @@ tags: [pecmd, prefetch, execution (T0002)]
 comments: true
 ---
 
-# Overview
+## Overview
+
 PECmd is a command line tool developed by Eric Zimmerman, to process Prefetch files (.pf) on Windows operating systems, identifying items such as:
 
 - Volume information
@@ -19,9 +20,10 @@ PECmd can output the parsed prefetch files into .csv, json and HTML formats for 
 | --------- | ------- | ------------------- | ---------------------- |
 | [PeCmd](https://ericzimmerman.github.io/#!index.md) | V1.5 | [Execution](https://attack.mitre.org/tactics/TA0002/) | 
 
-# Instructions
+## Instructions
 
-## Parsing a Single Prefetch File
+### Parsing a Single Prefetch File
+
 Parses the prefetch file for bad.exe and writes the output to a .csv file for further analysis. A single entry will be returned to STDOUT
 
 ```powershell
@@ -29,11 +31,12 @@ PECmd.exe -f \PATH\TO\bad.exe-2222BD1A.pf
 ```
 {: .nolineno }
 
-### Output
+#### Output
 
 ![PeCmd - Single Prefetch](/assets/img/posts/DFIR/DFIR_TOOLS/PeCmd_Single.png "PeCmd - Single Prefetch")
 
-## Parsing all Prefetch Files within a Directory
+### Parsing all Prefetch Files within a Directory
+
 Parses all prefetch files within a supplied directory. The example depicts parsing all .pf files within the default Windows prefetch directory and writes the output to a .csv file for further analysis. The `q` switch prevents the tool from printing the results to STDOUT. Two files will be output, a standard parsing of the entries Prefetch directory and a second timeline view of individual application executions.
 
 ```powershell
@@ -50,7 +53,7 @@ PECmd.exe -d “E:\Windows\Prefetch” –csv “G:\Cases\001\Suspect_Machine_1\
   - **LastRun** = Timestamp of last execution
   - **PreviousRun#** = Timestamps of previous executions
 
-### Output
+#### Output
 
 ![PeCmd - Prefetch](/assets/img/posts/DFIR/DFIR_TOOLS/PeCmd_Prefetch_CSV.png "PeCmd - Prefetch")
 
@@ -59,5 +62,6 @@ PECmd.exe -d “E:\Windows\Prefetch” –csv “G:\Cases\001\Suspect_Machine_1\
 > execution) and creation (first execution) DTG’s may be 10 seconds after displayed times on the prefetch listings.
 {: .prompt-info }
 
-# Sources
+## Sources
+
 - [Eric Zimmerman](https://ericzimmerman.github.io/#!documentation.md)
