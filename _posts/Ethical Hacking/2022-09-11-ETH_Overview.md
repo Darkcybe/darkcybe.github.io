@@ -50,11 +50,12 @@ There are multiple variations or terminologies used to describe how to carryout 
    - [Command and Control (C2)](https://attack.mitre.org/tactics/TA0011/)
    - [Exfiltration](https://attack.mitre.org/tactics/TA0010/)
 4. **Actions on Objectives**
-   -  [Impact](https://attack.mitre.org/tactics/TA0040/)
+   - [Impact](https://attack.mitre.org/tactics/TA0040/)
 5. **Reporting**
    - Identified Vulnerabilities
    - Tools and Techniques
    - Remediation Recommendations
 
 ## Sources
+
 - [EC-Council - Ethical Hacking](https://www.eccouncil.org/ethical-hacking/)
