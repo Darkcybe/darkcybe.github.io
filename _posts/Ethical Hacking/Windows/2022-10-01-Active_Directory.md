@@ -13,23 +13,12 @@ The Active Directory is divided into three main tiers: domains, trees, and fore
 
 Active Directory offers a variety of services that are grouped together as "Active Directory Domain Services," or AD DS. Among these services are:
 
-Domain Services
-: Stores centralized data and manages user-domain communication; includes login authentication and search functionality.
-
-Certificate Services
-: Responsible for the creation, distribution, and management of secure certificates.
-
-Lightweight Directory Services (LDAP)
-: Provides support for directory-enabled applications.
-
-Directory Federation Services
-: Enables a user to authenticate in multiple web applications in a single session using single-sign-on (SSO).
-
-Rights Management
-: Safeguards intellectual property by preventing unauthorized use and distribution of digital content.
-
-DNS/NTP/DHCP Services
-: This service is used to resolve domain names, act as a centralized time source, and can effectively manage a networks IP ranges and leases via DHCP.
+- **Domain Services:** Stores centralized data and manages user-domain communication; includes login authentication and search functionality.
+- **Certificate Services:** Responsible for the creation, distribution, and management of secure certificates.
+- **Lightweight Directory Services (LDAP):** Provides support for directory-enabled applications.
+- **Directory Federation Services:** Enables a user to authenticate in multiple web applications in a single session using single-sign-on (SSO).
+- **Rights Management:** Safeguards intellectual property by preventing unauthorized use and distribution of digital content.
+- **DNS/NTP/DHCP Services:** This service is used to resolve domain names, act as a centralized time source, and can effectively manage a networks IP ranges and leases via DHCP.
 
 Without needing much mention, Active Directory/Domain Controllers are an extremely high valued target.
 
@@ -67,7 +56,7 @@ If access has been gained to the same network as the AD server, there are variou
 Post exploitation discovery can yield a lot of valuable information regarding an AD controller environment. Some tools and techniques available to perform discovery tasks to extract these objects of interest are:
 
 1. [BloodHound](https://github.com/BloodHoundAD/BloodHound)
-2. [PowerView](https://github.com/PowerShellEmpire/PowerTools/blob/master/PowerView/powerview.ps1)
+2. [Darkcybe - PowerShell-Empire Guide](https://darkcybe.github.io/posts/PowerShell-Empire/#discovery-modules)
 
 ## Sources
 
