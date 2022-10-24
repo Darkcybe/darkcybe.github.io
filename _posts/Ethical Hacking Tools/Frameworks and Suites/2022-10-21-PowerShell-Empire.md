@@ -105,6 +105,12 @@ Using the Mimkatz LogonPasswords modules automatically adds collected credential
 | Browser Credential Dump  | powershell/collection/FoxDump <br> powershell/collection/ChromeDump      |               |
 | Responder/Inveigh LLMNR Abuse | powershell/collection/inveigh                                       |               |
 
+### Lateral Movement Modules
+
+| Action                   | Module                                                                   | Configuration |
+| ------------------------ | ------------------------------------------------------------------------ | ------------- |
+|                          |                                                                          |               |
+
 ### Privilege Escalation Modules
 
 | Action                   | Module                                                                   | Configuration |
