@@ -1,7 +1,7 @@
 ---
 title: CrackMapExec
 categories: [Ethical Hacking Tools, Frameworks and Suites]
-tags: [crackmapexec, ntlmv2]
+tags: [crackmapexec, ldap, winrm, smb, ssh, mssql, pth]
 comments: true
 ---
 
@@ -21,7 +21,7 @@ Kali Linux comes with CME pre-installed. [^2]
 
 #### Pass The Hash/Password
 
-After obtaining credentials such as `Administrator:500:aad3b435b51404eeaad3b435b51404ee:13b29964cc2480b4ef454c59562e675c:::` you can use both the full hash or just the nt hash (second half). The following checks will attempt authentication to the entire /24 subnet though a single target may also be used.
+After obtaining credential hashes, both the full hash or just the nt hash (second half) can be used to move laterally using Pass the Hash techniques. The following checks will attempt authentication to the entire /24 subnet though a single target may also be used.
 
 ```bash
 # Pass the Hash
@@ -35,3 +35,4 @@ cme 192.168.1.0/24 -u Administrator -d Domain -p Password
 ## Sources
 
 [^1]: [CrackMapExec Wiki](https://wiki.porchetta.industries/)
+[^2]: [Kali Linux - CrackMapExec](https://www.kali.org/tools/crackmapexec/)
