@@ -11,9 +11,9 @@ The adversary is trying to move through your environment.
 
 Lateral Movement consists of techniques that adversaries use to enter and control remote systems on a network. Following through on their primary objective often requires exploring the network to find their target and subsequently gaining access to it. Reaching their objective often involves pivoting through multiple systems and accounts to gain. Adversaries might install their own remote access tools to accomplish Lateral Movement or use legitimate credentials with native network and operating system tools, which may be stealthier. [^1]
 
-### Use Alternate Authentication Material [^2]
+### Use Alternate Authentication Material
 
-Adversaries may use alternate authentication material, such as password hashes, Kerberos tickets, and application access tokens, in order to move laterally within an environment and bypass normal system access controls.
+Adversaries may use alternate authentication material, such as password hashes, Kerberos tickets, and application access tokens, in order to move laterally within an environment and bypass normal system access controls. [^2]
 
 #### Pass The Hash
 
@@ -21,10 +21,12 @@ Adversaries may "pass the hash" using stolen password hashes to move laterally w
 
 There are multiple tools available to conduct Pass The Hash attacks, such as:
 
-- Cobalt Strike
 - CrackMapExec
 - PowerShell-Empire
 - Mimikatz
+- Cobalt Strike
+
+Specific techniques to conduct PtH attacks can be found on the [CAPEC 644 - Use of Captured Hashes (Pass The Hash)](https://darkcybe.github.io/posts/644-Pth/) post.
 
 ## Sources
 
