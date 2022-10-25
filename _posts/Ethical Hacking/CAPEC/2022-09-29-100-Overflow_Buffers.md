@@ -57,7 +57,7 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
 2. Experiment
    - **Find injection vector:** Kali Linux has a built-in tool called `generic_send_tcp` that is used to generate TCP connections with the Vulnserver application and send data to the various inputs. The following is a sample of some of the inputs that are present on the Vulnserver application. This method of finding the injection vector is also referred to as spiking.
 
-    ```plaintext
+    ```cs
     STATS [stat_value]
     RTIME [rtime_value]
     LTIME [ltime_value]
@@ -68,7 +68,7 @@ To setup the environment, two hosts are required: a Kali Linux host and a Window
 
     - Using the `generic_send_tcp`, each buffer can be sent a large input in an attempt to identify buffer overflow vulnerabilities. The tool requires a `spike_script` to be compiled before running against an application. The generic command parameter to run the tool is `generic_send_tcp host port spike_script SKIPVAR SKIPSTR`. The spike_script should contain the following information, the `%INPUT%` field should be replaced with the application input being tested.
 
-    ```C#
+    ```cs
     s_readline();
     s_string("%INPUT% ");
     s_string_variable("0");
