@@ -66,4 +66,4 @@ Vol.py -f <memory-image-name.img> psscan –profile <profile>
 
 ## Sources
 
-[1]: [Volatility Foundation](https://www.volatilityfoundation.org/)
+[^1]: [Volatility Foundation](https://www.volatilityfoundation.org/)
