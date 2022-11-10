@@ -38,9 +38,7 @@ Vol.py -f <memory-image-name.img> kdbgscan
 Vol.py -f <hiberfil.sys> imagecopy -O hiberfil.raw –profile=WinXPSP2x86
 ```
 
-### Process Identification
-
-#### Running Processes (pslist)
+### Running Processes (pslist)
 
 Profile must be specified. Returns a list of all running processes for further analysis. The `-p` switch can be used to identify a specific PID
 
@@ -48,7 +46,7 @@ Profile must be specified. Returns a list of all running processes for further a
 Vol.py -f <memory-image-name.img> pslist –profile=<profile>
 ```
 
-#### Running Processes (pstree)
+### Running Processes (pstree)
 
 Profile must be specified. Returns a list of all running processes in a parent (PPID) and Process (PID) tree view. The `-v` switch can be used to include verbose logging including command line parameters.
 
@@ -56,7 +54,7 @@ Profile must be specified. Returns a list of all running processes in a parent (
 Vol.py -f <memory-image-name.img> pstree –profile <profile>
 ```
 
-#### Running and Terminated Processes (psscan)
+### Running and Terminated Processes (psscan)
 
 Profile must be specified. Returns a list of all processes, running and terminated for further analysis.
 
