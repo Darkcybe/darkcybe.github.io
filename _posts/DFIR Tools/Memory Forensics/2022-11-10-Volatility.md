@@ -30,8 +30,6 @@ Python3 Vol.py -f <memory-image-name.img> windows.info
 ```
 {: .nolineno }
 
-#### Windows.info Output
-
 ```bash
 Variable            Value
 
@@ -70,8 +68,6 @@ python3 vol.py -f memdump-001.mem windows.pslist
 ```
 {: .nolineno }
 
-#### Pslist Output
-
 ```bash
 PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       Wow64   CreateTime      ExitTime        File output
 
@@ -93,8 +89,6 @@ Plugin for listing processes in a tree based on their parent process ID. Specifi
 python3 vol.py -f memdump-001.mem windows.pstree
 ```
 {: .nolineno }
-
-#### Pstree Output
 
 ```bash
 PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       Wow64   CreateTime      ExitTime
@@ -123,8 +117,6 @@ python3 vol.py -f memdump-001.mem windows.psscan
 ```
 {: .nolineno }
 
-#### Psscan Output
-
 ```bash
 PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       Wow64   CreateTime      ExitTime        File output
 
@@ -145,8 +137,6 @@ python3 vol.py -f memdump-001.mem windows.svcscan
 ```
 {: .nolineno }
 
-#### Svcscan Output
-
 ```bash
 Offset  Order   PID     Start   State   Type    Name    Display Binary
 
@@ -159,6 +149,7 @@ Offset  Order   PID     Start   State   Type    Name    Display Binary
 0xb82590        227     N/A     SERVICE_DEMAND_START    SERVICE_STOPPED SERVICE_KERNEL_DRIVER   pcmcia  pcmcia  N/A
 0xb80e40        226     N/A     SERVICE_DEMAND_START    SERVICE_STOPPED SERVICE_KERNEL_DRIVER   pciide  pciide  N/A
 ```
+{: .nolineno }
 
 ### Command Line Arguments (cmdline)
 
@@ -167,8 +158,7 @@ Lists process command line arguments.
 ```bash
 python3 vol.py -f memdump-001.mem windows.cmdline
 ```
-
-### Cmdline Output
+{: .nolineno }
 
 ```bash
 PID     Process Args
@@ -179,6 +169,113 @@ PID     Process Args
 408     wininit.exe     wininit.exe
 440     csrss.exe       %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
 ```
+{: .nolineno }
+
+### Loaded DLLs (dlllist)
+
+Displays the DLLs loaded by each process and their respective filepaths.
+
+```bash
+python3 vol.py -f memdump-001.mem windows.dlllist
+```
+{: .nolineno }
+
+```bash
+PID     Process Base    Size    Name    Path    LoadTime        File output
+
+280     smss.exe        0x48010000      0x20000 smss.exe        \SystemRoot\System32\smss.exe   N/A     Disabled
+280     smss.exe        0x76f10000      0x19f000        ntdll.dll       C:\Windows\SYSTEM32\ntdll.dll   N/A     Disabled
+364     csrss.exe       0x499b0000      0x6000  csrss.exe       C:\Windows\system32\csrss.exe   N/A     Disabled
+364     csrss.exe       0x76f10000      0x19f000        ntdll.dll       C:\Windows\SYSTEM32\ntdll.dll   N/A     Disabled
+364     csrss.exe       0x7fefcbc0000   0x13000 CSRSRV.dll      C:\Windows\system32\CSRSRV.dll  2020-04-20 22:44:38.000000      Disabled
+364     csrss.exe       0x7fefcba0000   0x11000 basesrv.DLL     C:\Windows\system32\basesrv.DLL 2020-04-20 22:44:38.000000      Disabled
+364     csrss.exe       0x7fefcb60000   0x39000 winsrv.DLL      C:\Windows\system32\winsrv.DLL  2020-04-20 22:44:38.000000      Disabled
+364     csrss.exe       0x76cf0000      0xfa000 USER32.dll      C:\Windows\system32\USER32.dll  2020-04-20 22:44:38.000000      Disabled
+```
+{: .nolineno }
+
+### Scan for Injected Code (malfind)
+
+Lists process memory ranges that potentially contain injected code.
+
+```bash
+python3 vol.py -f memdump-001.mem windows.malfind
+```
+{: .nolineno }
+
+```bash
+PID     Process Start VPN       End VPN Tag     Protection      CommitCharge    PrivateMemory   File output     Hexdump Disasm
+
+3180    WINWORD.EXE     0x7ff072f0000   0x7ff072f9fff   VadS    PAGE_EXECUTE_READWRITE  10      1       Disabled
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+0x7ff072f0000:  add     byte ptr [rax], al
+0x7ff072f0002:  add     byte ptr [rax], al
+0x7ff072f0004:  add     byte ptr [rax], al
+```
+{: .nolineno }
+
+### Network Connections (netstat)
+
+Traverses network tracking structures present in a particular windows memory image.
+
+```bash
+python3 vol.py -f memdump-001.mem windows.netstat
+```
+{: .nolineno }
+
+```bash
+Offset  Proto   LocalAddr       LocalPort       ForeignAddr     ForeignPort     State   PID     Owner   Created
+
+0xfa803340b500  TCPv4   192.168.10.146  49174   172.253.122.188 5228    FIN_WAIT2       -       -       N/A
+0xfa803388f540  TCPv4   192.168.10.146  54279   151.101.116.106 443     ESTABLISHED     -       -       N/A
+```
+{: .nolineno }
+
+### Network Connections (netscan)
+
+Scans for network objects present in a particular windows memory image.
+
+```bash
+python3 vol.py -f memdump-001.mem windows.netscan
+```
+{: .nolineno }
+
+```bash
+Offset  Proto   LocalAddr       LocalPort       ForeignAddr     ForeignPort     State   PID     Owner   Created
+
+0x13d48f540     TCPv4   192.168.10.146  54279   151.101.116.106 443     ESTABLISHED     -       -       N/A
+0x13d518710     UDPv4   0.0.0.0 5355    *       0               1160    svchost.exe     2020-04-20 23:23:00.000000 
+0x13d518710     UDPv6   ::      5355    *       0               1160    svchost.exe     2020-04-20 23:23:00.000000 
+0x13d636ee0     TCPv4   0.0.0.0 49156   0.0.0.0 0       LISTENING       2032    svchost.exe     -
+0x13d63eac0     TCPv4   0.0.0.0 49156   0.0.0.0 0       LISTENING       2032    svchost.exe     -
+0x13d63eac0     TCPv6   ::      49156   ::      0       LISTENING       2032    svchost.exe     -
+```
+{: .nolineno }
+
+### Dump LM/NT Hashes (hashdump)
+
+Dump the LM and NT Hashes for accounts from the memory image.
+
+```bash
+python3 vol.py -f memdump-001.mem windows.hashdump
+```
+{: .nolineno }
+
+```bash
+User    rid     lmhash  nthash
+
+Administrator   500     aad3b435b51404eeaad3b435b51404ee        31d6cfe0d16ae931b73c59d7e0c089c0
+Guest   501     aad3b435b51404eeaad3b435b51404ee        31d6cfe0d16ae931b73c59d7e0c089c0
+Warren  1000    aad3b435b51404eeaad3b435b51404ee        2aa81fb8c8cdfd8f420f7f94615036b0
+```
+{: .nolineno }
 
 ## Sources
 
