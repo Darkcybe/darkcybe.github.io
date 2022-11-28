@@ -15,7 +15,7 @@ Volatility is the world's most widely used framework for extracting digital arti
 
 ## Volatility Plugins
 
-Volatility consists of many different plugins to execute various methods to provide evidence for analysis, a list of all plugins can be found at the [Volatility3 Docs Page](https://volatility3.readthedocs.io/en/stable/volatility3.plugins.html). 
+Volatility consists of many different plugins to execute various methods to provide evidence for analysis, a list of all plugins can be found at the [Volatility3 Docs Page](https://volatility3.readthedocs.io/en/stable/volatility3.plugins.html).
 
 ## Instructions
 
@@ -79,7 +79,6 @@ PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       
 472     408     services.exe    0xfa803317e8e0  7       241     0       False   2020-04-20 22:44:38.000000      N/A     Disabled
 ```
 {: .nolineno }
-
 
 ### Running Processes (pstree)
 
