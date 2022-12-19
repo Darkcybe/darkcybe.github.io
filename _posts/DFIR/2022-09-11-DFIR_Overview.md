@@ -137,6 +137,27 @@ Due to the multitude of avenues in which an incident can occur, several layers o
 - Preparation Review (People, Policy and Procedure)
 - Funding Increase
 
+## MITRE ATT&CK
+
+MITRE ATT&CK is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. It is designed to provide a common language for discussing cyber security threats and a framework for analyzing and defending against them.
+
+The tactics in MITRE ATT&CK are organized into the following categories:
+
+1. Initial Access: tactics used by adversaries to gain access to a target system or network
+2. Execution: tactics used to run malicious code or files on a target system
+3. Persistence: tactics used to maintain a foothold on a target system
+4. Privilege Escalation: tactics used to increase the level of access an adversary has on a target system
+5. Defense Evasion: tactics used to evade detection and prevent response by security systems
+6. Credential Access: tactics used to gain access to user credentials or other sensitive information
+7. Discovery: tactics used to gather information about a target system or network
+8. Lateral Movement: tactics used to move within a target system or network
+9. Collection: tactics used to gather data from a target system or network
+10. Command and Control: tactics used to communicate with and control compromised systems
+11. Exfiltration: tactics used to extract data from a target system or network
+12. Impact: tactics used to disrupt or damage a target system or network.
+
+Each tactic is further broken down into specific techniques that adversaries may use to carry out their objectives.
+
 ## Goals of DFIR
 
 Primarily IR is established to answer key facts for an organizations management team, who did what to which systems and how to we recover as quickly as possible. Digital Forensics on the other hand specialize in providing verbose evidence that can be used by an organization for any law or insurance proceedings arising from the incident. The work of both function is commonly joined during incidents which allows the simplification of achievable goals for the incident response team to follow into two main categories.
