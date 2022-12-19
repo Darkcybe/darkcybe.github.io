@@ -15,7 +15,17 @@ Volatility is the world's most widely used framework for extracting digital arti
 
 ## Volatility Plugins
 
-Volatility consists of many different plugins to execute various methods to provide evidence for analysis, a list of all plugins can be found at the [Volatility3 Docs Page](https://volatility3.readthedocs.io/en/stable/volatility3.plugins.html).
+Volatility consists of a number of plugins that can be used to perform various tasks, such as identifying and extracting process data, network connections, and other information that may be relevant to a forensic investigation.
+
+A list of all plugins available in Volatility can be found at the Volatility3 Docs Page. Some examples of plugins included in Volatility include:
+
+- **pstree:** Display the process tree for a given memory image.
+- **sockscan:** Scan for and list open TCP and UDP sockets.
+- **dlllist:** List the DLLs (dynamic link libraries) loaded by each process.
+- **connscan:** Scan for and list active TCP connections.
+- **netscan:** Scan for and list active network connections.
+
+These are just a few examples of the plugins available in Volatility. There are many other plugins available that can be used to extract and analyze different types of forensic data. Refer to the [Volatility3 Docs Page](https://volatility3.readthedocs.io/en/stable/volatility3.plugins.html). for a complete list of plugins and their descriptions.
 
 ## Instructions
 
@@ -276,6 +286,6 @@ Warren  1000    aad3b435b51404eeaad3b435b51404ee        2aa81fb8c8cdfd8f420f7f94
 ```
 {: .nolineno }
 
-## Sources
+## References
 
 [^1]: [Volatility Foundation](https://www.volatilityfoundation.org/)
