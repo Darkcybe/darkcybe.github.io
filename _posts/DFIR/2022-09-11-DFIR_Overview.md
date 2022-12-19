@@ -18,9 +18,7 @@ In many cases, digital forensics and incident response overlap, as both involve 
 There are several common incident response frameworks that organizations can use to guide their response to security incidents. These frameworks provide a structured approach to incident response and can help organizations to better understand and manage the various stages of an incident.
 
 1. [SANS PICERL](https://www.cynet.com/incident-response/incident-response-sans-the-6-steps-in-depth/): SANS PICERL is a framework developed by the SANS Institute that describes the seven stages of incident response: preparation, identification, containment, eradication, recovery, lessons learned, and post-incident activity. The goal of SANS PICERL is to help organizations to quickly and effectively respond to and recover from security incidents.
-
 2. [NIST SP800-61r2: Computer Security Incident Handling Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf): NIST SP 800-61r2 is a framework developed by the National Institute of Standards and Technology (NIST) that describes the process of responding to computer security incidents. It covers the entire incident response lifecycle, from preparing for incidents to post-incident activity.
-
 3. [RE&CT framework](https://atc-project.github.io/atc-react/): The RE&CT (Response, Engage, Analyze, Contain, Terminate) framework is a framework for incident response that is designed to build on top of the NIST framework and the MITRE ATT&CK framework. It provides a detailed and actionable template for incident response techniques, covering the entire incident response lifecycle.
 
 These incident response frameworks provide a structured approach to responding to security incidents and can help organizations to better understand and manage the various stages of an incident. They provide guidance on preparing for incidents, detecting and analyzing threats, containing and eradicating incidents, and recovering from incidents. Below are the breakdowns of the individual stages of each framework.
@@ -48,13 +46,9 @@ NIST SP 800-61r2 covers the following stages:
 The RE&CT framework consists of the following five stages:
 
 1. **Respond:** This phase involves activating the organization's incident response plan and activating the appropriate response team. It may also involve identifying the nature and scope of the incident, as well as assessing the risk potential.
-
 2. **Engage:** This phase involves gathering additional information about the incident, including analyzing logs and network traffic and identifying indicators of compromise. It may also involve engaging with other stakeholders, such as law enforcement or external cybersecurity experts.
-
 3. **Analyze:** This phase involves conducting a detailed analysis of the incident, including identifying the root cause of the incident and any vulnerabilities that were exploited by the attacker.
-
 4. **Contain:** This phase involves containing the incident to prevent further damage, including isolating affected systems, blocking access to certain resources, and implementing other containment measures.
-
 5. **Terminate:** This phase involves removing the threat from the organization's systems and restoring any damaged or compromised resources. It may also involve conducting post-incident activities, such as reporting and communicating about the incident, conducting forensic analysis, and reviewing and improving incident response plans and procedures.
 
 ### Adversarial Frameworks
@@ -64,11 +58,8 @@ Adversarial frameworks are frameworks that describe the tactics, techniques, and
 Some common adversarial frameworks include:
 
 1. [MITRE ATT&CK](https://attack.mitre.org/): The MITRE ATT&CK framework is a comprehensive knowledge base of adversarial TTPs, organized by tactics and techniques. It covers the entire attack lifecycle, from initial reconnaissance to post-compromise actions, and is designed to help organizations understand and defend against potential threats.
-
 2. [Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html): The Cyber Kill Chain is a framework developed by Lockheed Martin that describes the seven stages of a cyber attack, from initial reconnaissance to exfiltration of data. It is designed to help organizations to identify and mitigate potential threats at each stage of the attack.
-
 3. [D3fend Framework](https://d3fend.mitre.org/): The D3fend Framework is a framework developed by the Center for Internet Security (CIS) that describes the five stages of incident response: prepare, detect, defend, respond, and recover. It is designed to help organizations to plan and prepare for incident response and to quickly and effectively respond to and recover from incidents.
-
 4. [CAPEC (Common Attack Pattern Enumeration and Classification)](https://capec.mitre.org/): The CAPEC framework is a comprehensive knowledge base of common attack patterns that can be used to compromise systems and networks. It is developed and maintained by the MITRE Corporation and is designed to help organizations understand and defend against potential threats.
 
 Adversarial frameworks like the aforementioned examples can be useful tools for understanding the methods and tactics used by adversaries and for identifying and defending against potential threats. By providing a detailed understanding of adversarial TTPs, these frameworks can help organizations to better protect their systems and networks from potential attacks.
@@ -109,21 +100,15 @@ During an incident, it is common for both IR and digital forensics to work toget
 The key responsibilities of incident response (IR) typically include:
 
 1. **Identifying and mitigating security threats:** This involves identifying and responding to potential security threats, including cyber attacks, malware infections, and other security breaches. It may involve analyzing logs, network traffic, and other data sources to identify indicators of compromise, as well as implementing containment measures to prevent further damage.
-
 2. **Restoring affected systems and resources:** After a threat has been identified and contained, IR may be responsible for restoring affected systems and resources to their normal state of operation. This may involve repairing or rebuilding systems, restoring data from backups, and implementing other recovery measures.
-
 4. **Communicating with stakeholders:** IR may be responsible for communicating with stakeholders, such as management, employees, customers, and law enforcement, about the incident and any necessary actions that need to be taken.
-
 5. **Reviewing and improving incident response plans:** After an incident has been resolved, IR may be responsible for reviewing and improving the organization's incident response plans and procedures based on the lessons learned from the incident. This may involve identifying any weaknesses or vulnerabilities that were exploited by the attacker, as well as implementing new controls or procedures to prevent similar incidents from occurring in the future.
 
 The key responsibilities of digital forensics professionals typically include:
 
 1. **Collecting and preserving digital evidence:** Digital forensics professionals are responsible for collecting and preserving digital evidence in a manner that is forensically sound and admissible in a court of law. This may involve using specialized tools and techniques to collect evidence from computers, servers, mobile devices, and other digital systems.
-
 2. **Analyzing digital evidence:** Digital forensics professionals are responsible for analyzing digital evidence in order to identify and understand the root cause of an incident, as well as any potential suspects or perpetrators. This may involve examining system logs, network traffic, and other digital artifacts to identify patterns and trends that may provide clues about the incident.
-
 3. **Preparing reports and other documentation:** Digital forensics professionals are responsible for preparing reports and other documentation that detail the findings of their investigations. These reports may be used in criminal or civil cases to provide evidence of cyber crimes or other digital wrongdoing.
-
 4. **Providing expert testimony:** Digital forensics professionals may be called upon to provide expert testimony in court proceedings in order to explain the technical aspects of their investigations and the relevance of the evidence they have collected.
 
 The roles and responsibilities of IR and digital forensics often overlap in the process of addressing and mitigating security threats, and it is common for IR and digital forensics professionals to work together.
@@ -131,9 +116,7 @@ The roles and responsibilities of IR and digital forensics often overlap in the 
 Some key areas of overlap between the roles and responsibilities of IR and digital forensics include:
 
 1. **Collection and preservation of evidence:** Both IR and digital forensics professionals are responsible for collecting and preserving evidence in a manner that is forensically sound and admissible in a court of law. This may involve using specialized tools and techniques to collect evidence from computers, servers, mobile devices, and other digital systems.
-
 2. **Analysis of evidence:** Both IR and digital forensics professionals are responsible for analyzing evidence in order to identify and understand the root cause of an incident, as well as any potential suspects or perpetrators. This may involve examining system logs, network traffic, and other digital artifacts to identify patterns and trends that may provide clues about the incident.
-
 3. **Communication and reporting:** Both IR and digital forensics professionals are responsible for communicating and reporting on their findings and recommendations. This may involve preparing reports and other documentation, as well as presenting findings to management or other stakeholders.
 
 ## DFIR Analyst Skills
@@ -143,11 +126,8 @@ DFIR analysts must have a range of specialized skills in order to effectively pe
 Here are some specialized skills that a DFIR analyst may need to have:
 
 1. **Technical expertise:** DFIR analysts must have a strong understanding of computer systems, networks, and digital devices, as well as the software and tools used to analyze and preserve digital evidence. They should have a solid foundation in computer science, as well as experience with programming languages and operating systems.
-
 2. **Analytical skills:** DFIR analysts must be able to analyze complex data sets and identify patterns and trends that may provide clues about an incident. They should be able to critically evaluate evidence and draw logical conclusions based on their findings.
-
 3. **Legal knowledge:** DFIR analysts should have a strong understanding of the legal principles and rules governing the collection and admissibility of digital evidence in a court of law. They should be familiar with the rules of evidence, as well as with the legal requirements for preserving and handling digital evidence.
-
 4. **Communication skills:** DFIR analysts should be able to clearly communicate their findings and recommendations to a variety of audiences, including technical and non-technical stakeholders. They should be able to present complex technical information in a clear and concise manner, both verbally and in written form.
   
 ### DFIR Analyst Activities and Roles
@@ -155,11 +135,7 @@ Here are some specialized skills that a DFIR analyst may need to have:
 Digital forensics and incident response (DFIR) is a broad field that encompasses a wide range of activities and specialties related to the collection, analysis, and preservation of digital evidence. Some of the key areas of DFIR include:
 
 1. **Malware analysis:** Malware analysis is the process of examining and analyzing malicious software, such as viruses, worms, and Trojans, in order to understand how it works and what it is capable of doing. Malware analysts use a variety of tools and techniques to reverse engineer and deconstruct malware samples, in order to identify indicators of compromise and other artifacts that can help to understand the capabilities of the malware.
-
 2. **Forensics:** Forensics is the process of using technical methods to collect, analyze, and preserve evidence in a manner that is admissible in a court of law. DFIR professionals who specialize in forensics are responsible for conducting forensic examinations of digital systems and devices, as well as for preparing reports and other documentation that detail their findings. Forensics are commonly catagorised as Host, Network, Mobile Device, and Cloud specific Forensics.
-
 3. **Cyber Threat Intelligence (CTI):** CTI is the process of collecting, analyzing, and disseminating information about cyber threats and vulnerabilities in order to inform decision-making and improve the security posture of an organization. DFIR professionals who specialize in CTI are responsible for gathering and analyzing intelligence about cyber threats, as well as for sharing that intelligence with relevant stakeholders.
-
 4. **Threat hunting:** Threat hunting is the proactive process of searching for and identifying threats that have evaded traditional security controls. DFIR professionals who specialize in threat hunting use a variety of tools and techniques to search for and identify indicators of compromise and other signs of potential threats.
-
 5. **Detection engineering:** Detection engineering is the process of designing and implementing systems and processes to detect and alert on potential security threats. DFIR professionals who specialize in detection engineering are responsible for developing and maintaining detection systems, as well as for tuning and optimizing those systems to improve their effectiveness.
