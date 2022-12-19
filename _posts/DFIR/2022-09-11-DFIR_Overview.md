@@ -7,214 +7,159 @@ comments: true
 
 ## DFIR Overview
 
-Digital Forensics and Incident Response (DFIR) describes the process of responding in a coordinated effort to a Cyber Security Incident. The main objective of DFIR is to return the organization or impacted assets to a Business as Usual (BaU) state whilst providing Root Cause Analysis on the incident in terms of executive and technical reporting. Typically, a DFIR process will incorporate several team members that form a Cyber Security Incident Response Team (CSIRT), activated upon the identification of a suspected breach and will respond to the incident collecting and recording evidence and carrying out mitigation actions in order to protect the organization.
+Digital forensics is the process of examining and analyzing digital devices, such as computers, smartphones, and servers, in order to gather and preserve evidence that can be used in a court of law. It involves the use of specialized tools and techniques to extract, analyze, and present digital evidence in a way that is reliable and admissible in legal proceedings.
 
-DFIR consists of two main functions:
+Incident response is the process of identifying, responding to, and managing the aftermath of a security incident or breach. It involves a set of coordinated activities designed to minimize the impact of the incident and restore affected systems and resources to their normal state of operation.
 
-- **Digital Forensics:** Responsible for examining system data, user activity, and other evidence (digital or physical) to verbosely map the activities performed by and attacker and possible attribution of the actor.
-- **Incident Response:** Covers personnel and the overarching process of the coordinated response to cyber security incidents.
+In many cases, digital forensics and incident response overlap, as both involve the collection and analysis of digital evidence in order to understand and respond to a security incident. Digital forensics is typically used to investigate the root cause of an incident and to gather evidence that can be used in legal proceedings, while incident response focuses on minimizing the impact of the incident and restoring affected systems and resources.
 
-There are several frameworks in existence that detail the response lifecycle when responding to cyber security incidents, such as the [Lockheed Martin Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html), [The Diamond Model](https://www.threatintel.academy/diamond/), [SANS PICERL](https://www.cynet.com/incident-response/incident-response-sans-the-6-steps-in-depth/) and [NIST SP 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf). There is also the [D3fend Framework](https://d3fend.mitre.org/) however this applies for to a SOC detection and mitigation stance rather than Incident Response. The most commonly used within the industry, within my experience anyway, are the PICERL and NIST frameworks which separate incident response into the following phases:
+## DFIR Frameworks
 
-- **PICERL**
-  1. Preparation
-  2. Identification
-  3. Containment
-  4. Eradication
-  5. Recovery
-  6. Lessons Learned
-- **NIST**
-  1. Preparation
-  2. Detection and Analysis
-  3. Containment, Eradication, and Recovery
-  4. Post-Incident Activity
+There are several common incident response frameworks that organizations can use to guide their response to security incidents. These frameworks provide a structured approach to incident response and can help organizations to better understand and manage the various stages of an incident.
 
-Following an established response process or framework is crucial to the success in service restoration following an incident. Typically a process will contain several phases that the DFIR team must achieve in order to complete the response, NIST provide such a framework within publication [SP800-61: Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final). A short summary of the phases can be found below, with more specific recommendations and guides found in the phase links above.
+1. [SANS PICERL](https://www.cynet.com/incident-response/incident-response-sans-the-6-steps-in-depth/): SANS PICERL is a framework developed by the SANS Institute that describes the seven stages of incident response: preparation, identification, containment, eradication, recovery, lessons learned, and post-incident activity. The goal of SANS PICERL is to help organizations to quickly and effectively respond to and recover from security incidents.
+
+2. [NIST SP800-61r2: Computer Security Incident Handling Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf): NIST SP 800-61r2 is a framework developed by the National Institute of Standards and Technology (NIST) that describes the process of responding to computer security incidents. It covers the entire incident response lifecycle, from preparing for incidents to post-incident activity.
+
+3. [RE&CT framework](https://atc-project.github.io/atc-react/): The RE&CT (Response, Engage, Analyze, Contain, Terminate) framework is a framework for incident response that is designed to build on top of the NIST framework and the MITRE ATT&CK framework. It provides a detailed and actionable template for incident response techniques, covering the entire incident response lifecycle.
+
+These incident response frameworks provide a structured approach to responding to security incidents and can help organizations to better understand and manage the various stages of an incident. They provide guidance on preparing for incidents, detecting and analyzing threats, containing and eradicating incidents, and recovering from incidents. Below are the breakdowns of the individual stages of each framework.
+
+SANS PICERL consists of the following seven stages:
+
+1. **Preparation:** This phase involves planning and preparing for incident response, including developing response plans, training staff, and testing systems.
+2. **Identification:** This phase involves identifying the nature and extent of the incident, including identifying indicators of compromise, analyzing logs and network traffic, and determining the scope and impact of the incident.
+3. **Containment:** This phase involves containing the incident to prevent further damage, including isolating affected systems, blocking access to certain resources, and implementing other containment measures.
+4. **Eradication:** This phase involves removing the threat from the organization's systems and restoring any damaged or compromised resources.
+5. **Recovery:** This phase involves restoring affected systems and resources to their normal state of operation.
+6. **Lessons learned:** This phase involves reviewing and improving incident response plans and procedures based on the lessons learned from the incident.
+7. **Post-incident activity:** This phase involves conducting post-incident activities, such as reporting and communicating about the incident and conducting forensic analysis to understand the root cause of the incident.
+
+NIST SP 800-61r2 covers the following stages:
+
+1. **Preparation:** This phase involves planning and preparing for incident response, including developing response plans, training staff, and testing systems.
+2. **Detection:** This phase involves detecting and identifying indicators of compromise and determining the scope and impact of the incident.
+3. **Analysis:** This phase involves analyzing the nature and extent of the incident, including analyzing logs and network traffic and identifying the root cause of the incident.
+4. **Containment:** This phase involves containing the incident to prevent further damage, including isolating affected systems, blocking access to certain resources, and implementing other containment measures.
+5. **Eradication:** This phase involves removing the threat from the organization's systems and restoring any damaged or compromised resources.
+6. **Recovery:** This phase involves restoring affected systems and resources to their normal state of operation.
+7. **Post-incident activity:** This phase involves conducting post-incident activities, such as reporting and communicating about the incident, conducting forensic analysis to understand the root cause of the incident, and reviewing and improving incident response plans and procedures.
+
+The RE&CT framework consists of the following five stages:
+
+1. **Respond:** This phase involves activating the organization's incident response plan and activating the appropriate response team. It may also involve identifying the nature and scope of the incident, as well as assessing the risk potential.
+
+2. **Engage:** This phase involves gathering additional information about the incident, including analyzing logs and network traffic and identifying indicators of compromise. It may also involve engaging with other stakeholders, such as law enforcement or external cybersecurity experts.
+
+3. **Analyze:** This phase involves conducting a detailed analysis of the incident, including identifying the root cause of the incident and any vulnerabilities that were exploited by the attacker.
+
+4. **Contain:** This phase involves containing the incident to prevent further damage, including isolating affected systems, blocking access to certain resources, and implementing other containment measures.
+
+5. **Terminate:** This phase involves removing the threat from the organization's systems and restoring any damaged or compromised resources. It may also involve conducting post-incident activities, such as reporting and communicating about the incident, conducting forensic analysis, and reviewing and improving incident response plans and procedures.
+
+### Adversarial Frameworks
+
+Adversarial frameworks are frameworks that describe the tactics, techniques, and procedures (TTPs) used by attackers to compromise systems and networks. These frameworks can be used to understand the methods and tactics used by adversaries, as well as to identify and defend against potential threats.
+
+Some common adversarial frameworks include:
+
+1. [MITRE ATT&CK](https://attack.mitre.org/): The MITRE ATT&CK framework is a comprehensive knowledge base of adversarial TTPs, organized by tactics and techniques. It covers the entire attack lifecycle, from initial reconnaissance to post-compromise actions, and is designed to help organizations understand and defend against potential threats.
+
+2. [Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html): The Cyber Kill Chain is a framework developed by Lockheed Martin that describes the seven stages of a cyber attack, from initial reconnaissance to exfiltration of data. It is designed to help organizations to identify and mitigate potential threats at each stage of the attack.
+
+3. [D3fend Framework](https://d3fend.mitre.org/): The D3fend Framework is a framework developed by the Center for Internet Security (CIS) that describes the five stages of incident response: prepare, detect, defend, respond, and recover. It is designed to help organizations to plan and prepare for incident response and to quickly and effectively respond to and recover from incidents.
+
+4. [CAPEC (Common Attack Pattern Enumeration and Classification)](https://capec.mitre.org/): The CAPEC framework is a comprehensive knowledge base of common attack patterns that can be used to compromise systems and networks. It is developed and maintained by the MITRE Corporation and is designed to help organizations understand and defend against potential threats.
+
+Adversarial frameworks like the aforementioned examples can be useful tools for understanding the methods and tactics used by adversaries and for identifying and defending against potential threats. By providing a detailed understanding of adversarial TTPs, these frameworks can help organizations to better protect their systems and networks from potential attacks.
 
 ## Event Vs. Incident
 
-Understanding fundamental terminology and how to correctly categorize events, incidents, risk potential and efficacy is key to effective response. Although organizations should and will individually categorize and define their own specific methodologies, the baseline standards as described in the aforementioned NIST Guide as well as incorporating my own understanding and preferences.
+It is important for organizations to understand fundamental terminology and to be able to correctly categorize events, incidents, and efficacy in order to effectively respond to security threats. Establishing clear definitions and methodologies for these concepts can help organizations to better understand and manage potential threats, as well as to develop effective strategies for responding to and mitigating them.
 
-### Event
+Here are some basic definitions and examples:
 
-An event can span a wide variety of actions and behaviors and should be used to categorize system or network activities in which may be indicative of adverse actions. Alerts from products deployed in an environment should be considered initially as events before verification is carried out to determine whether is should be reclassified as an incident or not. Not every event will be an adverse incident, however ever incident will contain one or more events. The below quote comes directly from the NIST Computer Security Incident Handling Guide to define the term.
-
-> An event is any observable occurrence in a system or network. Events include a user connecting to a file share, a server receiving a request
-> for a web page, a user sending email, and a firewall blocking a connection attempt. Adverse events are events with a negative consequence, such
-> as system crashes, packet floods, unauthorized use of system privileges, unauthorized access to sensitive data, and execution of malware that
-> destroys data.
-
-### Incident
-
-Incidents encompass all events that negatively impact the Confidentiality, Integrity and/or Availability (CIA) of the Business in general. Again he below quote from the NIST Computer Security Incident Handling Guide defines the term and provides several examples of what may constitute an event to be escalated to Incident status.
-
-> A computer security incident is a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard
-> security practices. Examples of incidents are:
->
-> - An attacker commands a botnet to send high volumes of connection requests to a web server, causing it to crash.
-> - Users are tricked into opening a “quarterly report” sent via email that is actually malware; running the tool has infected their computers
-> and established connections with an external host.
-> - An attacker obtains sensitive data and threatens that the details will be released publicly if the organization does not pay a designated sum
->  of money.
-> - A user provides or exposes sensitive information to others through peer-to-peer file sharing services.
+- **Events:** Events are any activities or occurrences that are recorded by a system or network. These may include normal system activities, such as logins and file access, as well as unusual or suspicious activities that may indicate a potential threat.
+- **Incidents:** Incidents are events that have the potential to compromise the security of an organization's systems or networks. These may include cyber attacks, malware infections, or other security breaches.
+- **Efficacy:** Efficacy refers to the ability of a security measure or control to effectively prevent or mitigate a particular threat. This may be evaluated based on the effectiveness of the measure or control in practice, as well as its cost and any other factors that may impact its use.
 
 ### Event and Incident Categorization
 
-When data is ingested into a SIEM platform or ticketing system, it is the job of a security analyst to perform analysis of the events, initially determining the categorization of the event. This is perhaps the most challenging component of security monitoring, the determination of whether an incident has occurred. Categorization encompasses multiple considerations and objectives, such as:
+As a security analyst, it is important to carefully analyze data ingested into a SIEM platform or ticketing system in order to accurately determine the categorization of events and identify potential incidents. This can be a challenging task, as it requires a thorough understanding of security protocols, incident response procedures, and the various types of threats that an organization may face.
 
-- **Event Verification:** Initial review of event type and high level verification of data source/alert. Has a server shutdown due to legitimate Administrative tasks?
-- **Scope:** Correlation and aggregation of events from multiple data sources. How wide spread is the event?
-- **Lifecycle Identification:** Is the event a potential precursor to further nefarious activity or is the event a clear indication of malicious activity?
-- **Efficacy:** Based upon the potential impact to business operations and using knowledge of system processes, networking, threat intelligence and honed skills in analysis a determination of alert efficacy will be made leading to a result of:
-  - **Incident:** A valid threat was detected.
-  - **False Positive:** – An event in which triggered an alert was incorrectly identified or posed no extant risk.
-  - **Benign:** A valid threat was detected, however there is no apparent risk due to the condition being explained or expected.
-  - **Normal:** Events that have been previously triaged and determined to be normal and expected within the environment.
-  - **Indeterminable/Noteworthy:** Not enough evidence or context to confidently decide, events that appear suspicious however non-impactful to operations but do require further monitoring. Often events under this category require further investigation.
+Here are some steps that a security analyst might take when performing analysis of events:
 
-### Incident Prioritization
+1. **Review and assess the data:** The first step in analyzing events is to review and assess the data that has been ingested into the SIEM platform or ticketing system. This may involve reviewing logs, network traffic, or other data sources to identify any unusual or suspicious activities.
+2. **Determine the nature and scope of the event:** Once the data has been reviewed and assessed, the next step is to determine the nature and scope of the event. This may involve identifying the type of event, such as a cyber attack, malware infection, or other security breach, and determining the extent to which the event has impacted the organization's systems and networks.
+3. **Assess the risk potential:** After the nature and scope of the event has been determined, the security analyst should assess the risk potential of the event. This may involve evaluating the likelihood that the event will result in harm or damage to the organization, as well as the potential impact if it does occur.
+4. **Determine the appopriate response:** Once the nature, scope, and risk potential of the event have been determined, the security analyst should determine the appropriate response. This may involve activating the organization's incident response plan and activating the appropriate response team, depending on the nature and severity of the event.
 
-Once an event has been determined to be an incident that negatively impacts the CIA, prioritization is the next logical step and perhaps one of the most critical in organizing responsive actions. Determining incident priority should be based on relevant factors, such as the following:
+## DFIR Goals
 
-- **Impact:** How the incident impacts existing functionality of the affected systems. Not only the current functional impact of the incident should be taken into consideration, but also the likely future functional impact of the incident if it is not immediately contained.
+Incident response (IR) and digital forensics are both important tools for addressing and mitigating security threats to an organization's systems and networks. However, they have different primary goals and focus on different aspects of an incident.
 
-| Category |                                                   Definition                                                  |
-|:--------:| ------------------------------------------------------------------------------------------------------------- |
-|   None   | No effect to the organization’s ability to provide all services to all users                                  |
-|    Low   | Minimal effect; the organization can still provide all critical services to all users but has lost efficiency |
-|  Medium  | Organization has lost the ability to provide a critical service to a subset of system users                   |
-|   High   | Organization is no longer able to provide some critical services to any users                                 |
+IR is primarily focused on answering key questions for an organization's management team, such as who did what to which systems and how to recover as quickly as possible. This typically involves identifying the nature and scope of the incident, containing the threat to prevent further damage, and restoring affected systems and resources to their normal state of operation.
 
-[Impact Categories](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
+Digital forensics, on the other hand, is focused on providing verbose evidence that can be used by an organization in any law or insurance proceedings arising from the incident. This may involve conducting a detailed analysis of the incident to identify the root cause, collecting and analyzing forensic evidence, and preparing reports and other documentation.
 
-- **Recoverability:** Possible responses that the team may take when handling the incident. An incident with a high impact and low effort to recover from is an ideal candidate for immediate action from the team. The team should prioritize the response to each incident based on its estimate of the business impact caused by the incident and the estimated efforts required to recover from the incident.
+During an incident, it is common for both IR and digital forensics to work together in order to achieve the organization's goals. This allows the incident response team to simplify its objectives into two main categories: responding to the incident and collecting evidence for use in any legal or insurance proceedings. By working together, IR and digital forensics can help organizations to effectively address and mitigate security threats, as well as to protect their interests in the event of any legal or insurance proceedings.
 
-|     Category    |                                                        Definition                                                       |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Regular         | Time to recovery is predictable with existing resources                                                                 |
-| Supplemented    | Time to recovery is predictable with additional resources                                                               |
-| Extended        | Time to recovery is unpredictable; additional resources and outside help are needed                                     |
-| Not Recoverable | Recovery from the incident is not possible (e.g., sensitive data exfiltrated and posted publicly); launch investigation |
+## DFIR Responsiblities
 
-[Recoverability Categories](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
+The key responsibilities of incident response (IR) typically include:
 
-## Response Lifecycle
+1. **Identifying and mitigating security threats:** This involves identifying and responding to potential security threats, including cyber attacks, malware infections, and other security breaches. It may involve analyzing logs, network traffic, and other data sources to identify indicators of compromise, as well as implementing containment measures to prevent further damage.
 
-The way in which a team or single incident responder approaches an incident will differ based on the attack stage and type of attack launched against the organization. The aforementioned NIST framework provides a great high level understanding of how each phase can be categorized. To expand on each phase, other frameworks exist such as the [RE&CT framework](https://atc-project.github.io/atc-react/), which is designed to build on top of IR phases and the MITRE ATT&CK framework to provide an actionable template for Incident Response techniques.
+2. **Restoring affected systems and resources:** After a threat has been identified and contained, IR may be responsible for restoring affected systems and resources to their normal state of operation. This may involve repairing or rebuilding systems, restoring data from backups, and implementing other recovery measures.
 
-### Preparation
+4. **Communicating with stakeholders:** IR may be responsible for communicating with stakeholders, such as management, employees, customers, and law enforcement, about the incident and any necessary actions that need to be taken.
 
-The goal of the preparation phase in perspective of IR is to identify the specific requirements of the organization to effectively respond to a multitude of different incident scenarios. Core components off include:
+5. **Reviewing and improving incident response plans:** After an incident has been resolved, IR may be responsible for reviewing and improving the organization's incident response plans and procedures based on the lessons learned from the incident. This may involve identifying any weaknesses or vulnerabilities that were exploited by the attacker, as well as implementing new controls or procedures to prevent similar incidents from occurring in the future.
 
-- People (Roles, Training, Vendor Relationships)
-- Process (Policies, Communications Plans)
-- Procedures (Tools, Preventative Methods, Reactive Methods)
+The key responsibilities of digital forensics professionals typically include:
 
-### Detection and Analysis
+1. **Collecting and preserving digital evidence:** Digital forensics professionals are responsible for collecting and preserving digital evidence in a manner that is forensically sound and admissible in a court of law. This may involve using specialized tools and techniques to collect evidence from computers, servers, mobile devices, and other digital systems.
 
-Due to the multitude of avenues in which an incident can occur, several layers of detection methods should be employed to ensure robust detection and monitoring capabilities. This phases is the starting point of an incident, the detection of suspicious activity having occurred and the characterization of that activity as either expected or unexpected warranting further investigation and engagement of a wider response. Common detection methods include:
+2. **Analyzing digital evidence:** Digital forensics professionals are responsible for analyzing digital evidence in order to identify and understand the root cause of an incident, as well as any potential suspects or perpetrators. This may involve examining system logs, network traffic, and other digital artifacts to identify patterns and trends that may provide clues about the incident.
 
-- Detection Alerts (AV, IPS, HIDS, SIEM)
-- Unusual Activity (Processes, Network Behavior, Artifacts, Monitoring Anomalies, External Notification)
-- Event and Incident Declaration (Efficacy and Categorization, Initial Analysis)
+3. **Preparing reports and other documentation:** Digital forensics professionals are responsible for preparing reports and other documentation that detail the findings of their investigations. These reports may be used in criminal or civil cases to provide evidence of cyber crimes or other digital wrongdoing.
 
-### Containment, Eradication, and Recovery
+4. **Providing expert testimony:** Digital forensics professionals may be called upon to provide expert testimony in court proceedings in order to explain the technical aspects of their investigations and the relevance of the evidence they have collected.
 
-- **Containment**
-  - Short-term methods
-  - Data collection and retention
-  - Artifact Interruption (Kill processes, Firewall Rule Modification, Account Blocking and Password Resets)
-- **Eradication**
-  - Removal of Artifacts (Files, Registry Entries, Backup Restorals)
-  - System and Application Patching
-- **Recovery**
-  - Return to BaU
-  - Monitoring and Environmental Baselines
+The roles and responsibilities of IR and digital forensics often overlap in the process of addressing and mitigating security threats, and it is common for IR and digital forensics professionals to work together.
 
-### Post-Incident Activity
+Some key areas of overlap between the roles and responsibilities of IR and digital forensics include:
 
-- Lessons Learned
-- Preparation Review (People, Policy and Procedure)
-- Funding Increase
+1. **Collection and preservation of evidence:** Both IR and digital forensics professionals are responsible for collecting and preserving evidence in a manner that is forensically sound and admissible in a court of law. This may involve using specialized tools and techniques to collect evidence from computers, servers, mobile devices, and other digital systems.
 
-## MITRE ATT&CK
+2. **Analysis of evidence:** Both IR and digital forensics professionals are responsible for analyzing evidence in order to identify and understand the root cause of an incident, as well as any potential suspects or perpetrators. This may involve examining system logs, network traffic, and other digital artifacts to identify patterns and trends that may provide clues about the incident.
 
-MITRE ATT&CK is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. It is designed to provide a common language for discussing cyber security threats and a framework for analyzing and defending against them.
+3. **Communication and reporting:** Both IR and digital forensics professionals are responsible for communicating and reporting on their findings and recommendations. This may involve preparing reports and other documentation, as well as presenting findings to management or other stakeholders.
 
-The tactics in MITRE ATT&CK are organized into the following categories:
+## DFIR Analyst Skills
 
-1. Initial Access: tactics used by adversaries to gain access to a target system or network
-2. Execution: tactics used to run malicious code or files on a target system
-3. Persistence: tactics used to maintain a foothold on a target system
-4. Privilege Escalation: tactics used to increase the level of access an adversary has on a target system
-5. Defense Evasion: tactics used to evade detection and prevent response by security systems
-6. Credential Access: tactics used to gain access to user credentials or other sensitive information
-7. Discovery: tactics used to gather information about a target system or network
-8. Lateral Movement: tactics used to move within a target system or network
-9. Collection: tactics used to gather data from a target system or network
-10. Command and Control: tactics used to communicate with and control compromised systems
-11. Exfiltration: tactics used to extract data from a target system or network
-12. Impact: tactics used to disrupt or damage a target system or network.
+DFIR analysts must have a range of specialized skills in order to effectively perform their duties.
 
-Each tactic is further broken down into specific techniques that adversaries may use to carry out their objectives.
+Here are some specialized skills that a DFIR analyst may need to have:
 
-## Goals of DFIR
+1. **Technical expertise:** DFIR analysts must have a strong understanding of computer systems, networks, and digital devices, as well as the software and tools used to analyze and preserve digital evidence. They should have a solid foundation in computer science, as well as experience with programming languages and operating systems.
 
-Primarily IR is established to answer key facts for an organizations management team, who did what to which systems and how to we recover as quickly as possible. Digital Forensics on the other hand specialize in providing verbose evidence that can be used by an organization for any law or insurance proceedings arising from the incident. The work of both function is commonly joined during incidents which allows the simplification of achievable goals for the incident response team to follow into two main categories.
+2. **Analytical skills:** DFIR analysts must be able to analyze complex data sets and identify patterns and trends that may provide clues about an incident. They should be able to critically evaluate evidence and draw logical conclusions based on their findings.
 
-### Investigation
+3. **Legal knowledge:** DFIR analysts should have a strong understanding of the legal principles and rules governing the collection and admissibility of digital evidence in a court of law. They should be familiar with the rules of evidence, as well as with the legal requirements for preserving and handling digital evidence.
 
-- Determine Pivot Points and Time frame
-- Initial Entry Vector Identification
-- Tools and Malware Used
-- Incident Scope (Identification of Impacted Systems and Accounts)
-- Damage Assessment
-
-### Remediation
-
-- Reverse Changes Made
-- Protect Future Breaches from Occurring
-
-## DFIR Analysis Techniques
-
-There a number of specialist skills that a DFIR analyst or engineer may learn or individually specialize in, some of the more common are:
-
-- Malware Analysis
-- Cyber Threat Intelligence
-- Threat Hunting
-- System Forensics
+4. **Communication skills:** DFIR analysts should be able to clearly communicate their findings and recommendations to a variety of audiences, including technical and non-technical stakeholders. They should be able to present complex technical information in a clear and concise manner, both verbally and in written form.
   
-### Malware Analysis
+### DFIR Analyst Activities and Roles
 
-Malware can be categorized into several core types based upon their intended functions. Historically, early malware would be designed to perform a single or few tasks as developed by the attacker. Recently however, there has been an increasing amount of malware application designed in a modular fashion that enable an attacker to choose which functions the deployed malware can perform. The below image identifies some of the more common types of malware.
+Digital forensics and incident response (DFIR) is a broad field that encompasses a wide range of activities and specialties related to the collection, analysis, and preservation of digital evidence. Some of the key areas of DFIR include:
 
-[![Types of Malware](/assets/img/posts/DFIR/Overview_Types_of_Malware.png "Types of Malware")](https://www.crowdstrike.com/cybersecurity-101/malware/types-of-malware/)
+1. **Malware analysis:** Malware analysis is the process of examining and analyzing malicious software, such as viruses, worms, and Trojans, in order to understand how it works and what it is capable of doing. Malware analysts use a variety of tools and techniques to reverse engineer and deconstruct malware samples, in order to identify indicators of compromise and other artifacts that can help to understand the capabilities of the malware.
 
-There are several challenges when analyzing a piece of malware. Each type of malware will have unique analysis phases and required environmental configurations in order to effectively understand it’s intended and possible functionality. Not only does each type of malware require a unique analysis technique, there are other factors that will be encountered such as encryption, programming languages, anti-debugging techniques, and many more.
+2. **Forensics:** Forensics is the process of using technical methods to collect, analyze, and preserve evidence in a manner that is admissible in a court of law. DFIR professionals who specialize in forensics are responsible for conducting forensic examinations of digital systems and devices, as well as for preparing reports and other documentation that detail their findings. Forensics are commonly catagorised as Host, Network, Mobile Device, and Cloud specific Forensics.
 
-#### Goal of Malware Analysis
+3. **Cyber Threat Intelligence (CTI):** CTI is the process of collecting, analyzing, and disseminating information about cyber threats and vulnerabilities in order to inform decision-making and improve the security posture of an organization. DFIR professionals who specialize in CTI are responsible for gathering and analyzing intelligence about cyber threats, as well as for sharing that intelligence with relevant stakeholders.
 
-During incident response, in-depth malware analysis or reverse engineering will not always be required. Known hacker tool kits are often detected via signature or behavioral characteristics that are used by security vendors to identify the malware family, type, and capabilities. In these circumstance, malware analysis is not always an efficient mechanism in assisting an organization with responding to and recovering from an attack.
+4. **Threat hunting:** Threat hunting is the proactive process of searching for and identifying threats that have evaded traditional security controls. DFIR professionals who specialize in threat hunting use a variety of tools and techniques to search for and identify indicators of compromise and other signs of potential threats.
 
-The overarching goals of malware analysis are focused on observing malware behavior’s, deconstructing the file to gain import artifacts that can assist in understanding the capabilities and providing Indicators of Compromise (IOCs) containment and for future detection. Analyzing and de-constructing malware samples is a time consuming process, hence the opening paragraph stating that it is a techniques not always required during Incident Response engagements. Malware analysis and reverse engineering techniques really shine in circumstances where analysts are dealing with unknown or undetected malware strains, investigating suspicious behavior’s that do not trigger alerts, and for proving verbose documentation such as forensic reports.
-
-#### Types of Malware Analysis
-
-There are two common types of malware analysis that all malware professionals should be familiar with; Static and Dynamic Analysis.
-
-- **Static Analysis:** Static analysis is the initial phase of malware analysis in which a malicious file is examined without running the file itself. Determinations of potential classification and artefact of interest are common outcomes of static analysis. However, there are complex scenarios in which static analysis can be hindered such as code packing and encryption which require an advanced level of understanding areas of disassembly, coding, and operating system architectures.
-- **Dynamic Analysis:** Dynamic analysis is typically a secondary phase after static analysis has been performed. Dynamic analysis involves observing the malware's behaviors during and after execution. Highly detailed signatures can be discovered during dynamic analysis such as registry modifications, dropped files and many more. Debugging may also be covered within dynamic analysis which is the examination of a running processes internal constructs.
-
-### Cyber Threat Intelligence (CTI)
-
-Cyber Threat Intelligence is both a proactive mindset that can bolster Incident Response as well as a formalized output that can detail attack patterns that SOC teams can ingest to better and faster detect threats. Through the ongoing analysis of datasets containing capabilities, motivations, and goals of adversaries, threat reports can be created which enrich static data observed by many security or native tooling such as IP addresses, Domains, event log records, etc.
-
-### Threat Hunting
-
-Threat Hunting refers to the process of hypothesis generation for potential attacks and searching for indications that an environment has remnants of abuse. Threat Hunters generally leverage available CTI and expand on possible tactic and technique extensions that may occur via a particular threat actor. An example of this would be a threat hunter ingesting a report containing indictors of a particular PowerShell command to gather system information and hypothesizing other ways in which the same information can be returned, such as running the command via WMI. In Incident Response, threat hunters can be an initiating member responsible for the identification of a confirmed incident as well as providing tracing analysis through the incident engagement.
-
-## System Forensics
-
-- Memory Forensics
-- Host Forensics (All OS's)
-- Mobile Forensics
+5. **Detection engineering:** Detection engineering is the process of designing and implementing systems and processes to detect and alert on potential security threats. DFIR professionals who specialize in detection engineering are responsible for developing and maintaining detection systems, as well as for tuning and optimizing those systems to improve their effectiveness.
