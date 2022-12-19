@@ -5,7 +5,7 @@ tags: []
 comments: true
 ---
 
-## Cybersecurity Risk and Risk Management.
+## Cybersecurity Risk and Risk Management
 
 Cybersecurity risk refers to the potential for harm to an organization's assets, such as data, systems, and networks, as a result of cyber threats. Cyber threats can include activities such as hacking, malware, phishing, and ransomware attacks, and they can have serious consequences for organizations, such as data breaches, financial losses, and damage to reputation.
 
