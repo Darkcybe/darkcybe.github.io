@@ -26,7 +26,7 @@ Without needing much mention, Active Directory/Domain Controllers are an extreme
 
 ### Reconnaissance
 
-Identifying an Active Directory server can be achieved via the exposed ports and often the nomenclature of the server naming. Often Active Directory or Domain Controller servers will have the terms AD or DC within the hostname to identify it locally. Examples could appear like `abcAD01` or `abcDC02`. These servers are not typically publicly facing, unless misconfigured.
+Identifying an Active Directory server can be achieved via the exposed ports and often the nomenclature of the server naming. Often Active Directory or Domain Controller servers will have the terms AD or DC within the hostname to identify it locally. Examples could appear like `abcAD01` or `abcDC02`. It is important to note that AD servers are typically not publicly facing, unless they are misconfigured. As such, it is generally necessary for an adversary to have some level of access to the internal network in order to conduct reconnaissance on AD servers.
 
 Port scanning can reveal specific common ports that are exposed on Active Directory servers, such as the table below. Using Nmap to gain further information on specific ports can be achieved via NSE scripts. Reconnaissance activities assume that tasks are unauthenticated.
 

@@ -410,3 +410,37 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist{
 
 - [Aldeid - Windows UserAssist Keys](https://www.aldeid.com/wiki/Windows-userassist-keys)
 - [Didier Stevens - UserAssist](https://blog.didierstevens.com/programs/userassist/)
+
+### PowerShell
+
+These events can be useful for tracking the use of PowerShell on a device, including the specific cmdlets, scripts, and providers that are being invoked. By analyzing these events, you can get a sense of which users are using PowerShell, and what actions they are performing.
+
+**WIN:** XP, 7, 8, 10, 11<br>
+**SRV:** NULL
+
+#### Location
+
+```plaintext
+
+```
+
+#### Interpretation and Investigative Notes
+
+| Event Log       | Event ID | Description                 | Details Recorded                                                                                                                                          |
+|-----------------|----------|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PowerShell.evtx | 4103     | A cmdlet was invoked.       | The name of the cmdlet, the parameters passed to the cmdlet, and the security identifier (SID) of the user who invoked the cmdlet.                        |
+| PowerShell.evtx | 4104     | A script was executed.      | The name and path of the script, the parameters passed to the script, and the security identifier (SID) of the user who executed the script.              |
+| PowerShell.evtx | 4105     | A script block was invoked. | The script block that was invoked, the parameters passed to the script block, and the security identifier (SID) of the user who invoked the script block. |
+| PowerShell.evtx | 4106     | A provider was loaded.      | The name of the provider that was loaded, the security identifier (SID) of the user who loaded the provider, and the logon ID.                            |
+| PowerShell.evtx | 4107     | A provider was unloaded.    | The name of the provider that was unloaded, the security identifier (SID) of the user who unloaded the provider, and the logon ID.                        |
+| PowerShell.evtx | 4108     | A provider was invoked.     | The name of the provider that was invoked, the security identifier (SID) of the user who invoked the provider, and the logon ID.                          |
+| PowerShell.evtx | 4109     | A provider was refused.     | The name of the provider that was refused, the security identifier (SID) of the user who attempted to load the provider, and the logon ID.                |
+
+  
+#### Tools
+
+-
+
+#### Sources
+
+- 
