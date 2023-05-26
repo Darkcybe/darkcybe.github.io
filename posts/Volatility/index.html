@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="Volatility" /><meta property="og:locale" content="en" /><meta name="description" content="Overview" /><meta property="og:description" content="Overview" /><link rel="canonical" href="https://darkcybe.github.io/posts/Volatility/" /><meta property="og:url" content="https://darkcybe.github.io/posts/Volatility/" /><meta property="og:site_name" content="darkcybe" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-11-10T00:00:00+11:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Volatility" /><meta name="twitter:site" content="@darkcybe" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-19T16:21:23+11:00","datePublished":"2022-11-10T00:00:00+11:00","description":"Overview","headline":"Volatility","mainEntityOfPage":{"@type":"WebPage","@id":"https://darkcybe.github.io/posts/Volatility/"},"url":"https://darkcybe.github.io/posts/Volatility/"}</script><title>Volatility | darkcybe</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="darkcybe"><meta name="application-name" content="darkcybe"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="/assets/img/logo/darkcybe.gif" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">darkcybe</a></div><div class="site-subtitle font-italic">This is the security blog you've been looking for</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/whoami/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>WHOAMI</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/darkcybe" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/darkcybe" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href="https://discordapp.com/users/darkcybe#4349" aria-label="discord" target="_blank" rel="noopener"> <i class="fab fa-discord"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a> <a href="" aria-label="" target="_blank" rel="noopener"> <i class=""></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>Volatility</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>Volatility</h1><div class="post-meta text-muted"> <span> Posted <em class="" data-ts="1667998800" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Nov 10, 2022 </em> </span> <span> Updated <em class="" data-ts="1671427283" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Dec 19, 2022 </em> </span><div class="d-flex justify-content-between"> <span> By <em> <a href="https://twitter.com/darkcybe">darkcybe</a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1462 words"> <em>8 min</em> read</span></div></div></div><div class="post-content"><h2 id="overview"><span class="mr-2">Overview</span><a href="#overview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Volatility is the world’s most widely used framework for extracting digital artifacts from volatile memory (RAM) samples. The extraction techniques are performed completely independent of the system being investigated but offer visibility into the runtime state of the system. The framework is intended to introduce people to the techniques and complexities associated with extracting digital artifacts from volatile memory samples and provide a platform for further work into this exciting area of research. <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p><div class="table-wrapper"><table><thead><tr><th>Tool Name<th>Version<th>MITRE ATT&amp;CK Tactic<th>MITRE ATT&amp;CK Technique<tbody><tr><td><a href="https://github.com/volatilityfoundation/volatility3">Volatility3</a><td>V2.4.1<td> <td> </table></div><h2 id="volatility-plugins"><span class="mr-2">Volatility Plugins</span><a href="#volatility-plugins" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Volatility consists of a number of plugins that can be used to perform various tasks, such as identifying and extracting process data, network connections, and other information that may be relevant to a forensic investigation.</p><p>A list of all plugins available in Volatility can be found at the Volatility3 Docs Page. Some examples of plugins included in Volatility include:</p><ul><li><strong>pstree:</strong> Display the process tree for a given memory image.<li><strong>sockscan:</strong> Scan for and list open TCP and UDP sockets.<li><strong>dlllist:</strong> List the DLLs (dynamic link libraries) loaded by each process.<li><strong>connscan:</strong> Scan for and list active TCP connections.<li><strong>netscan:</strong> Scan for and list active network connections.</ul><p>These are just a few examples of the plugins available in Volatility. There are many other plugins available that can be used to extract and analyze different types of forensic data. Refer to the <a href="https://volatility3.readthedocs.io/en/stable/volatility3.plugins.html">Volatility3 Docs Page</a>. for a complete list of plugins and their descriptions.</p><h2 id="instructions"><span class="mr-2">Instructions</span><a href="#instructions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>The below examples were based off of a Windows 10 Memory Image available for download via the <a href="https://cfreds.nist.gov/all/MagnetForensics/2020WindowsMemoryMagnetCTF">NIST CFReDS Portal</a> which was provided from Magnet Forensics.</p><h3 id="memory-image-identification-windowsinfo"><span class="mr-2">Memory Image Identification (windows.info)</span><a href="#memory-image-identification-windowsinfo" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Show OS &amp; kernel details of the memory sample being analyzed.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>Python3 Vol.py <span class="nt">-f</span> &lt;memory-image-name.img&gt; windows.info
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre><td class="rouge-code"><pre>Variable            Value
+
+Kernel Base         0xf80002a48000
+DTB                 0x187000
+Symbols             file:///etc/volatility3/volatility3/symbols/windows/ntkrnlmp.pdb/ECE191A20CFF4465AE46DF96C2263845-1.json.xz
+Is64Bit             True
+IsPAE               False
+layer_name          0 WindowsIntel32e
+memory_layer        1 FileLayer
+KdDebuggerDataBlock 0xf80002c2a120
+NTBuildLab          7601.24384.amd64fre.win7sp1_ldr_
+CSDVersion          1
+KdVersionBlock      0xf80002c2a0e8
+Major/Minor         15.7601
+MachineType         34404
+KeNumberProcessors  2
+SystemTime          2020-04-20 23:23:26
+NtSystemRoot        C:<span class="se">\W</span>indows
+NtProductType       NtProductWinNt
+NtMajorVersion      6
+NtMinorVersion      1
+PE MajorOperatingSystemVersion  6
+PE MinorOperatingSystemVersion  1
+PE Machine          34404
+PE TimeDateStamp    Thu Feb 21 03:36:29 2019
+</pre></table></code></div></div><h3 id="running-processes-pslist"><span class="mr-2">Running Processes (pslist)</span><a href="#running-processes-pslist" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Lists the processes present in a particular windows memory image. Specific PIDs can be processed via the <code class="language-plaintext highlighter-rouge">--pid</code> switch. Additionally, each process can be dumped to disk via the <code class="language-plaintext highlighter-rouge">--dump</code> switch.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python3 vol.py <span class="nt">-f</span> memdump-001.mem windows.pslist
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>PID     PPID    ImageFileName   Offset<span class="o">(</span>V<span class="o">)</span>       Threads Handles SessionId       Wow64   CreateTime      ExitTime        File output
+
+4       0       System          0xfa8030e57b00  108     572     N/A     False   2020-04-20 22:44:37.000000      N/A     Disabled
+280     4       smss.exe        0xfa8032005aa0  2       30      N/A     False   2020-04-20 22:44:37.000000      N/A     Disabled
+364     352     csrss.exe       0xfa8032f05b00  9       532     0       False   2020-04-20 22:44:38.000000      N/A     Disabled
+408     352     wininit.exe     0xfa803254d580  3       76      0       False   2020-04-20 22:44:38.000000      N/A     Disabled
+440     416     csrss.exe       0xfa8032a29350  11      534     1       False   2020-04-20 22:44:38.000000      N/A     Disabled
+472     408     services.exe    0xfa803317e8e0  7       241     0       False   2020-04-20 22:44:38.000000      N/A     Disabled
+</pre></table></code></div></div><h3 id="running-processes-pstree"><span class="mr-2">Running Processes (pstree)</span><a href="#running-processes-pstree" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Plugin for listing processes in a tree based on their parent process ID. Specific PIDs can be processed via the <code class="language-plaintext highlighter-rouge">--pid</code> switch. Additionally, each process can be dumped to disk via the <code class="language-plaintext highlighter-rouge">--dump</code> switch.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python3 vol.py <span class="nt">-f</span> memdump-001.mem windows.pstree
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre>PID     PPID    ImageFileName   Offset<span class="o">(</span>V<span class="o">)</span>       Threads Handles SessionId       Wow64   CreateTime      ExitTime
+
+4       0       System  0xfa8030e57b00  108     572     N/A     False   2020-04-20 22:44:37.000000      N/A
+<span class="k">*</span> 280   4       smss.exe        0xfa8032005aa0  2       30      N/A     False   2020-04-20 22:44:37.000000      N/A
+364     352     csrss.exe       0xfa8032f05b00  9       532     0       False   2020-04-20 22:44:38.000000      N/A
+408     352     wininit.exe     0xfa803254d580  3       76      0       False   2020-04-20 22:44:38.000000      N/A
+<span class="k">*</span> 472   408     services.exe    0xfa803317e8e0  7       241     0       False   2020-04-20 22:44:38.000000      N/A
+<span class="k">**</span> 2944 472     svchost.exe     0xfa803365b060  9       136     0       False   2020-04-20 22:46:40.000000      N/A
+<span class="k">**</span> 772  472     svchost.exe     0xfa8033266060  10      336     0       False   2020-04-20 22:44:39.000000      N/A
+<span class="k">**</span> 1160 472     svchost.exe     0xfa8033424860  21      668     0       False   2020-04-20 22:44:39.000000      N/A
+<span class="k">**</span> 660  472     svchost.exe     0xfa8033227b00  11      378     0       False   2020-04-20 22:44:38.000000      N/A
+<span class="k">***</span> 3440        660     WmiPrvSE.exe    0xfa80333d6060  13      332     0       False   2020-04-20 23:17:13.000000      N/A
+<span class="k">***</span> 2108        660     WmiPrvSE.exe    0xfa803379eb00  12      221     0       False   2020-04-20 22:44:40.000000      N/A
+<span class="k">**</span> 2324 472     msdtc.exe       0xfa803386db00  12      148     0       False   2020-04-20 22:44:40.000000      N/A
+</pre></table></code></div></div><h3 id="running-and-terminated-processes-psscan"><span class="mr-2">Running and Terminated Processes (psscan)</span><a href="#running-and-terminated-processes-psscan" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Returns a list of all processes, running and terminated for further analysis.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python3 vol.py <span class="nt">-f</span> memdump-001.mem windows.psscan
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre>PID     PPID    ImageFileName   Offset<span class="o">(</span>V<span class="o">)</span>       Threads Handles SessionId       Wow64   CreateTime      ExitTime        File output
+
+4196    3384    chrome.exe      0x13d406b00     8       106     1       False   2020-04-20 23:17:15.000000      N/A     Disabled
+2216    472     dllhost.exe     0x13d4145f0     13      195     0       False   2020-04-20 22:44:40.000000      N/A     Disabled
+2324    472     msdtc.exe       0x13d46db00     12      148     0       False   2020-04-20 22:44:40.000000      N/A     Disabled
+2848    2208    slack.exe       0x13d4cdb00     14      276     1       False   2020-04-20 23:17:00.000000      N/A     Disabled
+2032    472     svchost.exe     0x13d62c060     6       105     0       False   2020-04-20 22:44:40.000000      N/A     Disabled
+</pre></table></code></div></div><h3 id="installed-services-svcscan"><span class="mr-2">Installed Services (svcscan)</span><a href="#installed-services-svcscan" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Returns a list of all installed services from the host system.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python3 vol.py <span class="nt">-f</span> memdump-001.mem windows.svcscan
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>Offset  Order   PID     Start   State   Type    Name    Display Binary
+
+0xb81200        233     660     SERVICE_AUTO_START      SERVICE_RUNNING SERVICE_WIN32_SHARE_PROCESS     PlugPlay        Plug and Play   C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\s</span>vchost.exe <span class="nt">-k</span> DcomLaunch
+0xb81200        232     N/A     SERVICE_DEMAND_START    SERVICE_STOPPED SERVICE_WIN32_SHARE_PROCESS     pla     Performance Logs &amp; Alerts       N/A
+0xb82670        231     N/A     SERVICE_DEMAND_START    SERVICE_STOPPED SERVICE_WIN32_OWN_PROCESS       PerfHost        Performance Counter DLL Host    N/A
+0xb81110        230     N/A     SERVICE_DEMAND_START    SERVICE_STOPPED SERVICE_WIN32_SHARE_PROCESS     PeerDistSvc     BranchCache     N/A
+0xb81020        229     N/A     SERVICE_AUTO_START      SERVICE_RUNNING SERVICE_KERNEL_DRIVER   PEAUTH  PEAUTH  <span class="se">\D</span>river<span class="se">\P</span>EAUTH
+0xb80f30        228     N/A     SERVICE_BOOT_START      SERVICE_RUNNING SERVICE_KERNEL_DRIVER   pcw     Performance Counters <span class="k">for </span>Windows Driver <span class="se">\D</span>river<span class="se">\p</span>cw
+0xb82590        227     N/A     SERVICE_DEMAND_START    SERVICE_STOPPED SERVICE_KERNEL_DRIVER   pcmcia  pcmcia  N/A
+0xb80e40        226     N/A     SERVICE_DEMAND_START    SERVICE_STOPPED SERVICE_KERNEL_DRIVER   pciide  pciide  N/A
+</pre></table></code></div></div><h3 id="command-line-arguments-cmdline"><span class="mr-2">Command Line Arguments (cmdline)</span><a href="#command-line-arguments-cmdline" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Lists process command line arguments.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python3 vol.py <span class="nt">-f</span> memdump-001.mem windows.cmdline
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre>PID     Process Args
+
+4       System  Required memory at 0x20 is not valid <span class="o">(</span>process exited?<span class="o">)</span>
+280     smss.exe        <span class="se">\S</span>ystemRoot<span class="se">\S</span>ystem32<span class="se">\s</span>mss.exe
+364     csrss.exe       %SystemRoot%<span class="se">\s</span>ystem32<span class="se">\c</span>srss.exe <span class="nv">ObjectDirectory</span><span class="o">=</span><span class="se">\W</span>indows <span class="nv">SharedSection</span><span class="o">=</span>1024,20480,768 <span class="nv">Windows</span><span class="o">=</span>On <span class="nv">SubSystemType</span><span class="o">=</span>Windows <span class="nv">ServerDll</span><span class="o">=</span>basesrv,1 <span class="nv">ServerDll</span><span class="o">=</span>winsrv:UserServerDllInitialization,3 <span class="nv">ServerDll</span><span class="o">=</span>winsrv:ConServerDllInitialization,2 <span class="nv">ServerDll</span><span class="o">=</span>sxssrv,4 <span class="nv">ProfileControl</span><span class="o">=</span>Off <span class="nv">MaxRequestThreads</span><span class="o">=</span>16
+408     wininit.exe     wininit.exe
+440     csrss.exe       %SystemRoot%<span class="se">\s</span>ystem32<span class="se">\c</span>srss.exe <span class="nv">ObjectDirectory</span><span class="o">=</span><span class="se">\W</span>indows <span class="nv">SharedSection</span><span class="o">=</span>1024,20480,768 <span class="nv">Windows</span><span class="o">=</span>On <span class="nv">SubSystemType</span><span class="o">=</span>Windows <span class="nv">ServerDll</span><span class="o">=</span>basesrv,1 <span class="nv">ServerDll</span><span class="o">=</span>winsrv:UserServerDllInitialization,3 <span class="nv">ServerDll</span><span class="o">=</span>winsrv:ConServerDllInitialization,2 <span class="nv">ServerDll</span><span class="o">=</span>sxssrv,4 <span class="nv">ProfileControl</span><span class="o">=</span>Off <span class="nv">MaxRequestThreads</span><span class="o">=</span>16
+</pre></table></code></div></div><h3 id="loaded-dlls-dlllist"><span class="mr-2">Loaded DLLs (dlllist)</span><a href="#loaded-dlls-dlllist" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Displays the DLLs loaded by each process and their respective filepaths.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python3 vol.py <span class="nt">-f</span> memdump-001.mem windows.dlllist
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>PID     Process Base    Size    Name    Path    LoadTime        File output
+
+280     smss.exe        0x48010000      0x20000 smss.exe        <span class="se">\S</span>ystemRoot<span class="se">\S</span>ystem32<span class="se">\s</span>mss.exe   N/A     Disabled
+280     smss.exe        0x76f10000      0x19f000        ntdll.dll       C:<span class="se">\W</span>indows<span class="se">\S</span>YSTEM32<span class="se">\n</span>tdll.dll   N/A     Disabled
+364     csrss.exe       0x499b0000      0x6000  csrss.exe       C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\c</span>srss.exe   N/A     Disabled
+364     csrss.exe       0x76f10000      0x19f000        ntdll.dll       C:<span class="se">\W</span>indows<span class="se">\S</span>YSTEM32<span class="se">\n</span>tdll.dll   N/A     Disabled
+364     csrss.exe       0x7fefcbc0000   0x13000 CSRSRV.dll      C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\C</span>SRSRV.dll  2020-04-20 22:44:38.000000      Disabled
+364     csrss.exe       0x7fefcba0000   0x11000 basesrv.DLL     C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\b</span>asesrv.DLL 2020-04-20 22:44:38.000000      Disabled
+364     csrss.exe       0x7fefcb60000   0x39000 winsrv.DLL      C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\w</span>insrv.DLL  2020-04-20 22:44:38.000000      Disabled
+364     csrss.exe       0x76cf0000      0xfa000 USER32.dll      C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\U</span>SER32.dll  2020-04-20 22:44:38.000000      Disabled
+</pre></table></code></div></div><h3 id="scan-for-injected-code-malfind"><span class="mr-2">Scan for Injected Code (malfind)</span><a href="#scan-for-injected-code-malfind" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Lists process memory ranges that potentially contain injected code.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python3 vol.py <span class="nt">-f</span> memdump-001.mem windows.malfind
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre>PID     Process Start VPN       End VPN Tag     Protection      CommitCharge    PrivateMemory   File output     Hexdump Disasm
+
+3180    WINWORD.EXE     0x7ff072f0000   0x7ff072f9fff   VadS    PAGE_EXECUTE_READWRITE  10      1       Disabled
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+00 00 00 00 00 00 00 00 ........
+0x7ff072f0000:  add     byte ptr <span class="o">[</span>rax], al
+0x7ff072f0002:  add     byte ptr <span class="o">[</span>rax], al
+0x7ff072f0004:  add     byte ptr <span class="o">[</span>rax], al
+</pre></table></code></div></div><h3 id="network-connections-netstat"><span class="mr-2">Network Connections (netstat)</span><a href="#network-connections-netstat" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Traverses network tracking structures present in a particular windows memory image.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python3 vol.py <span class="nt">-f</span> memdump-001.mem windows.netstat
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>Offset  Proto   LocalAddr       LocalPort       ForeignAddr     ForeignPort     State   PID     Owner   Created
+
+0xfa803340b500  TCPv4   192.168.10.146  49174   172.253.122.188 5228    FIN_WAIT2       -       -       N/A
+0xfa803388f540  TCPv4   192.168.10.146  54279   151.101.116.106 443     ESTABLISHED     -       -       N/A
+</pre></table></code></div></div><h3 id="network-connections-netscan"><span class="mr-2">Network Connections (netscan)</span><a href="#network-connections-netscan" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Scans for network objects present in a particular windows memory image.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python3 vol.py <span class="nt">-f</span> memdump-001.mem windows.netscan
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>Offset  Proto   LocalAddr       LocalPort       ForeignAddr     ForeignPort     State   PID     Owner   Created
+
+0x13d48f540     TCPv4   192.168.10.146  54279   151.101.116.106 443     ESTABLISHED     -       -       N/A
+0x13d518710     UDPv4   0.0.0.0 5355    <span class="k">*</span>       0               1160    svchost.exe     2020-04-20 23:23:00.000000 
+0x13d518710     UDPv6   ::      5355    <span class="k">*</span>       0               1160    svchost.exe     2020-04-20 23:23:00.000000 
+0x13d636ee0     TCPv4   0.0.0.0 49156   0.0.0.0 0       LISTENING       2032    svchost.exe     -
+0x13d63eac0     TCPv4   0.0.0.0 49156   0.0.0.0 0       LISTENING       2032    svchost.exe     -
+0x13d63eac0     TCPv6   ::      49156   ::      0       LISTENING       2032    svchost.exe     -
+</pre></table></code></div></div><h3 id="dump-lmnt-hashes-hashdump"><span class="mr-2">Dump LM/NT Hashes (hashdump)</span><a href="#dump-lmnt-hashes-hashdump" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Dump the LM and NT Hashes for accounts from the memory image.</p><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>python3 vol.py <span class="nt">-f</span> memdump-001.mem windows.hashdump
+</pre></table></code></div></div><div class="language-bash nolineno highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>User    rid     lmhash  nthash
+
+Administrator   500     aad3b435b51404eeaad3b435b51404ee        31d6cfe0d16ae931b73c59d7e0c089c0
+Guest   501     aad3b435b51404eeaad3b435b51404ee        31d6cfe0d16ae931b73c59d7e0c089c0
+Warren  1000    aad3b435b51404eeaad3b435b51404ee        2aa81fb8c8cdfd8f420f7f94615036b0
+</pre></table></code></div></div><h2 id="references"><span class="mr-2">References</span><a href="#references" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><div class="footnotes" role="doc-endnotes"><ol><li id="fn:1" role="doc-endnote"><p><a href="https://www.volatilityfoundation.org/">Volatility Foundation</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p></ol></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/dfir-tools/'>DFIR Tools</a>, <a href='/categories/memory-forensics/'>Memory Forensics</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/volatility/" class="post-tag no-text-decoration" >volatility</a> <a href="/tags/memory/" class="post-tag no-text-decoration" >memory</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Volatility+-+darkcybe&url=https%3A%2F%2Fdarkcybe.github.io%2Fposts%2FVolatility%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Volatility+-+darkcybe&u=https%3A%2F%2Fdarkcybe.github.io%2Fposts%2FVolatility%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=https%3A%2F%2Fdarkcybe.github.io%2Fposts%2FVolatility%2F&text=Volatility+-+darkcybe" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdarkcybe.github.io%2Fposts%2FVolatility%2F" data-toggle="tooltip" data-placement="top" title="Linkedin" target="_blank" rel="noopener" aria-label="Linkedin"> <i class="fa-fw fab fa-linkedin"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/DFIR_Evidence_of_Account_Usage/">Evidence of Account Usage</a><li><a href="/posts/DFIR_Evidence_of_Execution/">Evidence of Execution</a><li><a href="/posts/Active_Directory/">Active Directory</a><li><a href="/posts/Command_and_Control/">Command and Control</a><li><a href="/posts/ETH_Overview/">Ethical Hacking Overview</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/credential-access-ta0006/">credential access (TA0006)</a> <a class="post-tag" href="/tags/execution-ta0002/">execution (TA0002)</a> <a class="post-tag" href="/tags/aitm/">aitm</a> <a class="post-tag" href="/tags/execution-t0002/">execution (T0002)</a> <a class="post-tag" href="/tags/lateral-movement-ta0008/">lateral movement (TA0008)</a> <a class="post-tag" href="/tags/mitm/">mitm</a> <a class="post-tag" href="/tags/nmap/">nmap</a> <a class="post-tag" href="/tags/ntlmv2/">ntlmv2</a> <a class="post-tag" href="/tags/privilege-escalation-ta0004/">privilege escalation (TA0004)</a> <a class="post-tag" href="/tags/responder/">responder</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/Memory_Forensics_Overview/"><div class="card-body"> <em class="small" data-ts="1671368400" data-df="ll" > Dec 19, 2022 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Memory Forensics Overview</h3><div class="text-muted small"><p> Overview Memory forensics is a branch of digital forensics that involves analyzing a computer’s memory dump (or RAM) to uncover evidence of cyber attacks, malicious activity, and other issues. It ...</p></div></div></a></div><div class="card"> <a href="/posts/DFIR_Tools_MA_Sigcheck/"><div class="card-body"> <em class="small" data-ts="1662818400" data-df="ll" > Sep 11, 2022 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>SigCheck</h3><div class="text-muted small"><p> Overview SigCheck is a command line tool from the SysInternals Suite developed to scan PE files and verify if they’re signed. A majority of malware identified in the wild is not signed, however it...</p></div></div></a></div><div class="card"> <a href="/posts/DFIR_Tools_Execution_PeCmd/"><div class="card-body"> <em class="small" data-ts="1662904800" data-df="ll" > Sep 12, 2022 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>PeCmd</h3><div class="text-muted small"><p> Overview PECmd is a command line tool developed by Eric Zimmerman, to process Prefetch files (.pf) on Windows operating systems, identifying items such as: Volume information Files and Direc...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/Token_Impersonation/" class="btn btn-outline-primary" prompt="Older"><p>CAPEC 633 - Token Impersonation</p></a> <a href="/posts/MrKaplan/" class="btn btn-outline-primary" prompt="Newer"><p>MrKaplan</p></a></div></div></div><footer class="row pl-3 pr-3"><div class="col-12 d-flex justify-content-between align-items-center text-muted pl-0 pr-0"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://twitter.com/darkcybe">darkcybe</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/credential-access-ta0006/">credential access (TA0006)</a> <a class="post-tag" href="/tags/execution-ta0002/">execution (TA0002)</a> <a class="post-tag" href="/tags/aitm/">aitm</a> <a class="post-tag" href="/tags/execution-t0002/">execution (T0002)</a> <a class="post-tag" href="/tags/lateral-movement-ta0008/">lateral movement (TA0008)</a> <a class="post-tag" href="/tags/mitm/">mitm</a> <a class="post-tag" href="/tags/nmap/">nmap</a> <a class="post-tag" href="/tags/ntlmv2/">ntlmv2</a> <a class="post-tag" href="/tags/privilege-escalation-ta0004/">privilege escalation (TA0004)</a> <a class="post-tag" href="/tags/responder/">responder</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No results found.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-QFH2BQ5ZG5"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QFH2BQ5ZG5'); }); </script>
